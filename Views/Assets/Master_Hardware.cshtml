@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Master Hardware";
+}
+<script src="~/Scripts/jquery-3.6.3.min.js"></script>
+
+<h2>Inventario de Hardware</h2>
+<hr />
+<p>
+    Ingresa el parámetro que deseas buscar:
+
+</p>
+<div class="row">
+    <div class="col-md-3">
+        <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+    </div>
+</div>
+
+<br>
+<a href="~/Assets/Add_Hardware_Form"><i class="fa-solid fa-plus"></i></a>
+    <div class="row">
+        <div class="col-md-9">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th style="background-color:dodgerblue; color:white;">OPERATOR</th>
+                        <th style="background-color:dodgerblue; color:white;">MODEL</th>
+                        <th style="background-color:dodgerblue; color:white;">SERIAL NUMBER</th>
+                        <th style="background-color:dodgerblue; color:white;">ASSET TAG</th>
+                        <th style="background-color:dodgerblue; color:white;">TYPE</th>
+                        <th style="background-color:dodgerblue; color:white;">STATUS</th>
+                        <th style="background-color:dodgerblue; color:white;">LOCATION</th>
+                        <th style="background-color:dodgerblue; color:white;">COMMENTS</th>
+                        <th style="background-color:dodgerblue; color:white;">VENDOR</th>
+
+                    </tr>
+
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.Operator</td>
+                            <td>@x.Modelo</td>
+                            <td>@x.SerialNumber</td>
+                            <td>@x.AssetTag</td>
+                            <td>@x.Type</td>
+                            @if (x.Status == "Assigned")
+                            {
+                                <td style="background-color:green; color:white;">@x.Status</td>
+                            }
+                            else if (x.Status == "Available")
+                            {
+                                <td style="background-color:cornflowerblue; color:white;">@x.Status</td>
+                            }
+                            else
+                            {
+                                <td>@x.Status</td>
+                            }
+                            <td>@x.Location</td>
+                            <td>@x.Comments</td>
+                            <td>@x.Vendor</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+
+

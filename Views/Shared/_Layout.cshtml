@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -IRS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="~/Content/Site.css" />
+    <script src="~/Scripts/Site.js"></script>
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <img src="~/Resources/Images/logo.png" width="55px" height="45px" class="borde-tope" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">Flecha abajo</span>
+            </button>
+
+            <label class="form-label" style="color:white">IRS</label>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">:) Usuario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Configuración</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
+                </ul>
+               
+                <form class="navbar-form">
+                    <input type="text" class="form-control" placeholder="Buscar...">
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="sidebar izquierda">
+
+                    <button class="dropdown-btn">
+                        Administration
+                        <i class="fa fa-briefcase"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a class="fondo_a" href="~/Usuarios/Mostrar_Solicitudes">
+                            <i class="fa-regular fa-address-book"></i> Phone Book
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-dollar-sign"></i> Budget
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-check"></i> ShiftLog
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-user-check"></i> User Managment
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-code-fork"></i> Projects
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-folder-open"></i> Documents
+                        </a>
+
+                    </div>
+
+                    <button class="dropdown-btn">
+                        Assets
+                        <i class="fa fa-microchip"></i>
+                    </button>
+
+                    <div class="dropdown-container">
+                        <a class="fondo_a" href="~/Assets/Master_Hardware">
+                            <i class="fa-solid fa-computer"></i> Hardware Inventory
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-code"></i> Software Inventory
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-user-gear"></i> Accounts
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-user-tie"></i> Employees
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-phone"></i> Telcom
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-user-shield"></i> Vendors
+                        </a>
+                    </div>
+
+                    <button class="dropdown-btn">
+                        Process
+                        <i class="fa fa-gears"></i>
+                    </button>
+                    <div class="dropdown-container">
+                        <a class="fondo_a" href="~/Usuarios/Mostrar_Solicitudes">
+                            <i class="fa-solid fa-screwdriver-wrench"></i> Equimpent Repair
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-chart-gantt"></i> Kamishibai Board
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-person-military-pointing"></i> Audit Controls
+                        </a>
+                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                            <i class="fa-solid fa-globe"></i> Valor
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 contenido">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+
+</html>

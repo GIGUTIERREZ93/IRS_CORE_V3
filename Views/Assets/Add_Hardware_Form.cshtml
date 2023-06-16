@@ -1,0 +1,508 @@
+﻿
+@{
+    ViewBag.Title = "Add New Hardware";
+   
+}
+
+
+
+
+<h2 class="page-header">Agregar Hardware</h2>
+<hr />
+<div class="form-horizontal">
+    <form action="~/Home/Index" method="post">
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Model</label>
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" aria-label="Position" autofocus required>
+                    <option disabled selected value="Espacio"></option>
+
+                    <option value="New">NEW MODEL</option>
+                    <option></option>
+                    <option value="416"> DATALOGIC</option>
+                    <option value="414"> SYMBOL</option>
+                    <option value="447">3101 Basic Phone</option>
+                    <option value="452">3102 Business Phone</option>
+                    <option value="329">ACER</option>
+                    <option value="337">ACER G195W</option>
+                    <option value="330">ACER V173</option>
+                    <option value="331">ACER V176L</option>
+                    <option value="332">AOC E950SWN</option>
+                    <option value="333">AOC E950WN</option>
+                    <option value="453">BACK-UPS PRO 1000</option>
+                    <option value="455">BACK-UPS PRO 1500</option>
+                    <option value="456">BACK-UPS PRO 900</option>
+                    <option value="383">BR1000G</option>
+                    <option value="480">CARGADOR </option>
+                    <option value="486">CISCO</option>
+                    <option value="464">CISCO 7841</option>
+                    <option value="465">CISCO 8851</option>
+                    <option value="454">CYBER POWER 1000VA</option>
+                    <option value="408">DATA LOGIC GRYPHON</option>
+                    <option value="410">DATA LOGIC MEMOR</option>
+                    <option value="415">DATALOGIC</option>
+                    <option value="334">DELL</option>
+                    <option value="490">DODEX  DT4X</option>
+                    <option value="418">DS4308</option>
+                    <option value="463">EPSON H719A</option>
+                    <option value="404">EPSON L355</option>
+                    <option value="407">EPSONL375</option>
+                    <option value="413">ESCANER MOTOROLA</option>
+                    <option value="411">ESCANER SYMBOL</option>
+                    <option value="400">EVOLIS PRIMACY</option>
+                    <option value="338">HP  P223</option>
+                    <option value="470">HP 19KA</option>
+                    <option value="374">HP 2013 DOCKING STATION</option>
+                    <option value="339">HP 244H</option>
+                    <option value="375">HP 2570 DOCKING STATION</option>
+                    <option value="173">HP COMPAQ 6000 PRO</option>
+                    <option value="182">HP COMPAQ 6005 PRO</option>
+                    <option value="184">HP COMPAQ 6200 PRO</option>
+                    <option value="203">HP Compaq 6200 Pro MT PC</option>
+                    <option value="206">HP COMPAQ 6300 MT</option>
+                    <option value="207">HP COMPAQ 6300 PRO</option>
+                    <option value="212">HP COMPAQ 6730B</option>
+                    <option value="213">HP COMPAQ DX2400</option>
+                    <option value="214">HP COMPAQ DX2450</option>
+                    <option value="215">HP COMPAQ ELITE 8300</option>
+                    <option value="340">HP COMPAQ LA 2205WG</option>
+                    <option value="468">HP COMPAQ LE 1711</option>
+                    <option value="216">HP COMPAQ PRO 6300</option>
+                    <option value="343">HP CPMPAQ LA 2205WG</option>
+                    <option value="491">HP DESIGNJET T520</option>
+                    <option value="376">HP DOCKING STATION</option>
+                    <option value="223">HP ELITE BOOK FOLIO 1040 G3</option>
+                    <option value="348">HP ELITE DISPLAY E201</option>
+                    <option value="349">HP ELITE DISPLAY E202</option>
+                    <option value="345">HP ELITE DISPLAY E222</option>
+                    <option value="346">HP ELITE DISPLAY E231</option>
+                    <option value="347">HP ELITE DISPLAY E232</option>
+                    <option value="462">HP ELITE DISPLAY E2O1</option>
+                    <option value="460">HP ELITEBOOK  820 G3</option>
+                    <option value="224">HP ELITEBOOK 2570P</option>
+                    <option value="225">HP ELITEBOOK 820 G3</option>
+                    <option value="227">HP EliteBook Folio 1040 G3</option>
+                    <option value="228">HP ELITEDESK 705 G2 SFF</option>
+                    <option value="457">HP ELITEDESK 705 G3 SFF</option>
+                    <option value="229">HP ELITEDESK 800 G1</option>
+                    <option value="481">HP ELITEDISPLAY E233</option>
+                    <option value="231">HP ELITEONE 800</option>
+                    <option value="234">HP ELITEONE 800 G3</option>
+                    <option value="350">HP L1706</option>
+                    <option value="352">HP L1908W</option>
+                    <option value="401">HP LASER JET CP1525NW</option>
+                    <option value="386">HP LASER JET P1606DN</option>
+                    <option value="353">HP LITE DISPLAY E2O1</option>
+                    <option value="354">HP LV1911</option>
+                    <option value="355">HP P223</option>
+                    <option value="476">HP P224</option>
+                    <option value="476">HP P224</option>
+                    <option value="236">HP PRO DESK 600 G3 SFF</option>
+                    <option value="489">HP PROBOOK 440</option>
+                    <option value="237">HP PROBOOK 600 G1</option>
+                    <option value="238">HP PROBOOK 640</option>
+                    <option value="257">HP ProBook 6465b</option>
+                    <option value="258">HP PROBOOK 6470B</option>
+                    <option value="262">HP PROBOOK 650 G1</option>
+                    <option value="264">HP PROBOOK 650 G2</option>
+                    <option value="474">HP PROBOOK 650 G4</option>
+                    <option value="477">HP PROBOOK 650 G5</option>
+                    <option value="267">HP PROBOOK 6550B</option>
+                    <option value="271">HP PROBOOK 6560B</option>
+                    <option value="272">HP PROBOOK 6570B</option>
+                    <option value="280">HP PRODESK 400 G3 SFF</option>
+                    <option value="281">HP PRODESK 600 G1</option>
+                    <option value="293">HP ProDesk 600 G1 TWR</option>
+                    <option value="298">HP PRODESK 600 G2</option>
+                    <option value="300">HP PRODESK 600 G3</option>
+                    <option value="475">HP PRODESK 600 G4 SFF</option>
+                    <option value="478">HP PRODESK 600 G5 SFF</option>
+                    <option value="356">HP S1933</option>
+                    <option value="473">HP THUNDERBOLT DOCK 230W G2</option>
+                    <option value="473">HP THUNDERBOLT DOCK 230W G2</option>
+                    <option value="315">HP TOUCH SMART 9300 ELITE</option>
+                    <option value="479">HP ULTRASLIM DOCKING STATION LTNA</option>
+                    <option value="357">HP V185ES</option>
+                    <option value="358">HP V185WS</option>
+                    <option value="359">HP V223</option>
+                    <option value="360">HP V244 h</option>
+                    <option value="361">HP V244H</option>
+                    <option value="362">HP Z 23</option>
+                    <option value="461">HP Z23I</option>
+                    <option value="363">HP Z23N</option>
+                    <option value="364">HP Z24W</option>
+                    <option value="316">HP Z400 WOK STATION</option>
+                    <option value="318">HP Z420 WORKSTATION</option>
+                    <option value="320">HP ZBOOK</option>
+                    <option value="471">HP ZBOOK 15 G5</option>
+                    <option value="472">HP ZBOOK 15G5</option>
+                    <option value="365">HP ZDISPLAY</option>
+                    <option value="366">HP ZR24W</option>
+                    <option value="368">HPV185ES</option>
+                    <option value="467">HSC040W</option>
+                    <option value="466">HSC060</option>
+                    <option value="369">HSTND-9571A</option>
+                    <option value="458">JABRA SPEAK 510</option>
+                    <option value="482">JABRA SPEAK 810</option>
+                    <option value="405">KYOSERA</option>
+                    <option value="403">KYOSERA ECOSYS P3055DN</option>
+                    <option value="384">KYOSERA FS-4100DN</option>
+                    <option value="397">KYOSERA FS-4200DN</option>
+                    <option value="398">KYOSERA TK 362</option>
+                    <option value="484">LG 19M38A</option>
+                    <option value="485">LG PANTALLA70</option>
+                    <option value="324">OEM</option>
+                    <option value="370">PRO DISPLAY P19A</option>
+                    <option value="325">PRO LIANTML110 G6</option>
+                    <option value="371">SAMSUNG</option>
+                    <option value="326">SHUTTLE INC</option>
+                    <option value="372">SONY SDM-S95F</option>
+                    <option value="417">SYMBOL</option>
+                    <option value="459">SYMBOL MC32NO</option>
+                    <option value="409">SYMBOL MC92NO</option>
+                    <option value="412">SYMBOL TECH</option>
+                    <option value="469">TELEFONO</option>
+                    <option value="327">TIENE LLAVE Y EN SISTEMA NO APARECE</option>
+                    <option value="328">To be filled by O.E.M.</option>
+                    <option value="487">VIEWSONIC</option>
+                    <option value="483">VSU010</option>
+                    <option value="378">XEROX&nbsp;WorkCentre&nbsp;5325</option>
+                    <option value="377">XEROX&nbsp;WorkCentre&nbsp;6655</option>
+                    <option value="488">ZD421</option>
+                    <option value="373">ZDISPLAY</option>
+                    <option value="392">ZEBRA  ZT 410</option>
+                    <option value="391">ZEBRA 110 XI4</option>
+                    <option value="393">ZEBRA 6MPLUS</option>
+                    <option value="381">ZEBRA GC 420 T</option>
+                    <option value="394">ZEBRA GK 420D</option>
+                    <option value="379">ZEBRA GK420T</option>
+                    <option value="395">ZEBRA GX 430T</option>
+                    <option value="493">ZEBRA MC330L</option>
+                    <option value="399">ZEBRA S4M</option>
+                    <option value="494">ZEBRA SHARECRADLE</option>
+                    <option value="402">ZEBRA TAEL GB 43</option>
+                    <option value="387">ZEBRA TLP 2844</option>
+                    <option value="389">ZEBRA Z4M PLUS</option>
+                    <option value="382">ZEBRA ZM 400</option>
+                    <option value="388">ZEBRA ZM 600</option>
+                    <option value="406">ZEBRA ZM PLUS</option>
+                    <option value="390">ZEBRA ZT 410</option>
+                    <option value="396">ZEBRA ZT 420</option>
+                    <option value="495">ZEBRA ZT230</option>
+                    <option value="492">ZEBRA ZT411</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label" >Speed(Mhz):</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label">Memory(MB):</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label">HD(GB):</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+        <hr>
+
+        <br>
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Vendor</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label">Type</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Serial Number</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label">Asset Tag</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">PO Number</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label">Cost</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+        </div>
+
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Purchase Site</label>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Purchase Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="tep-el">TEP-EL</option>
+                    <option value="tep-al">TEP-AL</option>
+                    <option value="tol-el">TOL-EL</option>
+                    <option value="tol-al">TOL-AL</option>
+
+
+
+
+
+                </select>
+
+
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label">Operator</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+
+
+            <div class="col-md-1">
+                <label class="control-label">Location Site</label>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Location Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="tepo">TEPO</option>
+                    <option value="tol">TOL</option>
+
+
+
+
+
+                </select>
+
+
+
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label">Create Date</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+        </div>
+
+        <br>
+
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Comments</label>
+            </div>
+            <div class="col-md-3">
+                <textarea type="text" class="form-control" autofocus required style="width:810px; height: 70px;">
+                </textarea>
+
+            </div>
+
+
+
+
+        </div>
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Status</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label class="control-label">Location</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+        </div>
+
+
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Elegible Refresh Date</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label class="control-label">Warranty Date</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" class="form-control" autofocus required />
+
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Category</label>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Manager" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="admin">ADMIN</option>
+                    <option value="mc">MC</option>
+                    <option value="spare">SPARE</option>
+                    <option value="damaged">DAMAGED</option>
+                    <option value="scrap">SCRAP</option>
+
+
+
+
+                </select>
+
+
+
+            </div>
+        </div>
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-offset-6 col-md-1">
+                <input type="submit" value="Enviar" class="btn btn-success">
+
+            </div>
+
+
+
+            <div class=" col-md-1 ">
+                <input type="submit" value="Cancel" class="btn btn-danger">
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

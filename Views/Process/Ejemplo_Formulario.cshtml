@@ -1,0 +1,66 @@
+﻿@model IRS.Models.ViewModels.Saludo
+@{
+    ViewBag.Title = "Ejemplo Formulario";
+}
+
+<h2>Formulario de Ejemplo</h2>
+<hr />
+<div class="container">
+   
+    @using (Html.BeginForm("Saludo","Process",FormMethod.Post))
+    {
+
+        <div class="row">
+            <div class="col-md-2">
+                <label class="control-label">Nombre</label>
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(s => s.nombre, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s => s.nombre, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <label class="control-label">Edad</label>
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(s => s.edad, new { @class = "form-control" })
+                @Html.ValidationMessageFor(s=>s.edad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2">
+                <label class="control-label">Apellido</label>
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(s => s.apellido, new { @class = "form-control" })
+            </div>
+            <div class="col-md-2">
+                <label class="control-label">Color</label>
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(s => s.color, new { @class = "form-control" })
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-2">
+                <label class="control-label">Dirección</label>
+            </div>
+            <div class="col-md-3">
+                @Html.TextAreaFor(s => s.direccion, new { @class = "form-control" })
+            </div>
+            
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-1">
+                <input type="submit" name="name" value="Enviar" class="btn btn-success" />
+            </div>
+
+        </div>
+
+
+
+    }
+
+</div>

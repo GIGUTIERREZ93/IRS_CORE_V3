@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91de039241d247d9b50cdcc1e8aa78ef" Name="Diagram1">
+        <EntityTypeShape EntityType="ITDBModel.Phone" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.Document" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.HW_MODEL" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.Master_HW" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.Master_SW" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.PhoneMaster" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ITDBModel.COVID_ES_Employees" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ITDBModel.Employee" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="ITDBModel.Project_Tasks" Width="1.5" PointX="13.125" PointY="0.625" />
+        <EntityTypeShape EntityType="ITDBModel.Account" Width="1.5" PointX="14.75" PointY="5.375" />
+        <EntityTypeShape EntityType="ITDBModel.BCategory" Width="1.5" PointX="13.5" PointY="8.5" />
+        <EntityTypeShape EntityType="ITDBModel.BCharge" Width="1.5" PointX="14.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ITDBModel.Budget" Width="1.5" PointX="0.5" PointY="15.5" />
+        <EntityTypeShape EntityType="ITDBModel.BudgetCharge" Width="1.5" PointX="16.625" PointY="0.625" />
+        <EntityTypeShape EntityType="ITDBModel.BudgetCharges_ant" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ITDBModel.COVID_Acceso" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ITDBModel.Department" Width="1.5" PointX="4.75" PointY="15.75" />
+        <EntityTypeShape EntityType="ITDBModel.Downtime_Causas" Width="1.5" PointX="18.75" PointY="13.75" />
+        <EntityTypeShape EntityType="ITDBModel.File" Width="1.5" PointX="18.75" PointY="16.75" />
+        <EntityTypeShape EntityType="ITDBModel.INV_Budget" Width="1.5" PointX="18.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ITDBModel.KamishibaiLog" Width="1.5" PointX="18.875" PointY="1.625" />
+        <EntityTypeShape EntityType="ITDBModel.Kiosk" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ITDBModel.Kiosk_Log" Width="1.5" PointX="20.75" PointY="11.75" />
+        <EntityTypeShape EntityType="ITDBModel.LogHistory" Width="1.5" PointX="20.75" PointY="14.75" />
+        <EntityTypeShape EntityType="ITDBModel.Maquina" Width="1.5" PointX="20.75" PointY="19.75" />
+        <EntityTypeShape EntityType="ITDBModel.Master_History" Width="1.5" PointX="7.125" PointY="16" />
+        <EntityTypeShape EntityType="ITDBModel.Project_Tracking" Width="1.5" PointX="22.75" PointY="8.75" />
+        <EntityTypeShape EntityType="ITDBModel.ShiftLog" Width="1.5" PointX="20" PointY="25.5" />
+        <EntityTypeShape EntityType="ITDBModel.Status" Width="1.5" PointX="26.75" PointY="23.75" />
+        <EntityTypeShape EntityType="ITDBModel.SW_Installs" Width="1.5" PointX="23.5" PointY="26" />
+        <EntityTypeShape EntityType="ITDBModel.Task_Documents" Width="1.5" PointX="0.5" PointY="21.125" />
+        <EntityTypeShape EntityType="ITDBModel.Type_Of_Change" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITDBModel.UserAccount" Width="1.5" PointX="28.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ITDBModel.User" Width="1.5" PointX="2.375" PointY="21.125" />
+        <EntityTypeShape EntityType="ITDBModel.Vendor" Width="1.5" PointX="28.75" PointY="11.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

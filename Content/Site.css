@@ -1,0 +1,88 @@
+﻿body{
+    margin-top:50px;
+}
+.contenido {
+   margin-top:15px;
+}
+
+
+/* Barra de herramientas*/
+
+.borde-tope {
+    margin-top: 3px;
+    margin-left: -5px;
+}
+
+
+/*menu lateral*/
+
+.fondo_a:hover {
+    background-color: #808080;
+}
+
+.sidebar {
+    padding-left:0px;
+    width: 250px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+    .sidebar a, .dropdown-btn {
+        display: block;
+        color: black;
+        padding:18px;
+        text-decoration: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        outline: none;
+        width: 100%;
+        text-align: left;
+    }
+
+
+.active {
+    background-color: #1080B4;
+    color: white;
+}
+
+.fa {
+    float: right;
+    padding-right: 8px;
+}
+
+
+.sidebar button:hover, .dropdown-btn:hover {
+    background-color: #1080B4;
+    color: white;
+}
+
+
+.dropdown-container {
+    display: none;
+    font-style: oblique;
+}
+
+.Titulo {
+    color: white;
+    padding-top: 8px;
+    padding-left: 8px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.dropdown-btn {
+    font-weight: bold;
+}
+
+.izquierda{
+    margin-left:-10px;
+}
+.control-label{
+    font-weight:bold;
+}
+
+
+

@@ -1,0 +1,2693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ITDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Accounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Accounts">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountType" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BCategories">
+          <Key>
+            <PropertyRef Name="RID" />
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CID" Type="int" Nullable="false" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="250" />
+          <Property Name="View2" Type="nvarchar" MaxLength="250" />
+          <Property Name="BoardCategory" Type="nvarchar" MaxLength="250" />
+          <Property Name="SITE" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BCharges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BCharges">
+          <Key>
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="RECID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DEPT17" Type="varchar" MaxLength="50" />
+          <Property Name="ORDC17" Type="varchar" MaxLength="50" />
+          <Property Name="ITEM17" Type="varchar" MaxLength="50" />
+          <Property Name="CUENTA" Type="varchar" MaxLength="50" />
+          <Property Name="VNDR17" Type="varchar" MaxLength="50" />
+          <Property Name="SNAM05" Type="varchar" MaxLength="50" />
+          <Property Name="CURC17" Type="varchar" MaxLength="50" />
+          <Property Name="VATCOD" Type="varchar" MaxLength="50" />
+          <Property Name="OQTY17" Type="varchar" MaxLength="50" />
+          <Property Name="OUOM17" Type="varchar" MaxLength="50" />
+          <Property Name="PRIC17" Type="varchar" MaxLength="50" />
+          <Property Name="PRUM17" Type="varchar" MaxLength="50" />
+          <Property Name="FECREQ" Type="varchar" MaxLength="50" />
+          <Property Name="Mes" Type="nvarchar" MaxLength="50" />
+          <Property Name="M" Type="int" />
+          <Property Name="DREQ17" Type="varchar" MaxLength="50" />
+          <Property Name="FECVEN" Type="varchar" MaxLength="50" />
+          <Property Name="CNVF17" Type="varchar" MaxLength="50" />
+          <Property Name="REFT17" Type="varchar" MaxLength="50" />
+          <Property Name="ORDU17" Type="varchar" MaxLength="50" />
+          <Property Name="RQRC17" Type="varchar" MaxLength="50" />
+          <Property Name="REQN" Type="varchar" MaxLength="50" />
+          <Property Name="USER17" Type="varchar" MaxLength="50" />
+          <Property Name="ORDN17" Type="varchar" MaxLength="50" />
+          <Property Name="LINE17" Type="varchar" MaxLength="50" />
+          <Property Name="FECPO" Type="varchar" MaxLength="50" />
+          <Property Name="RSTS05 " Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BCuentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Budget' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="RID" />
+            <PropertyRef Name="FYear" />
+          </Key>
+          <Property Name="RID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Initial" Type="money" />
+          <Property Name="Forecast1" Type="money" />
+          <Property Name="Forecast2" Type="money" />
+          <Property Name="Forecast3" Type="money" />
+          <Property Name="Jan" Type="money" />
+          <Property Name="Feb" Type="money" />
+          <Property Name="Mar" Type="money" />
+          <Property Name="Apr" Type="money" />
+          <Property Name="May" Type="money" />
+          <Property Name="Jun" Type="money" />
+          <Property Name="Jul" Type="money" />
+          <Property Name="Aug" Type="money" />
+          <Property Name="Sep" Type="money" />
+          <Property Name="Oct" Type="money" />
+          <Property Name="Nov" Type="money" />
+          <Property Name="Dec" Type="money" />
+          <Property Name="Depa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plant" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalFYr" Type="money" StoreGeneratedPattern="Computed" />
+          <Property Name="FYear" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BudgetCharges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BudgetCharges">
+          <Key>
+            <PropertyRef Name="ChgID" />
+          </Key>
+          <Property Name="ChgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CoCd" Type="nvarchar" MaxLength="255" />
+          <Property Name="BID" Type="float" />
+          <Property Name="Cuenta" Type="float" />
+          <Property Name="Category" Type="nvarchar" MaxLength="255" />
+          <Property Name="Costcenter" Type="nvarchar" MaxLength="255" />
+          <Property Name="DocumentNo" Type="float" />
+          <Property Name="DocTyp" Type="nvarchar" MaxLength="255" />
+          <Property Name="Item" Type="float" />
+          <Property Name="ValueTCur" Type="money" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="PostDate" Type="nvarchar" MaxLength="255" />
+          <Property Name="TCurr" Type="nvarchar" MaxLength="255" />
+          <Property Name="Quantity" Type="float" />
+          <Property Name="PUM" Type="nvarchar" MaxLength="255" />
+          <Property Name="OffAct" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Plant" Type="nvarchar" MaxLength="255" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaPO" Type="smalldatetime" />
+          <Property Name="Concepto" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+          <Property Name="Rev" Type="nvarchar" MaxLength="255" />
+          <Property Name="Area" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="Approved" Type="smalldatetime" />
+          <Property Name="BoardCategory" Type="nvarchar" MaxLength="255" />
+          <Property Name="MesNumber" Type="int" />
+          <Property Name="Site" Type="nvarchar" MaxLength="10" />
+          <Property Name="Mes" Type="nvarchar" MaxLength="10" />
+          <Property Name="ReqNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaReq" Type="smalldatetime" />
+          <Property Name="Documents" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.BudgetCharges_ant' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BudgetCharges_ant">
+          <Key>
+            <PropertyRef Name="ChgID" />
+          </Key>
+          <Property Name="ChgID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BID" Type="int" />
+          <Property Name="Concepto" Type="nvarchar" MaxLength="500" />
+          <Property Name="Cuenta" Type="float" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="250" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="ReqNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaReq" Type="datetime" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="50" />
+          <Property Name="FechaPO" Type="datetime" />
+          <Property Name="Documents" Type="nvarchar" MaxLength="500" />
+          <Property Name="Mes" Type="nvarchar" MaxLength="50" />
+          <Property Name="Site" Type="nvarchar" MaxLength="10" />
+          <Property Name="Plant" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="text" />
+          <Property Name="Area" Type="nvarchar" MaxLength="5" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approved" Type="smalldatetime" />
+          <Property Name="RecordID" Type="int" />
+          <Property Name="BoardCategory" Type="nvarchar" MaxLength="500" />
+          <Property Name="MesNumber" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Components' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.COVID_Acceso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="COVID_Acceso">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transporte" Type="tinyint" />
+          <Property Name="Turno" Type="tinyint" />
+          <Property Name="Fecha" Type="smalldatetime" />
+          <Property Name="WeekNumber" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="Activo" Type="tinyint" />
+          <Property Name="PIN1" Type="smalldatetime" />
+          <Property Name="PIN2" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="COVID_ES_Employees">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="float" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" />
+          <Property Name="APE_MAT" Type="nvarchar" MaxLength="255" />
+          <Property Name="APE_PAT" Type="nvarchar" MaxLength="255" />
+          <Property Name="Departamento" Type="nvarchar" MaxLength="255" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="255" />
+          <Property Name="COD_Barras" Type="nvarchar" MaxLength="255" />
+          <Property Name="Pass" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rango" Type="smallint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.DELL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.DELLComponent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.DELLSpare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Departments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepID" />
+          </Key>
+          <Property Name="DepID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Department" Type="nvarchar" MaxLength="50" />
+          <Property Name="Manager" Type="int" />
+          <Property Name="Lang" Type="nvarchar" MaxLength="50" />
+          <Property Name="Value" Type="nvarchar" MaxLength="50" />
+          <Property Name="APR1_ID" Type="int" />
+          <Property Name="APR2_ID" Type="int" />
+          <Property Name="APR3_ID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Dexclude' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Dirs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Documents">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Topic" Type="nvarchar" MaxLength="50" />
+          <Property Name="DocType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Downtime_Causas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Downtime_Causas">
+          <Key>
+            <PropertyRef Name="DID" />
+          </Key>
+          <Property Name="DID" Type="float" Nullable="false" />
+          <Property Name="Causa" Type="nvarchar" MaxLength="500" />
+          <Property Name="Categoria" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="bigint" Nullable="false" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="102" StoreGeneratedPattern="Computed" />
+          <Property Name="Depa" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Manager" Type="int" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="CostCenter" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="StopDate" Type="smalldatetime" />
+          <Property Name="Site" Type="nvarchar" MaxLength="5" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastLogon" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Files' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Files">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Dir" Type="nvarchar" MaxLength="1000" />
+          <Property Name="Created" Type="nvarchar" MaxLength="50" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="owner" Type="nvarchar" MaxLength="50" />
+          <Property Name="descr" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.HITCO2_Norms' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.HITCO2_Subject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.HW_MODEL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="HW_MODEL">
+          <Key>
+            <PropertyRef Name="ModelID" />
+          </Key>
+          <Property Name="ModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="255" />
+          <Property Name="CPU" Type="nvarchar" MaxLength="255" />
+          <Property Name="MEM" Type="nvarchar" MaxLength="255" />
+          <Property Name="VENDOR" Type="nvarchar" MaxLength="255" />
+          <Property Name="TYPE" Type="nvarchar" MaxLength="255" />
+          <Property Name="HD" Type="nvarchar" MaxLength="255" />
+          <Property Name="UDate" Type="smalldatetime" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.INV_Budget' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="INV_Budget">
+          <Key>
+            <PropertyRef Name="INID" />
+          </Key>
+          <Property Name="INID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="CID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.KamishibaiLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="KamishibaiLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KBNUmber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssignedTo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompletedOn" Type="smalldatetime" />
+          <Property Name="SupervisedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+          <Property Name="Month" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Confirmed" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Kiosk' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Kiosk">
+          <Key>
+            <PropertyRef Name="KID" />
+          </Key>
+          <Property Name="KID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LineID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ButtonName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" />
+          <Property Name="Programa" Type="nvarchar" MaxLength="500" />
+          <Property Name="PasCode" Type="int" />
+          <Property Name="Evento" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Kiosk_Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Kiosk_Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Evento" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kiosk_Log" Type="text" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateTime" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Labels' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.LogHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="255" />
+          <Property Name="FName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LName" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Site" Type="nvarchar" MaxLength="255" />
+          <Property Name="RequestedDate" Type="smalldatetime" />
+          <Property Name="Approved" Type="nvarchar" MaxLength="255" />
+          <Property Name="ApprovedDate" Type="smalldatetime" />
+          <Property Name="ApprovedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="LogonName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Host" Type="nvarchar" MaxLength="255" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="StopDate" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Maquinas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Maquinas">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Marbetes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Master_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Master_History">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hw_ID" Type="int" />
+          <Property Name="ComputerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Account" Type="nvarchar" MaxLength="255" />
+          <Property Name="StartDate" Type="smalldatetime" />
+          <Property Name="StopDate" Type="smalldatetime" />
+          <Property Name="Bios" Type="nvarchar" MaxLength="50" />
+          <Property Name="TrueCrypt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="1000" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="255" />
+          <Property Name="Column" Type="nvarchar" MaxLength="255" />
+          <Property Name="Singnature" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Master_HW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Master_HW">
+          <Key>
+            <PropertyRef Name="Hw_ID" />
+          </Key>
+          <Property Name="Hw_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="int" />
+          <Property Name="ModelID" Type="int" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssetTag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="TypeC" Type="nvarchar" MaxLength="50" />
+          <Property Name="Site" Type="nvarchar" MaxLength="50" />
+          <Property Name="PSite" Type="nvarchar" MaxLength="50" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cost" Type="money" />
+          <Property Name="Refresh_EligDate" Type="smalldatetime" />
+          <Property Name="WarrantyDate" Type="smalldatetime" />
+          <Property Name="LastUpdate" Type="smalldatetime" />
+          <Property Name="LastModBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventoryLabel" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Master_SW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Master_SW">
+          <Key>
+            <PropertyRef Name="SWID" />
+          </Key>
+          <Property Name="SWID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoftwareName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Vendor" Type="nvarchar" MaxLength="255" />
+          <Property Name="Standard" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreatedDate" Type="smalldatetime" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+          <Property Name="PurchasedLicenses" Type="int" />
+          <Property Name="PurchasedSite" Type="nvarchar" MaxLength="255" />
+          <Property Name="Site" Type="nvarchar" MaxLength="255" />
+          <Property Name="PONum" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+          <Property Name="SW_Key" Type="nvarchar" MaxLength="250" />
+          <Property Name="bActivo" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.PhoneMaster' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PhoneMaster">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PhoneID" Type="float" />
+          <Property Name="Start" Type="smalldatetime" />
+          <Property Name="Stop" Type="smalldatetime" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="500" />
+          <Property Name="EmpID" Type="float" />
+          <Property Name="AssignedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnassignedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Phones">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Name="PhoneID" Type="float" Nullable="false" />
+          <Property Name="IDNextel" Type="nchar" MaxLength="15" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="CuentaPadre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cuenta" Type="nvarchar" MaxLength="50" />
+          <Property Name="SIM" Type="nvarchar" MaxLength="50" />
+          <Property Name="IMEI" Type="nvarchar" MaxLength="50" />
+          <Property Name="Mode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plan" Type="nvarchar" MaxLength="255" />
+          <Property Name="Renta" Type="money" />
+          <Property Name="MinIncluido" Type="int" />
+          <Property Name="Min_Telcel_Telcel" Type="int" />
+          <Property Name="SMS" Type="int" />
+          <Property Name="Datos" Type="int" />
+          <Property Name="Equipo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plazo" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="FecIni" Type="date" />
+          <Property Name="FecFin" Type="date" />
+          <Property Name="MonthLeft" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmpID" Type="float" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="10" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Comentarios" Type="text" />
+          <Property Name="InvNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="InvNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="Site" Type="nvarchar" MaxLength="5" />
+          <Property Name="Planta" Type="nvarchar" MaxLength="50" />
+          <Property Name="JP" Type="int" />
+          <Property Name="DisconnectDate" Type="smalldatetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Positions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.ProblemType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Project_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Task" Type="nvarchar" MaxLength="500" />
+          <Property Name="PID" Type="int" />
+          <Property Name="Phase" Type="nvarchar" MaxLength="50" />
+          <Property Name="AssignedDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="ActualDate" Type="datetime" />
+          <Property Name="Responsible" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Valid" Type="int" />
+          <Property Name="Comments" Type="text" />
+          <Property Name="AssignedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedBy" Type="int" />
+          <Property Name="RefreshBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="RefreshDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="KBNumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Project_Tracking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Project_Tracking">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Project_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Benefits" Type="text" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="SDate" Type="datetime" />
+          <Property Name="EDate" Type="datetime" />
+          <Property Name="Op_Statement" Type="text" />
+          <Property Name="Defecto" Type="text" />
+          <Property Name="Goal_Statement" Type="text" />
+          <Property Name="Scope" Type="text" />
+          <Property Name="Depa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sitio" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phase1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phase2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phase3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phase4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sponsor" Type="nvarchar" MaxLength="500" />
+          <Property Name="StakeHolders" Type="text" />
+          <Property Name="S_Factors" Type="text" />
+          <Property Name="Deliverables" Type="text" />
+          <Property Name="ApprovedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="Project_Leader" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Docs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Groups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Main' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Matrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Matriz_Answers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_Questions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_user_Answer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_User_Comments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Quiz_User_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Comodity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Customers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Format' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Links' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Projects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_ProjectType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_Requirements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.RFQ_User_Matrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Scripts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.ShiftLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ShiftLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="Ticket" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Site" Type="nvarchar" MaxLength="50" />
+          <Property Name="Plant" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="smalldatetime" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ticket" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProblemType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SystemID" Type="nvarchar" MaxLength="255" />
+          <Property Name="ComponentID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Update" Type="text" />
+          <Property Name="IT_Text" Type="text" />
+          <Property Name="LastUpdate" Type="smalldatetime" />
+          <Property Name="DateRef" Type="smalldatetime" />
+          <Property Name="TakeDate" Type="smalldatetime" />
+          <Property Name="CloseDate" Type="datetime" />
+          <Property Name="Hours" Type="int" />
+          <Property Name="Minutes" Type="int" />
+          <Property Name="Paro" Type="nvarchar" MaxLength="50" />
+          <Property Name="Linea" Type="nvarchar" MaxLength="50" />
+          <Property Name="LogonUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="Remote_Host" Type="nvarchar" MaxLength="50" />
+          <Property Name="Manager" Type="int" />
+          <Property Name="Approved" Type="nvarchar" MaxLength="50" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="ApprovedComments" Type="text" />
+          <Property Name="GralSeq" Type="int" />
+          <Property Name="UserSeq" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Status' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.SW_Installs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SW_Installs">
+          <Key>
+            <PropertyRef Name="SW_ID" />
+            <PropertyRef Name="SWID" />
+          </Key>
+          <Property Name="SW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SWID" Type="int" Nullable="false" />
+          <Property Name="ComputerName" Type="nvarchar" MaxLength="255" />
+          <Property Name="AssetTag" Type="nvarchar" MaxLength="255" />
+          <Property Name="SoftwareName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="255" />
+          <Property Name="IDate" Type="smalldatetime" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+          <Property Name="EmpID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Systems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Task_Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Task_Documents">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DocumentName" Type="nvarchar" MaxLength="250" />
+          <Property Name="TaskID" Type="int" />
+          <Property Name="UpLDate" Type="datetime" />
+          <Property Name="RefreshDate" Type="datetime" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="RefreshUserID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.TeamMembers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Ticket_Req' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.TicketRate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Type_Of_Change' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Type_Of_Change">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HW_ID" Type="float" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="NewValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="Operator" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.TypeOfProblem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.UserAccounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="UserAccounts">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="255" />
+          <Property Name="Account" Type="nvarchar" MaxLength="255" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Date" Type="smalldatetime" />
+          <Property Name="ProcessedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccessLvl" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="tinyint" />
+          <Property Name="StaffJ" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Site" Type="nvarchar" MaxLength="50" />
+          <Property Name="Receive_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessLevel" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastLogon" Type="smalldatetime" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChgPass" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassExpire" Type="int" />
+          <Property Name="Depa" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="tinyint" />
+          <Property Name="MailSent" Type="date" />
+          <Property Name="Color" Type="nvarchar" MaxLength="50" />
+          <Property Name="InitialPage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ITDB.dbo.Vendors' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vendors">
+          <Key>
+            <PropertyRef Name="VendorID" />
+          </Key>
+          <Property Name="VendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Contact" Type="nvarchar" MaxLength="255" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="Service" Type="text" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fecha" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="ITDBModelStoreContainer">
+          <EntitySet Name="COVID_ES_Employees" EntityType="Self.COVID_ES_Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Phones" EntityType="Self.Phones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_Tasks" EntityType="Self.Project_Tasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Accounts" EntityType="Self.Accounts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Accounts].[RecordID] AS [RecordID], 
+    [Accounts].[AccountType] AS [AccountType], 
+    [Accounts].[CreatedBy] AS [CreatedBy], 
+    [Accounts].[Date] AS [Date]
+    FROM [dbo].[Accounts] AS [Accounts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BCategories" EntityType="Self.BCategories" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BCategories].[RID] AS [RID], 
+    [BCategories].[CID] AS [CID], 
+    [BCategories].[Categoria] AS [Categoria], 
+    [BCategories].[View2] AS [View2], 
+    [BCategories].[BoardCategory] AS [BoardCategory], 
+    [BCategories].[SITE] AS [SITE], 
+    [BCategories].[Area] AS [Area]
+    FROM [dbo].[BCategories] AS [BCategories]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BCharges" EntityType="Self.BCharges" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BCharges].[RECID] AS [RECID], 
+    [BCharges].[DEPT17] AS [DEPT17], 
+    [BCharges].[ORDC17] AS [ORDC17], 
+    [BCharges].[ITEM17] AS [ITEM17], 
+    [BCharges].[CUENTA] AS [CUENTA], 
+    [BCharges].[VNDR17] AS [VNDR17], 
+    [BCharges].[SNAM05] AS [SNAM05], 
+    [BCharges].[CURC17] AS [CURC17], 
+    [BCharges].[VATCOD] AS [VATCOD], 
+    [BCharges].[OQTY17] AS [OQTY17], 
+    [BCharges].[OUOM17] AS [OUOM17], 
+    [BCharges].[PRIC17] AS [PRIC17], 
+    [BCharges].[PRUM17] AS [PRUM17], 
+    [BCharges].[FECREQ] AS [FECREQ], 
+    [BCharges].[Mes] AS [Mes], 
+    [BCharges].[M] AS [M], 
+    [BCharges].[DREQ17] AS [DREQ17], 
+    [BCharges].[FECVEN] AS [FECVEN], 
+    [BCharges].[CNVF17] AS [CNVF17], 
+    [BCharges].[REFT17] AS [REFT17], 
+    [BCharges].[ORDU17] AS [ORDU17], 
+    [BCharges].[RQRC17] AS [RQRC17], 
+    [BCharges].[REQN] AS [REQN], 
+    [BCharges].[USER17] AS [USER17], 
+    [BCharges].[ORDN17] AS [ORDN17], 
+    [BCharges].[LINE17] AS [LINE17], 
+    [BCharges].[FECPO] AS [FECPO], 
+    [BCharges].[RSTS05 ] AS [RSTS05 ]
+    FROM [dbo].[BCharges] AS [BCharges]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Budget" EntityType="Self.Budget" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Budget].[RID] AS [RID], 
+    [Budget].[Initial] AS [Initial], 
+    [Budget].[Forecast1] AS [Forecast1], 
+    [Budget].[Forecast2] AS [Forecast2], 
+    [Budget].[Forecast3] AS [Forecast3], 
+    [Budget].[Jan] AS [Jan], 
+    [Budget].[Feb] AS [Feb], 
+    [Budget].[Mar] AS [Mar], 
+    [Budget].[Apr] AS [Apr], 
+    [Budget].[May] AS [May], 
+    [Budget].[Jun] AS [Jun], 
+    [Budget].[Jul] AS [Jul], 
+    [Budget].[Aug] AS [Aug], 
+    [Budget].[Sep] AS [Sep], 
+    [Budget].[Oct] AS [Oct], 
+    [Budget].[Nov] AS [Nov], 
+    [Budget].[Dec] AS [Dec], 
+    [Budget].[Depa] AS [Depa], 
+    [Budget].[Plant] AS [Plant], 
+    [Budget].[TotalFYr] AS [TotalFYr], 
+    [Budget].[FYear] AS [FYear], 
+    [Budget].[Tipo] AS [Tipo]
+    FROM [dbo].[Budget] AS [Budget]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BudgetCharges" EntityType="Self.BudgetCharges" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BudgetCharges].[ChgID] AS [ChgID], 
+    [BudgetCharges].[CoCd] AS [CoCd], 
+    [BudgetCharges].[BID] AS [BID], 
+    [BudgetCharges].[Cuenta] AS [Cuenta], 
+    [BudgetCharges].[Category] AS [Category], 
+    [BudgetCharges].[Costcenter] AS [Costcenter], 
+    [BudgetCharges].[DocumentNo] AS [DocumentNo], 
+    [BudgetCharges].[DocTyp] AS [DocTyp], 
+    [BudgetCharges].[Item] AS [Item], 
+    [BudgetCharges].[ValueTCur] AS [ValueTCur], 
+    [BudgetCharges].[Amount] AS [Amount], 
+    [BudgetCharges].[PostDate] AS [PostDate], 
+    [BudgetCharges].[TCurr] AS [TCurr], 
+    [BudgetCharges].[Quantity] AS [Quantity], 
+    [BudgetCharges].[PUM] AS [PUM], 
+    [BudgetCharges].[OffAct] AS [OffAct], 
+    [BudgetCharges].[Vendor] AS [Vendor], 
+    [BudgetCharges].[UserID] AS [UserID], 
+    [BudgetCharges].[Plant] AS [Plant], 
+    [BudgetCharges].[PONum] AS [PONum], 
+    [BudgetCharges].[FechaPO] AS [FechaPO], 
+    [BudgetCharges].[Concepto] AS [Concepto], 
+    [BudgetCharges].[Comments] AS [Comments], 
+    [BudgetCharges].[Rev] AS [Rev], 
+    [BudgetCharges].[Area] AS [Area], 
+    [BudgetCharges].[Status] AS [Status], 
+    [BudgetCharges].[Approved] AS [Approved], 
+    [BudgetCharges].[BoardCategory] AS [BoardCategory], 
+    [BudgetCharges].[MesNumber] AS [MesNumber], 
+    [BudgetCharges].[Site] AS [Site], 
+    [BudgetCharges].[Mes] AS [Mes], 
+    [BudgetCharges].[ReqNum] AS [ReqNum], 
+    [BudgetCharges].[FechaReq] AS [FechaReq], 
+    [BudgetCharges].[Documents] AS [Documents]
+    FROM [dbo].[BudgetCharges] AS [BudgetCharges]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BudgetCharges_ant" EntityType="Self.BudgetCharges_ant" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BudgetCharges_ant].[ChgID] AS [ChgID], 
+    [BudgetCharges_ant].[BID] AS [BID], 
+    [BudgetCharges_ant].[Concepto] AS [Concepto], 
+    [BudgetCharges_ant].[Cuenta] AS [Cuenta], 
+    [BudgetCharges_ant].[Vendor] AS [Vendor], 
+    [BudgetCharges_ant].[Amount] AS [Amount], 
+    [BudgetCharges_ant].[ReqNum] AS [ReqNum], 
+    [BudgetCharges_ant].[FechaReq] AS [FechaReq], 
+    [BudgetCharges_ant].[PONum] AS [PONum], 
+    [BudgetCharges_ant].[FechaPO] AS [FechaPO], 
+    [BudgetCharges_ant].[Documents] AS [Documents], 
+    [BudgetCharges_ant].[Mes] AS [Mes], 
+    [BudgetCharges_ant].[Site] AS [Site], 
+    [BudgetCharges_ant].[Plant] AS [Plant], 
+    [BudgetCharges_ant].[UserID] AS [UserID], 
+    [BudgetCharges_ant].[Comments] AS [Comments], 
+    [BudgetCharges_ant].[Area] AS [Area], 
+    [BudgetCharges_ant].[Status] AS [Status], 
+    [BudgetCharges_ant].[Approved] AS [Approved], 
+    [BudgetCharges_ant].[RecordID] AS [RecordID], 
+    [BudgetCharges_ant].[BoardCategory] AS [BoardCategory], 
+    [BudgetCharges_ant].[MesNumber] AS [MesNumber]
+    FROM [dbo].[BudgetCharges_ant] AS [BudgetCharges_ant]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="COVID_Acceso" EntityType="Self.COVID_Acceso" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [COVID_Acceso].[RecordID] AS [RecordID], 
+    [COVID_Acceso].[EmpID] AS [EmpID], 
+    [COVID_Acceso].[Nombre] AS [Nombre], 
+    [COVID_Acceso].[Departamento] AS [Departamento], 
+    [COVID_Acceso].[Area] AS [Area], 
+    [COVID_Acceso].[Categoria] AS [Categoria], 
+    [COVID_Acceso].[Transporte] AS [Transporte], 
+    [COVID_Acceso].[Turno] AS [Turno], 
+    [COVID_Acceso].[Fecha] AS [Fecha], 
+    [COVID_Acceso].[WeekNumber] AS [WeekNumber], 
+    [COVID_Acceso].[Activo] AS [Activo], 
+    [COVID_Acceso].[PIN1] AS [PIN1], 
+    [COVID_Acceso].[PIN2] AS [PIN2]
+    FROM [dbo].[COVID_Acceso] AS [COVID_Acceso]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Departments" EntityType="Self.Departments" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Departments].[DepID] AS [DepID], 
+    [Departments].[Department] AS [Department], 
+    [Departments].[Manager] AS [Manager], 
+    [Departments].[Lang] AS [Lang], 
+    [Departments].[Value] AS [Value], 
+    [Departments].[APR1_ID] AS [APR1_ID], 
+    [Departments].[APR2_ID] AS [APR2_ID], 
+    [Departments].[APR3_ID] AS [APR3_ID]
+    FROM [dbo].[Departments] AS [Departments]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Documents" EntityType="Self.Documents" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Documents].[DocID] AS [DocID], 
+    [Documents].[DocumentName] AS [DocumentName], 
+    [Documents].[Area] AS [Area], 
+    [Documents].[Topic] AS [Topic], 
+    [Documents].[DocType] AS [DocType], 
+    [Documents].[Fecha] AS [Fecha], 
+    [Documents].[UserID] AS [UserID]
+    FROM [dbo].[Documents] AS [Documents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Downtime_Causas" EntityType="Self.Downtime_Causas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Downtime_Causas].[DID] AS [DID], 
+    [Downtime_Causas].[Causa] AS [Causa], 
+    [Downtime_Causas].[Categoria] AS [Categoria]
+    FROM [dbo].[Downtime_Causas] AS [Downtime_Causas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Files" EntityType="Self.Files" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Files].[FileID] AS [FileID], 
+    [Files].[Dir] AS [Dir], 
+    [Files].[Created] AS [Created], 
+    [Files].[size] AS [size], 
+    [Files].[owner] AS [owner], 
+    [Files].[descr] AS [descr]
+    FROM [dbo].[Files] AS [Files]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="HW_MODEL" EntityType="Self.HW_MODEL" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [HW_MODEL].[ModelID] AS [ModelID], 
+    [HW_MODEL].[Model] AS [Model], 
+    [HW_MODEL].[CPU] AS [CPU], 
+    [HW_MODEL].[MEM] AS [MEM], 
+    [HW_MODEL].[VENDOR] AS [VENDOR], 
+    [HW_MODEL].[TYPE] AS [TYPE], 
+    [HW_MODEL].[HD] AS [HD], 
+    [HW_MODEL].[UDate] AS [UDate], 
+    [HW_MODEL].[Operator] AS [Operator]
+    FROM [dbo].[HW_MODEL] AS [HW_MODEL]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="INV_Budget" EntityType="Self.INV_Budget" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [INV_Budget].[INID] AS [INID], 
+    [INV_Budget].[Amount] AS [Amount], 
+    [INV_Budget].[CID] AS [CID]
+    FROM [dbo].[INV_Budget] AS [INV_Budget]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="KamishibaiLog" EntityType="Self.KamishibaiLog" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [KamishibaiLog].[RecordID] AS [RecordID], 
+    [KamishibaiLog].[KBNUmber] AS [KBNUmber], 
+    [KamishibaiLog].[Description] AS [Description], 
+    [KamishibaiLog].[AssignedTo] AS [AssignedTo], 
+    [KamishibaiLog].[CompletedOn] AS [CompletedOn], 
+    [KamishibaiLog].[SupervisedBy] AS [SupervisedBy], 
+    [KamishibaiLog].[Status] AS [Status], 
+    [KamishibaiLog].[Comments] AS [Comments], 
+    [KamishibaiLog].[Month] AS [Month], 
+    [KamishibaiLog].[Year] AS [Year], 
+    [KamishibaiLog].[Confirmed] AS [Confirmed]
+    FROM [dbo].[KamishibaiLog] AS [KamishibaiLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Kiosk" EntityType="Self.Kiosk" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Kiosk].[KID] AS [KID], 
+    [Kiosk].[LineID] AS [LineID], 
+    [Kiosk].[ButtonName] AS [ButtonName], 
+    [Kiosk].[ID] AS [ID], 
+    [Kiosk].[Programa] AS [Programa], 
+    [Kiosk].[PasCode] AS [PasCode], 
+    [Kiosk].[Evento] AS [Evento]
+    FROM [dbo].[Kiosk] AS [Kiosk]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Kiosk_Log" EntityType="Self.Kiosk_Log" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Kiosk_Log].[LogID] AS [LogID], 
+    [Kiosk_Log].[Evento] AS [Evento], 
+    [Kiosk_Log].[Kiosk_Log] AS [Kiosk_Log], 
+    [Kiosk_Log].[UserID] AS [UserID], 
+    [Kiosk_Log].[DateTime] AS [DateTime]
+    FROM [dbo].[Kiosk_Log] AS [Kiosk_Log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LogHistory" EntityType="Self.LogHistory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LogHistory].[RecordID] AS [RecordID], 
+    [LogHistory].[EmpID] AS [EmpID], 
+    [LogHistory].[FName] AS [FName], 
+    [LogHistory].[LName] AS [LName], 
+    [LogHistory].[PhoneNumber] AS [PhoneNumber], 
+    [LogHistory].[Type] AS [Type], 
+    [LogHistory].[Site] AS [Site], 
+    [LogHistory].[RequestedDate] AS [RequestedDate], 
+    [LogHistory].[Approved] AS [Approved], 
+    [LogHistory].[ApprovedDate] AS [ApprovedDate], 
+    [LogHistory].[ApprovedBy] AS [ApprovedBy], 
+    [LogHistory].[LogonName] AS [LogonName], 
+    [LogHistory].[Host] AS [Host], 
+    [LogHistory].[StartDate] AS [StartDate], 
+    [LogHistory].[StopDate] AS [StopDate]
+    FROM [dbo].[LogHistory] AS [LogHistory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Maquinas" EntityType="Self.Maquinas" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Maquinas].[ID] AS [ID], 
+    [Maquinas].[MID] AS [MID], 
+    [Maquinas].[Descripcion] AS [Descripcion], 
+    [Maquinas].[Status] AS [Status]
+    FROM [dbo].[Maquinas] AS [Maquinas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Master_History" EntityType="Self.Master_History" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Master_History].[RecordID] AS [RecordID], 
+    [Master_History].[Hw_ID] AS [Hw_ID], 
+    [Master_History].[ComputerName] AS [ComputerName], 
+    [Master_History].[EmpID] AS [EmpID], 
+    [Master_History].[Account] AS [Account], 
+    [Master_History].[StartDate] AS [StartDate], 
+    [Master_History].[StopDate] AS [StopDate], 
+    [Master_History].[Bios] AS [Bios], 
+    [Master_History].[TrueCrypt] AS [TrueCrypt], 
+    [Master_History].[Operator] AS [Operator], 
+    [Master_History].[Comments] AS [Comments], 
+    [Master_History].[CreatedDate] AS [CreatedDate], 
+    [Master_History].[Location] AS [Location], 
+    [Master_History].[Column] AS [Column], 
+    [Master_History].[Singnature] AS [Singnature]
+    FROM [dbo].[Master_History] AS [Master_History]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Master_HW" EntityType="Self.Master_HW" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Master_HW].[Hw_ID] AS [Hw_ID], 
+    [Master_HW].[EmpID] AS [EmpID], 
+    [Master_HW].[ModelID] AS [ModelID], 
+    [Master_HW].[SerialNumber] AS [SerialNumber], 
+    [Master_HW].[AssetTag] AS [AssetTag], 
+    [Master_HW].[Vendor] AS [Vendor], 
+    [Master_HW].[Type] AS [Type], 
+    [Master_HW].[Location] AS [Location], 
+    [Master_HW].[Status] AS [Status], 
+    [Master_HW].[Comments] AS [Comments], 
+    [Master_HW].[Operator] AS [Operator], 
+    [Master_HW].[CreatedDate] AS [CreatedDate], 
+    [Master_HW].[TypeC] AS [TypeC], 
+    [Master_HW].[Site] AS [Site], 
+    [Master_HW].[PSite] AS [PSite], 
+    [Master_HW].[PONum] AS [PONum], 
+    [Master_HW].[Cost] AS [Cost], 
+    [Master_HW].[Refresh_EligDate] AS [Refresh_EligDate], 
+    [Master_HW].[WarrantyDate] AS [WarrantyDate], 
+    [Master_HW].[LastUpdate] AS [LastUpdate], 
+    [Master_HW].[LastModBy] AS [LastModBy], 
+    [Master_HW].[InventoryLabel] AS [InventoryLabel]
+    FROM [dbo].[Master_HW] AS [Master_HW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Master_SW" EntityType="Self.Master_SW" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Master_SW].[SWID] AS [SWID], 
+    [Master_SW].[SoftwareName] AS [SoftwareName], 
+    [Master_SW].[Vendor] AS [Vendor], 
+    [Master_SW].[Standard] AS [Standard], 
+    [Master_SW].[CreatedBy] AS [CreatedBy], 
+    [Master_SW].[CreatedDate] AS [CreatedDate], 
+    [Master_SW].[Status] AS [Status], 
+    [Master_SW].[PurchasedLicenses] AS [PurchasedLicenses], 
+    [Master_SW].[PurchasedSite] AS [PurchasedSite], 
+    [Master_SW].[Site] AS [Site], 
+    [Master_SW].[PONum] AS [PONum], 
+    [Master_SW].[Comments] AS [Comments], 
+    [Master_SW].[SW_Key] AS [SW_Key], 
+    [Master_SW].[bActivo] AS [bActivo]
+    FROM [dbo].[Master_SW] AS [Master_SW]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PhoneMaster" EntityType="Self.PhoneMaster" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PhoneMaster].[LogID] AS [LogID], 
+    [PhoneMaster].[PhoneID] AS [PhoneID], 
+    [PhoneMaster].[Start] AS [Start], 
+    [PhoneMaster].[Stop] AS [Stop], 
+    [PhoneMaster].[Comment] AS [Comment], 
+    [PhoneMaster].[EmpID] AS [EmpID], 
+    [PhoneMaster].[AssignedBy] AS [AssignedBy], 
+    [PhoneMaster].[UnassignedBy] AS [UnassignedBy], 
+    [PhoneMaster].[Type] AS [Type]
+    FROM [dbo].[PhoneMaster] AS [PhoneMaster]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Project_Tracking" EntityType="Self.Project_Tracking" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Project_Tracking].[PID] AS [PID], 
+    [Project_Tracking].[ProNumber] AS [ProNumber], 
+    [Project_Tracking].[Project_Name] AS [Project_Name], 
+    [Project_Tracking].[Benefits] AS [Benefits], 
+    [Project_Tracking].[Fecha] AS [Fecha], 
+    [Project_Tracking].[SDate] AS [SDate], 
+    [Project_Tracking].[EDate] AS [EDate], 
+    [Project_Tracking].[Op_Statement] AS [Op_Statement], 
+    [Project_Tracking].[Defecto] AS [Defecto], 
+    [Project_Tracking].[Goal_Statement] AS [Goal_Statement], 
+    [Project_Tracking].[Scope] AS [Scope], 
+    [Project_Tracking].[Depa] AS [Depa], 
+    [Project_Tracking].[Sitio] AS [Sitio], 
+    [Project_Tracking].[Phase1] AS [Phase1], 
+    [Project_Tracking].[Phase2] AS [Phase2], 
+    [Project_Tracking].[Phase3] AS [Phase3], 
+    [Project_Tracking].[Phase4] AS [Phase4], 
+    [Project_Tracking].[Sponsor] AS [Sponsor], 
+    [Project_Tracking].[StakeHolders] AS [StakeHolders], 
+    [Project_Tracking].[S_Factors] AS [S_Factors], 
+    [Project_Tracking].[Deliverables] AS [Deliverables], 
+    [Project_Tracking].[ApprovedBy] AS [ApprovedBy], 
+    [Project_Tracking].[Project_Leader] AS [Project_Leader], 
+    [Project_Tracking].[Operator] AS [Operator], 
+    [Project_Tracking].[Status] AS [Status]
+    FROM [dbo].[Project_Tracking] AS [Project_Tracking]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ShiftLog" EntityType="Self.ShiftLog" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ShiftLog].[RecordID] AS [RecordID], 
+    [ShiftLog].[UserID] AS [UserID], 
+    [ShiftLog].[Site] AS [Site], 
+    [ShiftLog].[Plant] AS [Plant], 
+    [ShiftLog].[Date] AS [Date], 
+    [ShiftLog].[Time] AS [Time], 
+    [ShiftLog].[Ticket] AS [Ticket], 
+    [ShiftLog].[ProblemType] AS [ProblemType], 
+    [ShiftLog].[TypeID] AS [TypeID], 
+    [ShiftLog].[SystemID] AS [SystemID], 
+    [ShiftLog].[ComponentID] AS [ComponentID], 
+    [ShiftLog].[Description] AS [Description], 
+    [ShiftLog].[Status] AS [Status], 
+    [ShiftLog].[Update] AS [Update], 
+    [ShiftLog].[IT_Text] AS [IT_Text], 
+    [ShiftLog].[LastUpdate] AS [LastUpdate], 
+    [ShiftLog].[DateRef] AS [DateRef], 
+    [ShiftLog].[TakeDate] AS [TakeDate], 
+    [ShiftLog].[CloseDate] AS [CloseDate], 
+    [ShiftLog].[Hours] AS [Hours], 
+    [ShiftLog].[Minutes] AS [Minutes], 
+    [ShiftLog].[Paro] AS [Paro], 
+    [ShiftLog].[Linea] AS [Linea], 
+    [ShiftLog].[LogonUser] AS [LogonUser], 
+    [ShiftLog].[Remote_Host] AS [Remote_Host], 
+    [ShiftLog].[Manager] AS [Manager], 
+    [ShiftLog].[Approved] AS [Approved], 
+    [ShiftLog].[ApprovedDate] AS [ApprovedDate], 
+    [ShiftLog].[ApprovedComments] AS [ApprovedComments], 
+    [ShiftLog].[GralSeq] AS [GralSeq], 
+    [ShiftLog].[UserSeq] AS [UserSeq]
+    FROM [dbo].[ShiftLog] AS [ShiftLog]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Status" EntityType="Self.Status" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Status].[StatusID] AS [StatusID], 
+    [Status].[Description] AS [Description]
+    FROM [dbo].[Status] AS [Status]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SW_Installs" EntityType="Self.SW_Installs" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SW_Installs].[SW_ID] AS [SW_ID], 
+    [SW_Installs].[SWID] AS [SWID], 
+    [SW_Installs].[ComputerName] AS [ComputerName], 
+    [SW_Installs].[AssetTag] AS [AssetTag], 
+    [SW_Installs].[SoftwareName] AS [SoftwareName], 
+    [SW_Installs].[Operator] AS [Operator], 
+    [SW_Installs].[IDate] AS [IDate], 
+    [SW_Installs].[Comments] AS [Comments], 
+    [SW_Installs].[EmpID] AS [EmpID]
+    FROM [dbo].[SW_Installs] AS [SW_Installs]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Task_Documents" EntityType="Self.Task_Documents" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Task_Documents].[DocID] AS [DocID], 
+    [Task_Documents].[DocumentName] AS [DocumentName], 
+    [Task_Documents].[TaskID] AS [TaskID], 
+    [Task_Documents].[UpLDate] AS [UpLDate], 
+    [Task_Documents].[RefreshDate] AS [RefreshDate], 
+    [Task_Documents].[UserID] AS [UserID], 
+    [Task_Documents].[RefreshUserID] AS [RefreshUserID]
+    FROM [dbo].[Task_Documents] AS [Task_Documents]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Type_Of_Change" EntityType="Self.Type_Of_Change" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Type_Of_Change].[RecordID] AS [RecordID], 
+    [Type_Of_Change].[HW_ID] AS [HW_ID], 
+    [Type_Of_Change].[Type] AS [Type], 
+    [Type_Of_Change].[OldValue] AS [OldValue], 
+    [Type_Of_Change].[NewValue] AS [NewValue], 
+    [Type_Of_Change].[Description] AS [Description], 
+    [Type_Of_Change].[Date] AS [Date], 
+    [Type_Of_Change].[Operator] AS [Operator]
+    FROM [dbo].[Type_Of_Change] AS [Type_Of_Change]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UserAccounts" EntityType="Self.UserAccounts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [UserAccounts].[RecordID] AS [RecordID], 
+    [UserAccounts].[EmpID] AS [EmpID], 
+    [UserAccounts].[Account] AS [Account], 
+    [UserAccounts].[Type] AS [Type], 
+    [UserAccounts].[Date] AS [Date], 
+    [UserAccounts].[ProcessedBy] AS [ProcessedBy], 
+    [UserAccounts].[Comments] AS [Comments], 
+    [UserAccounts].[AccessLvl] AS [AccessLvl], 
+    [UserAccounts].[Status] AS [Status], 
+    [UserAccounts].[StaffJ] AS [StaffJ]
+    FROM [dbo].[UserAccounts] AS [UserAccounts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Users].[RecordID] AS [RecordID], 
+    [Users].[UserID] AS [UserID], 
+    [Users].[Fname] AS [Fname], 
+    [Users].[Lname] AS [Lname], 
+    [Users].[Password] AS [Password], 
+    [Users].[Site] AS [Site], 
+    [Users].[Receive_Email] AS [Receive_Email], 
+    [Users].[AccessLevel] AS [AccessLevel], 
+    [Users].[LastLogon] AS [LastLogon], 
+    [Users].[Email] AS [Email], 
+    [Users].[ChgPass] AS [ChgPass], 
+    [Users].[PassExpire] AS [PassExpire], 
+    [Users].[Depa] AS [Depa], 
+    [Users].[Active] AS [Active], 
+    [Users].[MailSent] AS [MailSent], 
+    [Users].[Color] AS [Color], 
+    [Users].[InitialPage] AS [InitialPage]
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vendors" EntityType="Self.Vendors" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vendors].[VendorID] AS [VendorID], 
+    [Vendors].[VendorName] AS [VendorName], 
+    [Vendors].[Contact] AS [Contact], 
+    [Vendors].[EmailAddress] AS [EmailAddress], 
+    [Vendors].[PhoneNumber] AS [PhoneNumber], 
+    [Vendors].[Address] AS [Address], 
+    [Vendors].[Service] AS [Service], 
+    [Vendors].[UserID] AS [UserID], 
+    [Vendors].[Fecha] AS [Fecha]
+    FROM [dbo].[Vendors] AS [Vendors]</DefiningQuery>
+          </EntitySet>
+          </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ITDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Phone">
+          <Key>
+            <PropertyRef Name="PhoneID" />
+          </Key>
+          <Property Name="PhoneID" Type="Double" Nullable="false" />
+          <Property Name="IDNextel" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CuentaPadre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cuenta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Renta" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="MinIncluido" Type="Int32" />
+          <Property Name="Min_Telcel_Telcel" Type="Int32" />
+          <Property Name="SMS" Type="Int32" />
+          <Property Name="Datos" Type="Int32" />
+          <Property Name="Equipo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plazo" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="FecIni" Type="DateTime" Precision="0" />
+          <Property Name="FecFin" Type="DateTime" Precision="0" />
+          <Property Name="MonthLeft" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="Double" />
+          <Property Name="Operator" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InvNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InvNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Planta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JP" Type="Int32" />
+          <Property Name="DisconnectDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Document">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Topic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DocType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HW_MODEL">
+          <Key>
+            <PropertyRef Name="ModelID" />
+          </Key>
+          <Property Name="ModelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Model" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CPU" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MEM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="VENDOR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UDate" Type="DateTime" Precision="0" />
+          <Property Name="Operator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Master_HW">
+          <Key>
+            <PropertyRef Name="Hw_ID" />
+          </Key>
+          <Property Name="Hw_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Int32" />
+          <Property Name="ModelID" Type="Int32" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssetTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vendor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="TypeC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PSite" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Refresh_EligDate" Type="DateTime" Precision="0" />
+          <Property Name="WarrantyDate" Type="DateTime" Precision="0" />
+          <Property Name="LastUpdate" Type="DateTime" Precision="0" />
+          <Property Name="LastModBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryLabel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Master_SW">
+          <Key>
+            <PropertyRef Name="SWID" />
+          </Key>
+          <Property Name="SWID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoftwareName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Vendor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Standard" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PurchasedLicenses" Type="Int32" />
+          <Property Name="PurchasedSite" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SW_Key" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="bActivo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="PhoneMaster">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PhoneID" Type="Double" />
+          <Property Name="Start" Type="DateTime" Precision="0" />
+          <Property Name="Stop" Type="DateTime" Precision="0" />
+          <Property Name="Comment" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="Double" />
+          <Property Name="AssignedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnassignedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ITDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Phones" EntityType="Self.Phone" />
+          <EntitySet Name="Documents" EntityType="Self.Document" />
+          <EntitySet Name="HW_MODEL" EntityType="Self.HW_MODEL" />
+          <EntitySet Name="Master_HW" EntityType="Self.Master_HW" />
+          <EntitySet Name="Master_SW" EntityType="Self.Master_SW" />
+          <EntitySet Name="PhoneMasters" EntityType="Self.PhoneMaster" />
+          <EntitySet Name="COVID_ES_Employees" EntityType="ITDBModel.COVID_ES_Employees" />
+          <EntitySet Name="Employees" EntityType="ITDBModel.Employee" />
+          <EntitySet Name="Project_Tasks" EntityType="ITDBModel.Project_Tasks" />
+          <EntitySet Name="Accounts" EntityType="ITDBModel.Account" />
+          <EntitySet Name="BCategories" EntityType="ITDBModel.BCategory" />
+          <EntitySet Name="BCharges" EntityType="ITDBModel.BCharge" />
+          <EntitySet Name="Budgets" EntityType="ITDBModel.Budget" />
+          <EntitySet Name="BudgetCharges" EntityType="ITDBModel.BudgetCharge" />
+          <EntitySet Name="BudgetCharges_ant" EntityType="ITDBModel.BudgetCharges_ant" />
+          <EntitySet Name="COVID_Acceso" EntityType="ITDBModel.COVID_Acceso" />
+          <EntitySet Name="Departments" EntityType="ITDBModel.Department" />
+          <EntitySet Name="Downtime_Causas" EntityType="ITDBModel.Downtime_Causas" />
+          <EntitySet Name="Files" EntityType="ITDBModel.File" />
+          <EntitySet Name="INV_Budget" EntityType="ITDBModel.INV_Budget" />
+          <EntitySet Name="KamishibaiLogs" EntityType="ITDBModel.KamishibaiLog" />
+          <EntitySet Name="Kiosks" EntityType="ITDBModel.Kiosk" />
+          <EntitySet Name="Kiosk_Log" EntityType="ITDBModel.Kiosk_Log" />
+          <EntitySet Name="LogHistories" EntityType="ITDBModel.LogHistory" />
+          <EntitySet Name="Maquinas" EntityType="ITDBModel.Maquina" />
+          <EntitySet Name="Master_History" EntityType="ITDBModel.Master_History" />
+          <EntitySet Name="Project_Tracking" EntityType="ITDBModel.Project_Tracking" />
+          <EntitySet Name="ShiftLogs" EntityType="ITDBModel.ShiftLog" />
+          <EntitySet Name="Status" EntityType="ITDBModel.Status" />
+          <EntitySet Name="SW_Installs" EntityType="ITDBModel.SW_Installs" />
+          <EntitySet Name="Task_Documents" EntityType="ITDBModel.Task_Documents" />
+          <EntitySet Name="Type_Of_Change" EntityType="ITDBModel.Type_Of_Change" />
+          <EntitySet Name="UserAccounts" EntityType="ITDBModel.UserAccount" />
+          <EntitySet Name="Users" EntityType="ITDBModel.User" />
+          <EntitySet Name="Vendors" EntityType="ITDBModel.Vendor" />
+          </EntityContainer>
+        <EntityType Name="COVID_ES_Employees">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Double" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="APE_MAT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="APE_PAT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Departamento" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="COD_Barras" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rango" Type="Int16" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int64" Nullable="false" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="102" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Depa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manager" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CostCenter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="StopDate" Type="DateTime" Precision="0" />
+          <Property Name="Site" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastLogon" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Project_Tasks">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Task" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PID" Type="Int32" />
+          <Property Name="Phase" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="ActualDate" Type="DateTime" Precision="3" />
+          <Property Name="Responsible" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Valid" Type="Int32" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedBy" Type="Int32" />
+          <Property Name="RefreshBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RefreshDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KBNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BCategory">
+          <Key>
+            <PropertyRef Name="RID" />
+            <PropertyRef Name="CID" />
+          </Key>
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CID" Type="Int32" Nullable="false" />
+          <Property Name="Categoria" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="View2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="BoardCategory" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SITE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BCharge">
+          <Key>
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="RECID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPT17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORDC17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ITEM17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CUENTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VNDR17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SNAM05" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CURC17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VATCOD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OQTY17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OUOM17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRIC17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PRUM17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECREQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="M" Type="Int32" />
+          <Property Name="DREQ17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECVEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CNVF17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REFT17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORDU17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RQRC17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="REQN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ORDN17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LINE17" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FECPO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RSTS05_" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Budget">
+          <Key>
+            <PropertyRef Name="RID" />
+            <PropertyRef Name="FYear" />
+          </Key>
+          <Property Name="RID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Initial" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Forecast1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Forecast2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Forecast3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Jan" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Feb" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Mar" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Apr" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="May" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Jun" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Jul" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Aug" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Sep" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Oct" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Nov" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Dec" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Depa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalFYr" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="FYear" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BudgetCharge">
+          <Key>
+            <PropertyRef Name="ChgID" />
+          </Key>
+          <Property Name="ChgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoCd" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="BID" Type="Double" />
+          <Property Name="Cuenta" Type="Double" />
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Costcenter" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentNo" Type="Double" />
+          <Property Name="DocTyp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Item" Type="Double" />
+          <Property Name="ValueTCur" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PostDate" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TCurr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="PUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OffAct" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Vendor" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Plant" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PONum" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaPO" Type="DateTime" Precision="0" />
+          <Property Name="Concepto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Rev" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Approved" Type="DateTime" Precision="0" />
+          <Property Name="BoardCategory" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="MesNumber" Type="Int32" />
+          <Property Name="Site" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Mes" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ReqNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaReq" Type="DateTime" Precision="0" />
+          <Property Name="Documents" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BudgetCharges_ant">
+          <Key>
+            <PropertyRef Name="ChgID" />
+          </Key>
+          <Property Name="ChgID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BID" Type="Int32" />
+          <Property Name="Concepto" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Cuenta" Type="Double" />
+          <Property Name="Vendor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ReqNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaReq" Type="DateTime" Precision="3" />
+          <Property Name="PONum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FechaPO" Type="DateTime" Precision="3" />
+          <Property Name="Documents" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Mes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Plant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Approved" Type="DateTime" Precision="0" />
+          <Property Name="RecordID" Type="Int32" />
+          <Property Name="BoardCategory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MesNumber" Type="Int32" />
+        </EntityType>
+        <EntityType Name="COVID_Acceso">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Departamento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transporte" Type="Byte" />
+          <Property Name="Turno" Type="Byte" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="WeekNumber" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Activo" Type="Byte" />
+          <Property Name="PIN1" Type="DateTime" Precision="0" />
+          <Property Name="PIN2" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepID" />
+          </Key>
+          <Property Name="DepID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manager" Type="Int32" />
+          <Property Name="Lang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="APR1_ID" Type="Int32" />
+          <Property Name="APR2_ID" Type="Int32" />
+          <Property Name="APR3_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Downtime_Causas">
+          <Key>
+            <PropertyRef Name="DID" />
+          </Key>
+          <Property Name="DID" Type="Double" Nullable="false" />
+          <Property Name="Causa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Categoria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="FileID" />
+          </Key>
+          <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Dir" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Created" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="owner" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="descr" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="INV_Budget">
+          <Key>
+            <PropertyRef Name="INID" />
+          </Key>
+          <Property Name="INID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KamishibaiLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KBNUmber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssignedTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompletedOn" Type="DateTime" Precision="0" />
+          <Property Name="SupervisedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Confirmed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kiosk">
+          <Key>
+            <PropertyRef Name="KID" />
+          </Key>
+          <Property Name="KID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID" Type="Int32" />
+          <Property Name="Programa" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="PasCode" Type="Int32" />
+          <Property Name="Evento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kiosk_Log">
+          <Key>
+            <PropertyRef Name="LogID" />
+          </Key>
+          <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Evento" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Kiosk_Log1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTime" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="LogHistory">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="RequestedDate" Type="DateTime" Precision="0" />
+          <Property Name="Approved" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="0" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LogonName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Host" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="StopDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Maquina">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Master_History">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hw_ID" Type="Int32" />
+          <Property Name="ComputerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="StopDate" Type="DateTime" Precision="0" />
+          <Property Name="Bios" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TrueCrypt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="Location" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Column" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Singnature" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Project_Tracking">
+          <Key>
+            <PropertyRef Name="PID" />
+          </Key>
+          <Property Name="PID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Project_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Benefits" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="SDate" Type="DateTime" Precision="3" />
+          <Property Name="EDate" Type="DateTime" Precision="3" />
+          <Property Name="Op_Statement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Defecto" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Goal_Statement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Scope" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Depa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sitio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phase1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phase2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phase3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phase4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sponsor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StakeHolders" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="S_Factors" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Deliverables" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Project_Leader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+        </EntityType>
+        <EntityType Name="ShiftLog">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="Ticket" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Plant" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ticket" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProblemType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SystemID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ComponentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Update" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IT_Text" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdate" Type="DateTime" Precision="0" />
+          <Property Name="DateRef" Type="DateTime" Precision="0" />
+          <Property Name="TakeDate" Type="DateTime" Precision="0" />
+          <Property Name="CloseDate" Type="DateTime" Precision="3" />
+          <Property Name="Hours" Type="Int32" />
+          <Property Name="Minutes" Type="Int32" />
+          <Property Name="Paro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Linea" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LogonUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Remote_Host" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Manager" Type="Int32" />
+          <Property Name="Approved" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="GralSeq" Type="Int32" />
+          <Property Name="UserSeq" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SW_Installs">
+          <Key>
+            <PropertyRef Name="SW_ID" />
+            <PropertyRef Name="SWID" />
+          </Key>
+          <Property Name="SW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SWID" Type="Int32" Nullable="false" />
+          <Property Name="ComputerName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AssetTag" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="SoftwareName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Operator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IDate" Type="DateTime" Precision="0" />
+          <Property Name="Comments" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Task_Documents">
+          <Key>
+            <PropertyRef Name="DocID" />
+          </Key>
+          <Property Name="DocID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DocumentName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TaskID" Type="Int32" />
+          <Property Name="UpLDate" Type="DateTime" Precision="3" />
+          <Property Name="RefreshDate" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RefreshUserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Type_Of_Change">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HW_ID" Type="Double" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OldValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NewValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Operator" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="ProcessedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Comments" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccessLvl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Byte" />
+          <Property Name="StaffJ" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Lname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Receive_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastLogon" Type="DateTime" Precision="0" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChgPass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassExpire" Type="Int32" />
+          <Property Name="Depa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Byte" />
+          <Property Name="MailSent" Type="DateTime" Precision="0" />
+          <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InitialPage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="VendorID" />
+          </Key>
+          <Property Name="VendorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Contact" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Service" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ITDBModelStoreContainer" CdmEntityContainer="ITDBEntities">
+          <EntitySetMapping Name="Phones">
+            <EntityTypeMapping TypeName="ITDBModel.Phone">
+              <MappingFragment StoreEntitySet="Phones">
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+                <ScalarProperty Name="IDNextel" ColumnName="IDNextel" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="CuentaPadre" ColumnName="CuentaPadre" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="SIM" ColumnName="SIM" />
+                <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="Plan" ColumnName="Plan" />
+                <ScalarProperty Name="Renta" ColumnName="Renta" />
+                <ScalarProperty Name="MinIncluido" ColumnName="MinIncluido" />
+                <ScalarProperty Name="Min_Telcel_Telcel" ColumnName="Min_Telcel_Telcel" />
+                <ScalarProperty Name="SMS" ColumnName="SMS" />
+                <ScalarProperty Name="Datos" ColumnName="Datos" />
+                <ScalarProperty Name="Equipo" ColumnName="Equipo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Plazo" ColumnName="Plazo" />
+                <ScalarProperty Name="FecIni" ColumnName="FecIni" />
+                <ScalarProperty Name="FecFin" ColumnName="FecFin" />
+                <ScalarProperty Name="MonthLeft" ColumnName="MonthLeft" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="InvNumber" ColumnName="InvNumber" />
+                <ScalarProperty Name="InvNum" ColumnName="InvNum" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Planta" ColumnName="Planta" />
+                <ScalarProperty Name="JP" ColumnName="JP" />
+                <ScalarProperty Name="DisconnectDate" ColumnName="DisconnectDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Documents">
+            <EntityTypeMapping TypeName="ITDBModel.Document">
+              <MappingFragment StoreEntitySet="Documents">
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Topic" ColumnName="Topic" />
+                <ScalarProperty Name="DocType" ColumnName="DocType" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HW_MODEL">
+            <EntityTypeMapping TypeName="ITDBModel.HW_MODEL">
+              <MappingFragment StoreEntitySet="HW_MODEL">
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="CPU" ColumnName="CPU" />
+                <ScalarProperty Name="MEM" ColumnName="MEM" />
+                <ScalarProperty Name="VENDOR" ColumnName="VENDOR" />
+                <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+                <ScalarProperty Name="HD" ColumnName="HD" />
+                <ScalarProperty Name="UDate" ColumnName="UDate" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_HW">
+            <EntityTypeMapping TypeName="ITDBModel.Master_HW">
+              <MappingFragment StoreEntitySet="Master_HW">
+                <ScalarProperty Name="Hw_ID" ColumnName="Hw_ID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="AssetTag" ColumnName="AssetTag" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="TypeC" ColumnName="TypeC" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="PSite" ColumnName="PSite" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Refresh_EligDate" ColumnName="Refresh_EligDate" />
+                <ScalarProperty Name="WarrantyDate" ColumnName="WarrantyDate" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="LastModBy" ColumnName="LastModBy" />
+                <ScalarProperty Name="InventoryLabel" ColumnName="InventoryLabel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_SW">
+            <EntityTypeMapping TypeName="ITDBModel.Master_SW">
+              <MappingFragment StoreEntitySet="Master_SW">
+                <ScalarProperty Name="SWID" ColumnName="SWID" />
+                <ScalarProperty Name="SoftwareName" ColumnName="SoftwareName" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PurchasedLicenses" ColumnName="PurchasedLicenses" />
+                <ScalarProperty Name="PurchasedSite" ColumnName="PurchasedSite" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="SW_Key" ColumnName="SW_Key" />
+                <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneMasters">
+            <EntityTypeMapping TypeName="ITDBModel.PhoneMaster">
+              <MappingFragment StoreEntitySet="PhoneMaster">
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+                <ScalarProperty Name="PhoneID" ColumnName="PhoneID" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="Stop" ColumnName="Stop" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+                <ScalarProperty Name="UnassignedBy" ColumnName="UnassignedBy" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COVID_ES_Employees">
+            <EntityTypeMapping TypeName="ITDBModel.COVID_ES_Employees">
+              <MappingFragment StoreEntitySet="COVID_ES_Employees">
+                <ScalarProperty Name="Rango" ColumnName="Rango" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+                <ScalarProperty Name="COD_Barras" ColumnName="COD_Barras" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="APE_PAT" ColumnName="APE_PAT" />
+                <ScalarProperty Name="APE_MAT" ColumnName="APE_MAT" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ITDBModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="LastLogon" ColumnName="LastLogon" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="CostCenter" ColumnName="CostCenter" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="EmployeeBy" ColumnName="EmployeeBy" />
+                <ScalarProperty Name="EmployeeType" ColumnName="EmployeeType" />
+                <ScalarProperty Name="Depa" ColumnName="Depa" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Tasks">
+            <EntityTypeMapping TypeName="ITDBModel.Project_Tasks">
+              <MappingFragment StoreEntitySet="Project_Tasks">
+                <ScalarProperty Name="KBNumber" ColumnName="KBNumber" />
+                <ScalarProperty Name="RefreshDate" ColumnName="RefreshDate" />
+                <ScalarProperty Name="RefreshBy" ColumnName="RefreshBy" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Valid" ColumnName="Valid" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Responsible" ColumnName="Responsible" />
+                <ScalarProperty Name="ActualDate" ColumnName="ActualDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+                <ScalarProperty Name="Phase" ColumnName="Phase" />
+                <ScalarProperty Name="PID" ColumnName="PID" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="ITDBModel.Account">
+              <MappingFragment StoreEntitySet="Accounts">
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BCategories">
+            <EntityTypeMapping TypeName="ITDBModel.BCategory">
+              <MappingFragment StoreEntitySet="BCategories">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="SITE" ColumnName="SITE" />
+                <ScalarProperty Name="BoardCategory" ColumnName="BoardCategory" />
+                <ScalarProperty Name="View2" ColumnName="View2" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BCharges">
+            <EntityTypeMapping TypeName="ITDBModel.BCharge">
+              <MappingFragment StoreEntitySet="BCharges">
+                <ScalarProperty Name="RSTS05_" ColumnName="RSTS05 " />
+                <ScalarProperty Name="FECPO" ColumnName="FECPO" />
+                <ScalarProperty Name="LINE17" ColumnName="LINE17" />
+                <ScalarProperty Name="ORDN17" ColumnName="ORDN17" />
+                <ScalarProperty Name="USER17" ColumnName="USER17" />
+                <ScalarProperty Name="REQN" ColumnName="REQN" />
+                <ScalarProperty Name="RQRC17" ColumnName="RQRC17" />
+                <ScalarProperty Name="ORDU17" ColumnName="ORDU17" />
+                <ScalarProperty Name="REFT17" ColumnName="REFT17" />
+                <ScalarProperty Name="CNVF17" ColumnName="CNVF17" />
+                <ScalarProperty Name="FECVEN" ColumnName="FECVEN" />
+                <ScalarProperty Name="DREQ17" ColumnName="DREQ17" />
+                <ScalarProperty Name="M" ColumnName="M" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="FECREQ" ColumnName="FECREQ" />
+                <ScalarProperty Name="PRUM17" ColumnName="PRUM17" />
+                <ScalarProperty Name="PRIC17" ColumnName="PRIC17" />
+                <ScalarProperty Name="OUOM17" ColumnName="OUOM17" />
+                <ScalarProperty Name="OQTY17" ColumnName="OQTY17" />
+                <ScalarProperty Name="VATCOD" ColumnName="VATCOD" />
+                <ScalarProperty Name="CURC17" ColumnName="CURC17" />
+                <ScalarProperty Name="SNAM05" ColumnName="SNAM05" />
+                <ScalarProperty Name="VNDR17" ColumnName="VNDR17" />
+                <ScalarProperty Name="CUENTA" ColumnName="CUENTA" />
+                <ScalarProperty Name="ITEM17" ColumnName="ITEM17" />
+                <ScalarProperty Name="ORDC17" ColumnName="ORDC17" />
+                <ScalarProperty Name="DEPT17" ColumnName="DEPT17" />
+                <ScalarProperty Name="RECID" ColumnName="RECID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Budgets">
+            <EntityTypeMapping TypeName="ITDBModel.Budget">
+              <MappingFragment StoreEntitySet="Budget">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="FYear" ColumnName="FYear" />
+                <ScalarProperty Name="TotalFYr" ColumnName="TotalFYr" />
+                <ScalarProperty Name="Plant" ColumnName="Plant" />
+                <ScalarProperty Name="Depa" ColumnName="Depa" />
+                <ScalarProperty Name="Dec" ColumnName="Dec" />
+                <ScalarProperty Name="Nov" ColumnName="Nov" />
+                <ScalarProperty Name="Oct" ColumnName="Oct" />
+                <ScalarProperty Name="Sep" ColumnName="Sep" />
+                <ScalarProperty Name="Aug" ColumnName="Aug" />
+                <ScalarProperty Name="Jul" ColumnName="Jul" />
+                <ScalarProperty Name="Jun" ColumnName="Jun" />
+                <ScalarProperty Name="May" ColumnName="May" />
+                <ScalarProperty Name="Apr" ColumnName="Apr" />
+                <ScalarProperty Name="Mar" ColumnName="Mar" />
+                <ScalarProperty Name="Feb" ColumnName="Feb" />
+                <ScalarProperty Name="Jan" ColumnName="Jan" />
+                <ScalarProperty Name="Forecast3" ColumnName="Forecast3" />
+                <ScalarProperty Name="Forecast2" ColumnName="Forecast2" />
+                <ScalarProperty Name="Forecast1" ColumnName="Forecast1" />
+                <ScalarProperty Name="Initial" ColumnName="Initial" />
+                <ScalarProperty Name="RID" ColumnName="RID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BudgetCharges">
+            <EntityTypeMapping TypeName="ITDBModel.BudgetCharge">
+              <MappingFragment StoreEntitySet="BudgetCharges">
+                <ScalarProperty Name="Documents" ColumnName="Documents" />
+                <ScalarProperty Name="FechaReq" ColumnName="FechaReq" />
+                <ScalarProperty Name="ReqNum" ColumnName="ReqNum" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="MesNumber" ColumnName="MesNumber" />
+                <ScalarProperty Name="BoardCategory" ColumnName="BoardCategory" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Rev" ColumnName="Rev" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="FechaPO" ColumnName="FechaPO" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="Plant" ColumnName="Plant" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="OffAct" ColumnName="OffAct" />
+                <ScalarProperty Name="PUM" ColumnName="PUM" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="TCurr" ColumnName="TCurr" />
+                <ScalarProperty Name="PostDate" ColumnName="PostDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ValueTCur" ColumnName="ValueTCur" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="DocTyp" ColumnName="DocTyp" />
+                <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+                <ScalarProperty Name="Costcenter" ColumnName="Costcenter" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="BID" ColumnName="BID" />
+                <ScalarProperty Name="CoCd" ColumnName="CoCd" />
+                <ScalarProperty Name="ChgID" ColumnName="ChgID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BudgetCharges_ant">
+            <EntityTypeMapping TypeName="ITDBModel.BudgetCharges_ant">
+              <MappingFragment StoreEntitySet="BudgetCharges_ant">
+                <ScalarProperty Name="MesNumber" ColumnName="MesNumber" />
+                <ScalarProperty Name="BoardCategory" ColumnName="BoardCategory" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Plant" ColumnName="Plant" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Documents" ColumnName="Documents" />
+                <ScalarProperty Name="FechaPO" ColumnName="FechaPO" />
+                <ScalarProperty Name="PONum" ColumnName="PONum" />
+                <ScalarProperty Name="FechaReq" ColumnName="FechaReq" />
+                <ScalarProperty Name="ReqNum" ColumnName="ReqNum" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Vendor" ColumnName="Vendor" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="BID" ColumnName="BID" />
+                <ScalarProperty Name="ChgID" ColumnName="ChgID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COVID_Acceso">
+            <EntityTypeMapping TypeName="ITDBModel.COVID_Acceso">
+              <MappingFragment StoreEntitySet="COVID_Acceso">
+                <ScalarProperty Name="PIN2" ColumnName="PIN2" />
+                <ScalarProperty Name="PIN1" ColumnName="PIN1" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="WeekNumber" ColumnName="WeekNumber" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Transporte" ColumnName="Transporte" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="ITDBModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="APR3_ID" ColumnName="APR3_ID" />
+                <ScalarProperty Name="APR2_ID" ColumnName="APR2_ID" />
+                <ScalarProperty Name="APR1_ID" ColumnName="APR1_ID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Lang" ColumnName="Lang" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="Department1" ColumnName="Department" />
+                <ScalarProperty Name="DepID" ColumnName="DepID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Downtime_Causas">
+            <EntityTypeMapping TypeName="ITDBModel.Downtime_Causas">
+              <MappingFragment StoreEntitySet="Downtime_Causas">
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Causa" ColumnName="Causa" />
+                <ScalarProperty Name="DID" ColumnName="DID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="ITDBModel.File">
+              <MappingFragment StoreEntitySet="Files">
+                <ScalarProperty Name="descr" ColumnName="descr" />
+                <ScalarProperty Name="owner" ColumnName="owner" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="Dir" ColumnName="Dir" />
+                <ScalarProperty Name="FileID" ColumnName="FileID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INV_Budget">
+            <EntityTypeMapping TypeName="ITDBModel.INV_Budget">
+              <MappingFragment StoreEntitySet="INV_Budget">
+                <ScalarProperty Name="CID" ColumnName="CID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="INID" ColumnName="INID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KamishibaiLogs">
+            <EntityTypeMapping TypeName="ITDBModel.KamishibaiLog">
+              <MappingFragment StoreEntitySet="KamishibaiLog">
+                <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="SupervisedBy" ColumnName="SupervisedBy" />
+                <ScalarProperty Name="CompletedOn" ColumnName="CompletedOn" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="KBNUmber" ColumnName="KBNUmber" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kiosks">
+            <EntityTypeMapping TypeName="ITDBModel.Kiosk">
+              <MappingFragment StoreEntitySet="Kiosk">
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="PasCode" ColumnName="PasCode" />
+                <ScalarProperty Name="Programa" ColumnName="Programa" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ButtonName" ColumnName="ButtonName" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="KID" ColumnName="KID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kiosk_Log">
+            <EntityTypeMapping TypeName="ITDBModel.Kiosk_Log">
+              <MappingFragment StoreEntitySet="Kiosk_Log">
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Kiosk_Log1" ColumnName="Kiosk_Log" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+                <ScalarProperty Name="LogID" ColumnName="LogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogHistories">
+            <EntityTypeMapping TypeName="ITDBModel.LogHistory">
+              <MappingFragment StoreEntitySet="LogHistory">
+                <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Host" ColumnName="Host" />
+                <ScalarProperty Name="LogonName" ColumnName="LogonName" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="RequestedDate" ColumnName="RequestedDate" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maquinas">
+            <EntityTypeMapping TypeName="ITDBModel.Maquina">
+              <MappingFragment StoreEntitySet="Maquinas">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="MID" ColumnName="MID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_History">
+            <EntityTypeMapping TypeName="ITDBModel.Master_History">
+              <MappingFragment StoreEntitySet="Master_History">
+                <ScalarProperty Name="Singnature" ColumnName="Singnature" />
+                <ScalarProperty Name="Column" ColumnName="Column" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="TrueCrypt" ColumnName="TrueCrypt" />
+                <ScalarProperty Name="Bios" ColumnName="Bios" />
+                <ScalarProperty Name="StopDate" ColumnName="StopDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="Hw_ID" ColumnName="Hw_ID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Tracking">
+            <EntityTypeMapping TypeName="ITDBModel.Project_Tracking">
+              <MappingFragment StoreEntitySet="Project_Tracking">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="Project_Leader" ColumnName="Project_Leader" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="Deliverables" ColumnName="Deliverables" />
+                <ScalarProperty Name="S_Factors" ColumnName="S_Factors" />
+                <ScalarProperty Name="StakeHolders" ColumnName="StakeHolders" />
+                <ScalarProperty Name="Sponsor" ColumnName="Sponsor" />
+                <ScalarProperty Name="Phase4" ColumnName="Phase4" />
+                <ScalarProperty Name="Phase3" ColumnName="Phase3" />
+                <ScalarProperty Name="Phase2" ColumnName="Phase2" />
+                <ScalarProperty Name="Phase1" ColumnName="Phase1" />
+                <ScalarProperty Name="Sitio" ColumnName="Sitio" />
+                <ScalarProperty Name="Depa" ColumnName="Depa" />
+                <ScalarProperty Name="Scope" ColumnName="Scope" />
+                <ScalarProperty Name="Goal_Statement" ColumnName="Goal_Statement" />
+                <ScalarProperty Name="Defecto" ColumnName="Defecto" />
+                <ScalarProperty Name="Op_Statement" ColumnName="Op_Statement" />
+                <ScalarProperty Name="EDate" ColumnName="EDate" />
+                <ScalarProperty Name="SDate" ColumnName="SDate" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Benefits" ColumnName="Benefits" />
+                <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+                <ScalarProperty Name="ProNumber" ColumnName="ProNumber" />
+                <ScalarProperty Name="PID" ColumnName="PID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShiftLogs">
+            <EntityTypeMapping TypeName="ITDBModel.ShiftLog">
+              <MappingFragment StoreEntitySet="ShiftLog">
+                <ScalarProperty Name="UserSeq" ColumnName="UserSeq" />
+                <ScalarProperty Name="GralSeq" ColumnName="GralSeq" />
+                <ScalarProperty Name="ApprovedComments" ColumnName="ApprovedComments" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="Remote_Host" ColumnName="Remote_Host" />
+                <ScalarProperty Name="LogonUser" ColumnName="LogonUser" />
+                <ScalarProperty Name="Linea" ColumnName="Linea" />
+                <ScalarProperty Name="Paro" ColumnName="Paro" />
+                <ScalarProperty Name="Minutes" ColumnName="Minutes" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+                <ScalarProperty Name="TakeDate" ColumnName="TakeDate" />
+                <ScalarProperty Name="DateRef" ColumnName="DateRef" />
+                <ScalarProperty Name="LastUpdate" ColumnName="LastUpdate" />
+                <ScalarProperty Name="IT_Text" ColumnName="IT_Text" />
+                <ScalarProperty Name="Update" ColumnName="Update" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ComponentID" ColumnName="ComponentID" />
+                <ScalarProperty Name="SystemID" ColumnName="SystemID" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="ProblemType" ColumnName="ProblemType" />
+                <ScalarProperty Name="Ticket" ColumnName="Ticket" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Plant" ColumnName="Plant" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="ITDBModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SW_Installs">
+            <EntityTypeMapping TypeName="ITDBModel.SW_Installs">
+              <MappingFragment StoreEntitySet="SW_Installs">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="IDate" ColumnName="IDate" />
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="SoftwareName" ColumnName="SoftwareName" />
+                <ScalarProperty Name="AssetTag" ColumnName="AssetTag" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+                <ScalarProperty Name="SWID" ColumnName="SWID" />
+                <ScalarProperty Name="SW_ID" ColumnName="SW_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task_Documents">
+            <EntityTypeMapping TypeName="ITDBModel.Task_Documents">
+              <MappingFragment StoreEntitySet="Task_Documents">
+                <ScalarProperty Name="RefreshUserID" ColumnName="RefreshUserID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RefreshDate" ColumnName="RefreshDate" />
+                <ScalarProperty Name="UpLDate" ColumnName="UpLDate" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Of_Change">
+            <EntityTypeMapping TypeName="ITDBModel.Type_Of_Change">
+              <MappingFragment StoreEntitySet="Type_Of_Change">
+                <ScalarProperty Name="Operator" ColumnName="Operator" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NewValue" ColumnName="NewValue" />
+                <ScalarProperty Name="OldValue" ColumnName="OldValue" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="HW_ID" ColumnName="HW_ID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="ITDBModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccounts">
+                <ScalarProperty Name="StaffJ" ColumnName="StaffJ" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AccessLvl" ColumnName="AccessLvl" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="ProcessedBy" ColumnName="ProcessedBy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="ITDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="InitialPage" ColumnName="InitialPage" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="MailSent" ColumnName="MailSent" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Depa" ColumnName="Depa" />
+                <ScalarProperty Name="PassExpire" ColumnName="PassExpire" />
+                <ScalarProperty Name="ChgPass" ColumnName="ChgPass" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastLogon" ColumnName="LastLogon" />
+                <ScalarProperty Name="AccessLevel" ColumnName="AccessLevel" />
+                <ScalarProperty Name="Receive_Email" ColumnName="Receive_Email" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Lname" ColumnName="Lname" />
+                <ScalarProperty Name="Fname" ColumnName="Fname" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendors">
+            <EntityTypeMapping TypeName="ITDBModel.Vendor">
+              <MappingFragment StoreEntitySet="Vendors">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+                <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
