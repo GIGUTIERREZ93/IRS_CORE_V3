@@ -12,20 +12,24 @@ namespace IRS.Controllers
     public class ProcessController : Controller
     {
         // GET: Process
-      public ActionResult Ejemplo_Formulario()
-      {
-            return View();
-      }
-      public ActionResult Saludo(Saludo sal)
+        public ActionResult Ejemplo_Formulario()
         {
-
+            return View();
+        }
+        public ActionResult Saludo(Saludo sal)
+        {
             if (!ModelState.IsValid)
             {
                 ViewBag.Message = "No mms verifica tus datos";
                 return View("Ejemplo_Formulario");
             }
             return View(sal);
+        }
 
-      }
+        public ActionResult Downtime_Entry ()
+        {
+            return View();
+        }
+
     }
 }

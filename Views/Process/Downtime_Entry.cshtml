@@ -1,0 +1,104 @@
+﻿
+@{
+    aViewBag.Title = "Downtime_Entry";
+}
+<h1>DownTime Entry</h1>
+<hr />
+<br />
+<br />
+<form class="row g-3 gx-5 gy-5">
+    <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
+    <div class="col-md-6">
+        <label class="fs-3 fw-bold" for="Linea">Seleccione Linea:</label>
+        <select class="form-control form-select" id="Linea">
+            <option>Seleccione....</option>
+            <option>SMT1</option>
+            <option>SMT2</option>
+            <option>SMT3</option>
+            <option>SMT4</option>
+            <option>SMT5</option>
+            <option>SMT6</option>
+            <option>SMT7</option>
+            <option>SMT8</option>
+            <option>MCA CLUSTER</option>
+            <option>MCA DISPLAY</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label class="fs-3 fw-bold" for="Evento">Seleccione un Evento:</label>
+        <select class="form-control form-select" id="Evento">
+            <option>Seleccione....</option>
+            <option>Evento 1 TBD</option>
+            <option>Evento 2 TBD</option>
+            <option>Evento 3 TBD</option>
+            <option>Evento 4 TBD</option>
+            <option>Evento 5 TBD</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label class="fs-3 fw-bold" for="Causa">Seleccione una Causa:</label>
+        <select class="form-control form-select" id="Causa">
+            <option>Seleccione....</option>
+            <option>Causa 1</option>
+            <option>Causa 2</option>
+            <option>Causa 3</option>
+            <option>Causa 4</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label class="fs-3 fw-bold" for="Maquina">Seleccione una Maquina:</label>
+        <select class="form-control form-select" id="Maquina">
+            <option>Seleccione....</option>
+            <option>SMT1</option>
+            <option>SMT2</option>
+            <option>SMT3</option>
+            <option>SMT4</option>
+            <option>SMT5</option>
+            <option>SMT6</option>
+            <option>SMT7</option>
+            <option>SMT8</option>
+            <option>MCA CLUSTER</option>
+            <option>MCA DISPLAY</option>
+        </select>
+    </div>
+
+    <div class="col-md-3">
+        <label class="fs-3 fw-bold" for="Cargo_Paro">Cargar paro de Linea a:</label>
+        <select class="form-control form-select" id="Cargar_Paro">
+            <option>Seleccione....</option>
+            <option>Evento 1 TBD</option>
+            <option>Evento 2 TBD</option>
+            <option>Evento 3 TBD</option>
+            <option>Evento 4 TBD</option>
+            <option>Evento 5 TBD</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <label class="fs-3 fw-bold" for="Empleado">¿Numero de Empleado?</label>
+        <input type="text" class="form-control" id="Empleado" placeholder="Ejemplo >> 763" />
+    </div>
+
+    <div class="col-md-3">
+        <label class="fs-3 fw-bold" for="Ticket">No Ticket creado</label>
+        <input type="text" class="form-control" id="Ticket" placeholder="Ejemplo >> INC000001" />
+    </div>
+    <div class="col-md-3">
+        <label class="fs-3 fw-bold" for="EWO">No de EWO creado</label>
+        <input type="text" class="form-control" id="EWO" />
+    </div>
+    <div class="col-md-12">
+        <textarea class="form-control" placeholder="Comentarios adicionales del reporte....."></textarea>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-success fs-3">PROCESAR</button>
+    </div>
+</form>
+
+<br />
+<br />
+<script src="~/Scripts/popper.js"></script>
+
+

@@ -390,7 +390,7 @@
     <Content Include="Views\Assets\Add_Hardware_Form.cshtml" />
     <Content Include="Views\Assets\Master_Hardware.cshtml" />
     <Content Include="Views\Process\Ejemplo_Formulario.cshtml" />
-    <Content Include="Views\Process\Saludo.cshtml" />
+    <Content Include="Views\Process\Downtime_Entry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
