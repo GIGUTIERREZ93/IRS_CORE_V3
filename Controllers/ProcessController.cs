@@ -17,17 +17,13 @@ namespace IRS.Controllers
     {
         // Controllers para Vistas dentro de folder PROCESS
         public ActionResult Equipment_Repair() { return View(); }
-
         public ActionResult Kamishibai_Board() { return View(); }
-
         public ActionResult Audit_Controls () { return View(); }
         public ActionResult Valor_Apps() { return View(); }
 
         // Controllers para Vistas dentro de folder PROCESS - > VALOR
         public ActionResult Declaration_Errors() {return View(); }
- 
         public ActionResult Downtime_Entry() { return View(); }
-       
         public ActionResult Kiosk_Configuration() { return View(); }
   
     }
