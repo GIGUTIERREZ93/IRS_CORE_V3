@@ -9,43 +9,46 @@
     <link rel="stylesheet" href="~/Content/Site.css" />
     <script src="~/Scripts/Site.js"></script>
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
-   
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-            <img src="~/Resources/Images/logo.png" width="55px" height="45px" class="borde-tope" />
+            <a class="navbar-brand" href="~/Home/Index">
+                <img src="~/Resources/Images/logo.png" width="55px" height="45px" class="d-inline-block align-top" />
+                SISTEMA IRS
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">Flecha abajo</span>
             </button>
 
-            <label class="form-label" style="color:white">IRS</label>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#">:) Usuario</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Configuración</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Ayuda</a></li>
                 </ul>
-               
+
                 <form class="navbar-form">
                     <input type="text" class="form-control" placeholder="Buscar...">
                 </form>
             </div>
         </div>
     </nav>
+    <br />
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
                 <div class="sidebar izquierda">
-
+                    
                     <button class="dropdown-btn">
                         Administration
                         <i class="fa fa-briefcase"></i>
                     </button>
+
                     <div class="dropdown-container">
                         <a class="fondo_a" href="~/Usuarios/Mostrar_Solicitudes">
                             <i class="fa-regular fa-address-book"></i> Phone Book
@@ -99,21 +102,22 @@
                         <i class="fa fa-gears"></i>
                     </button>
                     <div class="dropdown-container">
-                        <a class="fondo_a" href="~/Usuarios/Mostrar_Solicitudes">
+                        <a class="fondo_a" href="~/Process/Equipment_Repair">
                             <i class="fa-solid fa-screwdriver-wrench"></i> Equimpent Repair
                         </a>
-                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                        <a class="fondo_a" href="~/Process/Kamishibai_Board">
                             <i class="fa-solid fa-chart-gantt"></i> Kamishibai Board
                         </a>
-                        <a class="fondo_a" href="~/Usuarios/Solicitar_Ingreso">
+                        <a class="fondo_a" href="~/Process/Audit_Controls">
                             <i class="fa-solid fa-person-military-pointing"></i> Audit Controls
                         </a>
-                        <a class="fondo_a" href="~/Process/Downtime_Entry">
-                            <i class="fa-solid fa-globe"></i> Valor
+                        <a class="fondo_a" href="~/Process/Valor_Apps">
+                            <i class="fa-solid fa-globe"></i> VALOR Complements <i class="fa-solid fa-light fa-arrow-right fa-fade"></i>
                         </a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-9 contenido">
                 @RenderBody()
                 <hr />

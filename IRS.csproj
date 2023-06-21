@@ -390,7 +390,13 @@
     <Content Include="Views\Assets\Add_Hardware_Form.cshtml" />
     <Content Include="Views\Assets\Master_Hardware.cshtml" />
     <Content Include="Views\Process\Ejemplo_Formulario.cshtml" />
-    <Content Include="Views\Process\Downtime_Entry.cshtml" />
+    <Content Include="Views\Process\Valor\Downtime_Entry.cshtml" />
+    <Content Include="Views\Process\Valor\Declaration_Errors.cshtml" />
+    <Content Include="Views\Process\Valor\Kiosk_Configuration.cshtml" />
+    <Content Include="Views\Process\Equipment_Repair.cshtml" />
+    <Content Include="Views\Process\Kamishibai_Board.cshtml" />
+    <Content Include="Views\Process\Audit_Controls.cshtml" />
+    <Content Include="Views\Process\Valor_Apps.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
