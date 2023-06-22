@@ -12,6 +12,7 @@ namespace IRS.Controllers
     public class AssetsController : Controller
     {
         readonly HardwareService hws = new HardwareService();
+        readonly SoftwareServices sws = new SoftwareServices();
        //Actions para formularios
 
         public ActionResult Add_Hardware_Form()
@@ -28,6 +29,13 @@ namespace IRS.Controllers
         {
             var modelo = hws.Consultar_Hardware();
             return View(modelo);
+        }
+
+        public ActionResult Master_Software()
+        {
+
+            var result = sws.Get_Software();
+            return View(result);
         }
 
     }

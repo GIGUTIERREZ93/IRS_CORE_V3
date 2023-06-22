@@ -36,7 +36,7 @@
         <EntityTypeShape EntityType="ITDBModel.Status" Width="1.5" PointX="26.75" PointY="23.75" />
         <EntityTypeShape EntityType="ITDBModel.SW_Installs" Width="1.5" PointX="23.5" PointY="26" />
         <EntityTypeShape EntityType="ITDBModel.Task_Documents" Width="1.5" PointX="0.5" PointY="21.125" />
-        <EntityTypeShape EntityType="ITDBModel.Type_Of_Change" Width="1.5" PointX="28.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ITDBModel.Type_Of_Change" Width="1.5" PointX="21" PointY="1.125" />
         <EntityTypeShape EntityType="ITDBModel.UserAccount" Width="1.5" PointX="28.75" PointY="7.75" />
         <EntityTypeShape EntityType="ITDBModel.User" Width="1.5" PointX="2.375" PointY="21.125" />
         <EntityTypeShape EntityType="ITDBModel.Vendor" Width="1.5" PointX="28.75" PointY="11.75" />

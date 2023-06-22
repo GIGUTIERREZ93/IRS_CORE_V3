@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Master_Software";
+}
+
+<h2>Master_Software</h2>
+
+<table>
+    <tr>
+        <td>Nombre</td>
+        <td>Proveedor</td>
+       
+    </tr>
+    @foreach(var x in Model)
+            { 
+             <tr>
+                 <td>@x.SoftwareName</td>
+                <td>@x.Vendor</td>
+             </tr>
+            }
+</table>

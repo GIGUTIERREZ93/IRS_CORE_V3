@@ -17,6 +17,14 @@ warning 6002: The table/view 'ITDB.dbo.Accounts' does not have a primary key def
           <Property Name="Date" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'ITDB.dbo.Anexos' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Anexos">
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="255" />
+          <Property Name="Anexo" Type="int" />
+          <Property Name="AnexoNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Encontrado" Type="bit" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.BCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="BCategories">
           <Key>
@@ -66,10 +74,6 @@ warning 6002: The table/view 'ITDB.dbo.BCharges' does not have a primary key def
           <Property Name="FECPO" Type="varchar" MaxLength="50" />
           <Property Name="RSTS05 " Type="varchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.BCuentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.BTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Budget' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Budget">
@@ -171,8 +175,6 @@ warning 6002: The table/view 'ITDB.dbo.BudgetCharges_ant' does not have a primar
           <Property Name="MesNumber" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Components' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.COVID_Acceso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="COVID_Acceso">
           <Key>
@@ -208,12 +210,6 @@ warning 6002: The table/view 'ITDB.dbo.COVID_Acceso' does not have a primary key
           <Property Name="Rango" Type="smallint" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.DELL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.DELLComponent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.DELLSpare' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Departments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Departments">
           <Key>
@@ -228,10 +224,6 @@ warning 6002: The table/view 'ITDB.dbo.Departments' does not have a primary key 
           <Property Name="APR2_ID" Type="int" />
           <Property Name="APR3_ID" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Dexclude' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Dirs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Documents">
@@ -293,10 +285,6 @@ warning 6002: The table/view 'ITDB.dbo.Files' does not have a primary key define
           <Property Name="owner" Type="nvarchar" MaxLength="50" />
           <Property Name="descr" Type="nvarchar" MaxLength="1000" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.HITCO2_Norms' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.HITCO2_Subject' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.HW_MODEL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="HW_MODEL">
@@ -368,8 +356,6 @@ warning 6002: The table/view 'ITDB.dbo.Kiosk_Log' does not have a primary key de
           <Property Name="DateTime" Type="smalldatetime" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Labels' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.LogHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="LogHistory">
           <Key>
@@ -402,8 +388,6 @@ warning 6002: The table/view 'ITDB.dbo.Maquinas' does not have a primary key def
           <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
           <Property Name="Status" Type="bit" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Marbetes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Master_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Master_History">
@@ -529,10 +513,6 @@ warning 6002: The table/view 'ITDB.dbo.PhoneMaster' does not have a primary key 
           <Property Name="JP" Type="int" />
           <Property Name="DisconnectDate" Type="smalldatetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Positions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.ProblemType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Project_Tasks">
           <Key>
             <PropertyRef Name="TaskID" />
@@ -586,48 +566,6 @@ warning 6002: The table/view 'ITDB.dbo.Project_Tracking' does not have a primary
           <Property Name="Operator" Type="nvarchar" MaxLength="50" />
           <Property Name="Status" Type="tinyint" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Docs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Groups' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Main' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Matrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Matriz_Answers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_Questions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_user_Answer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_User_Comments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Quiz_User_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Comodity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Customers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Format' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_History' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Links' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Projects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_ProjectType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_Requirements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.RFQ_User_Matrix' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Scripts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.ShiftLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ShiftLog">
@@ -694,8 +632,6 @@ warning 6002: The table/view 'ITDB.dbo.SW_Installs' does not have a primary key 
           <Property Name="EmpID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Systems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Task_Documents' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Task_Documents">
           <Key>
@@ -709,12 +645,6 @@ warning 6002: The table/view 'ITDB.dbo.Task_Documents' does not have a primary k
           <Property Name="UserID" Type="nvarchar" MaxLength="50" />
           <Property Name="RefreshUserID" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.TeamMembers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.Ticket_Req' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.TicketRate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.Type_Of_Change' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Type_Of_Change">
@@ -730,8 +660,6 @@ warning 6002: The table/view 'ITDB.dbo.Type_Of_Change' does not have a primary k
           <Property Name="Date" Type="datetime" />
           <Property Name="Operator" Type="nvarchar" MaxLength="255" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'ITDB.dbo.TypeOfProblem' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ITDB.dbo.UserAccounts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="UserAccounts">
@@ -1304,7 +1232,7 @@ warning 6002: The table/view 'ITDB.dbo.Vendors' does not have a primary key defi
     [Vendors].[Fecha] AS [Fecha]
     FROM [dbo].[Vendors] AS [Vendors]</DefiningQuery>
           </EntitySet>
-          </EntityContainer>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
