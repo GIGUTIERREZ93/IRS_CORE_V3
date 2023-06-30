@@ -13,7 +13,7 @@ namespace IRS.Services
             ITDBEntities db = new ITDBEntities();
 
             var result = db.Master_SW.ToList();
-
+            
             return result;
 
         }

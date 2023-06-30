@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Get_Anexos";
+}
+
+<h2>Anexos</h2>
+
+<table class="table table-responsive">
+    <thead class="table-dark">
+        <tr>
+            <td>Serial Number</td>
+            <td>Anexo</td>
+            <td>Anexo Number</td>
+            <td>Encontrado</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.SerialNumber</td>
+                <td>@x.Anexo</td>
+                <td>@x.AnexoNumber</td>
+                <td>@x.Encontrado</td>
+            </tr>
+        }
+    </tbody>
+</table>

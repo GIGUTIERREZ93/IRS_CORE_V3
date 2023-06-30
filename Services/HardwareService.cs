@@ -30,11 +30,22 @@ namespace IRS.Services
                              Operator=hard.Operator
 
                          };
-                     }
-                ).ToList();
+            }).ToList();
 
+           
+            return result;
+        }
+        
+        public List<Anexos> Obtener_Anexos()
+        {
+            string query = "select * from Anexos";
+            var result = db.Database.SqlQuery<Anexos>(query).ToList();
 
             return result;
         }
+       
+      
+
+
     }
 }

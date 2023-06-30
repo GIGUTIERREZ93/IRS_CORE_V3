@@ -38,5 +38,12 @@ namespace IRS.Controllers
             return View(result);
         }
 
+        public ActionResult Get_Anexos()
+        {
+            var result = hws.Obtener_Anexos();
+
+            return View(result);
+        }
+
     }
 }
