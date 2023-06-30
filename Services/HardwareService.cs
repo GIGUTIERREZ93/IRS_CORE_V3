@@ -40,7 +40,7 @@ namespace IRS.Services
         {
             string query = "select * from Anexos";
             var result = db.Database.SqlQuery<Anexos>(query).ToList();
-
+           
             return result;
         }
        
