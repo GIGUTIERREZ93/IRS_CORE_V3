@@ -392,15 +392,23 @@
     <Content Include="Views\Assets\Add_Hardware_Form.cshtml" />
     <Content Include="Views\Assets\Master_Hardware.cshtml" />
     <Content Include="Views\Process\Ejemplo_Formulario.cshtml" />
-    <Content Include="Views\Process\Valor\Downtime_Entry.cshtml" />
-    <Content Include="Views\Process\Valor\Declaration_Errors.cshtml" />
-    <Content Include="Views\Process\Valor\Kiosk_Configuration.cshtml" />
     <Content Include="Views\Process\Equipment_Repair.cshtml" />
     <Content Include="Views\Process\Kamishibai_Board.cshtml" />
     <Content Include="Views\Process\Audit_Controls.cshtml" />
     <Content Include="Views\Process\Valor_Apps.cshtml" />
     <Content Include="Views\Assets\Master_Software.cshtml" />
     <Content Include="Views\Assets\Get_Anexos.cshtml" />
+    <Content Include="Views\Process\DowntimeEntry.cshtml" />
+    <Content Include="Views\Process\Declaration_Errors.cshtml" />
+    <Content Include="Views\Process\Kiosk_Configuration.cshtml" />
+    <Content Include="Views\Process\Error_Codes.cshtml" />
+    <Content Include="Views\Process\PLC_Activation.cshtml" />
+    <Content Include="Views\Process\OEE_Reporting.cshtml" />
+    <Content Include="Views\Process\System_Erros.cshtml" />
+    <Content Include="Views\Process\Trace_Errors.cshtml" />
+    <Content Include="Views\Process\History_Check.cshtml" />
+    <Content Include="Views\Process\Trace_Desactivation.cshtml" />
+    <Content Include="Views\Process\Valor_Declaration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
