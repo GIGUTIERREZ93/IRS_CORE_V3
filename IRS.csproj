@@ -319,6 +319,21 @@
       <LastGenOutput>Modelo_DB.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\Images\logo.png" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <EntityDeploy Include="Models\Modelo_DB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelo_DB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Modelo_DB.edmx.diagram">
+      <DependentUpon>Modelo_DB.edmx</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -347,21 +362,6 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
-    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.ttf" />
-    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
-    <EntityDeploy Include="Models\Modelo_DB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Modelo_DB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Modelo_DB.edmx.diagram">
-      <DependentUpon>Modelo_DB.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.6.3.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.3.js" />
     <Content Include="Scripts\jquery-3.6.3.min.js" />
