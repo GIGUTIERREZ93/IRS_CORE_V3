@@ -45,5 +45,26 @@ namespace IRS.Controllers
             return View(result);
         }
 
+        public ActionResult Add_Employees()
+        {
+           
+
+            return View();
+        }
+
+
+        public ActionResult Add_Hardware()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Add_Modelo_Hardware()
+        {
+
+
+            return View();
+        }
     }
 }

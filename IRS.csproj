@@ -390,7 +390,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Assets\Add_Hardware_Form.cshtml" />
     <Content Include="Views\Assets\Master_Hardware.cshtml" />
     <Content Include="Views\Process\Ejemplo_Formulario.cshtml" />
     <Content Include="Views\Process\Equipment_Repair.cshtml" />
@@ -410,6 +409,9 @@
     <Content Include="Views\Process\History_Check.cshtml" />
     <Content Include="Views\Process\Trace_Desactivation.cshtml" />
     <Content Include="Views\Process\Valor_Declaration.cshtml" />
+    <Content Include="Views\Assets\Add_Employees.cshtml" />
+    <Content Include="Views\Assets\Add_Hardware.cshtml" />
+    <Content Include="Views\Assets\Add_Modelo_Hardware.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
