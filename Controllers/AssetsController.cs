@@ -66,5 +66,26 @@ namespace IRS.Controllers
 
             return View();
         }
+
+        public ActionResult Add_Phone()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Add_Software()
+        {
+
+
+            return View();
+        }
+
+        public ActionResult Add_Vendor()
+        {
+
+
+            return View();
+        }
     }
 }

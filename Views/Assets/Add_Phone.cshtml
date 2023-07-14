@@ -1,0 +1,358 @@
+﻿
+@{
+    ViewBag.Title = "Add_Phone";
+}
+
+
+
+
+<h2>Agregar Phone</h2>
+<hr>
+<br>
+
+<div class="form-horizontal">
+
+
+
+    <form action="~/Home/Index" method="post">
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label class="control-label">Operator</label>
+            </div>
+            <div class="col-md-2">
+                <select class="form-control" aria-label="Position" autofocus required>
+                    <option disabled selected value="Espacio"></option>
+                    <option>TELCEL</option>
+                    <option>MOVISTAR</option>
+
+
+
+                </select>
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>Plan:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>IMEI:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label>SIM:</label>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <br>
+
+
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Cuenta Padre:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>Cuenta Hija:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Región:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label>Nextel ID</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label># Factura</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>Modo</label>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Purchase Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="controlado">Consumo Controlado</option>
+                    <option value="abierto">Abierto</option>
+
+
+                </select>
+
+
+
+            </div>
+
+        </div>
+
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Purchase Site</label>
+            </div>
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Purchase Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="tep-el">TEP-EL</option>
+                    <option value="tep-al">TEP-AL</option>
+
+
+
+
+
+
+                </select>
+
+
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>Renta</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+
+
+
+        </div>
+
+        <br>
+
+        <div class="row">
+
+
+
+            <div class="col-md-1">
+                <label>Location Site</label>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Location Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="tepo">TEPO</option>
+                    <option value="tol">TOL</option>
+
+
+
+
+
+                </select>
+
+
+
+            </div>
+
+            <div class="col-md-1">
+                <label>Create Date</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" class="form-control" autofocus required />
+
+            </div>
+
+
+        </div>
+
+        <br>
+
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Comments</label>
+            </div>
+            <div class="col-md-3">
+                <textarea type="text" class="form-control" autofocus required style="width:810px; height: 70px;">
+                </textarea>
+
+            </div>
+
+
+
+
+        </div>
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Modelo:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+            <div class="col-md-1">
+                <label>Staff Italiano</label>
+            </div>
+
+            <div class="col-md-3">
+                <select class="form-control" aria-label="Location Site" autofocus required>
+                    <option disabled selected value="Espacio">   </option>
+                    <option value="si">SI</option>
+                    <option value="no">NO</option>
+
+
+
+
+
+                </select>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <br />
+
+
+        <div class="row">
+
+            <div class="col-md-1">
+                <label>Fecha Inicio</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label>Fecha Termino</label>
+            </div>
+            <div class="col-md-3">
+                <input type="date" class="form-control" autofocus required />
+
+            </div>
+        </div>
+
+        <br />
+
+
+        <div class="row">
+
+
+            <div class="col-md-1">
+                <label>Numero</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+
+            <div class="col-md-1">
+                <label># Inventario</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control" autofocus required />
+
+            </div>
+
+        </div>
+        <br>
+
+        <div class="row">
+
+            <div class="col-md-offset-6 col-md-1">
+                <input type="submit" value="Enviar" class="btn btn-success">
+
+            </div>
+
+
+
+            <div class=" col-md-1 ">
+                <input type="submit" value="Cancel" class="btn btn-danger">
+
+            </div>
+
+        </div>
+
+    </form>
+
+
+</div>

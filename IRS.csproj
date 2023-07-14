@@ -412,6 +412,9 @@
     <Content Include="Views\Assets\Add_Employees.cshtml" />
     <Content Include="Views\Assets\Add_Hardware.cshtml" />
     <Content Include="Views\Assets\Add_Modelo_Hardware.cshtml" />
+    <Content Include="Views\Assets\Add_Phone.cshtml" />
+    <Content Include="Views\Assets\Add_Software.cshtml" />
+    <Content Include="Views\Assets\Add_Vendor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
