@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Agregar_Proyecto";
+}
+
+<h2><b class="navbar navbar-expand-md text-decoration-underline">📈 Agrega un nuevo proyecto</b></h2>
+<br />
+<div class="form-horizontal">
+
+    <form action="~/Administration/Proyecto" method="post" style="padding-left:50px">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos del sistema</h3>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Project ID</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Autor</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Creation date</label>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-2">
+                <input type="text" class="form-control " required="required" disabled select placeholder="Project #" />
+            </div>
+
+            <div class="offset-md-2 col-md-2">
+                <input type="text" class="form-control" value="F83259D" disabled select placeholder="User ID" />
+            </div>
+
+            <div class="offset-md-2 col-md-2">
+
+                <input class="form-control" disabled select value="@DateTime.Now">
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos del proyecto</h3>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Project name:</label>
+            </div>
+            <div class="col-md-5">
+                <input type="text" name="ProjectName" class="form-control " required="required" placeholder="*" />
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Site/Plant:</label>
+            </div>
+            <div class="col-md-3">
+                <select name="Site" id="Site" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="General_Information">Tepotzotlan</option>
+                    <option value="Manual">Toluca</option>
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Departament:</label>
+            </div>
+            <div class="col-md-3">
+                <select name="Departament" id="Departament" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="MM-RH">MM-RH</option>
+                    <option value="MM-LOGISTICA">MM-LOGISTICA</option>
+                    <option value="MM-COMPRAS">MM-COMPRAS</option>
+                    <option value="MM-DIRECCION">MM-DIRECCION</option>
+                    <option value="MM-EHS">MM-EHS</option>
+                    <option value="MM-TECNOLOGIA">MM-TECNOLOGIA</option>
+                    <option value="MM-CALIDAD">MM-CALIDAD</option>
+                    <option value="RYD">RYD</option>
+                    <option value="MM-FINANZAS">MM-FINANZAS</option>
+                    <option value="MM-PROCESOS">MM-PROCESOS</option>
+                    <option value="MM-MANTENIMIENTO">MM-MANTENIMIENTO</option>
+                    <option value="MM-METODOS">MM-METODOS</option>
+                    <option value="MM-PRODUCCION">MM-PRODUCCION</option>
+                    <option value="MM-TESTING">MM-TESTING</option>
+                    <option value="MM-MANUFACTURA">MM-MANUFACTURA</option>
+                    <option value="MM-GKD">MM-GKD</option>
+                    <option value="MM-PLASTICOS">MM-PLASTICOS</option>
+                    <option value="MM-PP&amp;C">MM-PP&amp;C</option>
+                    <option value="MM-SEGURIDAD PATRIMONIAL">MM-SEGURIDAD PATRIMONIAL</option>
+                    <option value="MM-SERIGRAFIA">MM-SERIGRAFIA</option>
+                    <option value="AL-RH">AL-RH</option>
+                    <option value="AL-PRODUCCION">AL-PRODUCCION</option>
+                    <option value="AL-MANTENIMIENTO">AL-MANTENIMIENTO</option>
+                    <option value="AL-LOGISTICA">AL-LOGISTICA</option>
+                    <option value="AL-FINANZAS">AL-FINANZAS</option>
+                    <option value="AL-DIRECCION">AL-DIRECCION</option>
+                    <option value="AL-PREPRODUCCION">AL-PREPRODUCCION</option>
+                    <option value="AL-MANUFACTURA">AL-MANUFACTURA</option>
+                    <option value="AL-PROCESOS">AL-PROCESOS</option>
+                    <option value="AL-CALIDAD">AL-CALIDAD</option>
+                    <option value="AL-PP&amp;C/MMS">AL-PP&amp;C/MMS</option>
+                    <option value="AL-MOLDES">AL-MOLDES</option>
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Project leader:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="ProjectLeader" class="form-control " required="required" placeholder="*" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Approved by:</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="Approved" class="form-control " required="required" placeholder="*" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Request/ Details:</label>
+            </div>
+            <div class="col-md-11">
+                <textarea rows="3" cols="5" class="form-control col-md-5 " name="Details" required="required" placeholder="*"></textarea>
+            </div>
+        </div>
+
+        <br />
+        <div class="row">
+            <div class="offset-md-4 col-md-1">
+                <input type="submit" value="Subir Proyecto" class="btn btn-success" />
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <a href="~/Administration/Agregar_Proyecto" class="btn btn-danger">Limpiar Datos</a>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label style="color:red">*Campos obligatorios</label>
+            </div>
+        </div>
+
+    </form>
+</div>

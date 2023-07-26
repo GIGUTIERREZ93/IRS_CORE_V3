@@ -1,0 +1,243 @@
+﻿@{
+    ViewBag.Title = "Agregar_Shiftlog";
+}
+
+<h2><b class="container">📝 Agrega un nuevo registro de incidencia</b></h2>
+<hr />
+<div class="form-horizontal">
+
+    <form action="~/Administration/ShiftLog" method="post" style="padding-left:50px">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos del sistema</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>User ID</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Creation date</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Ticket number</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <input type="text" class="form-control" name="User" value="F83259D" disabled select placeholder="User ID" />
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <input class="form-control" name="DateC" disabled select value="@DateTime.Now">
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <input type="text" class="form-control" name="Ticket" value="INC12345" required="required" placeholder="*" />
+            </div>
+
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos del incidente</h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2">
+                <label>Site select</label>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <label>Plant select</label>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <label>Type of ticket</label>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <label>Line #</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <select name="Site" id="Site" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="TEP01">Tepotzotlan</option>
+                    <option value="TOL01">Toluca</option>
+                </select>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <select name="Plant" id="Plant" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="EL">Electronicos</option>
+                    <option value="AL">Automotive Lighting</option>
+                </select>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <select name="TicketTy" id="Ticket" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="Inicident">Incident</option>
+                    <option value="Problem">Problem</option>
+                    <option value="Request">Request</option>
+                    <option value="Task">Task</option>
+                </select>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <select name="Line" id="line" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="smt2">SMT 2</option>
+                    <option value="smt3">SMT 3</option>
+                    <option value="smt4">SMT 4</option>
+                    <option value="smt6">SMT 6</option>
+                    <option value="smt7">SMT 7</option>
+                    <option value="smt8">SMT 8</option>
+                    <option value="smt10">SMT 10</option>
+                    <option value="dlc">DLC</option>
+                    <option value="La_Motta">La Motta</option>
+                    <option value="tbm2">TBM 2</option>
+                    <option value="halp">Halp</option>
+                    <option value="jl1">JL 1</option>
+                    <option value="jl2">JL 2</option>
+                    <option value="bcm_kl">BCM KL</option>
+                    <option value="mca_cluster">MCA CLUSTER</option>
+                    <option value="ecu_2.2">ECU 2.2</option>
+                    <option value="audi">AUDI</option>
+                    <option value="jeep_mp">JEEP MP</option>
+                    <option value="mca_display">MCA DISPLAY</option>
+                    <option value="ecu_6.1">ECU 6.1</option>
+                    <option value="flm3">FLM 3</option>
+
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Category</label>
+            </div>
+            <div class="offset-md-2 col-md-1">
+                <label>SubCategory</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Component ID</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <select name="Category" id="Category" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="IT_Asset">IT Asset</option>
+                    <option value="Network">Network</option>
+                    <option value="Traceability_Process">Traceability Process</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="offset-md-1 col-md-2">
+                <select name="Sub_Category" id="Sub_Category" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="Computer_Equipment">Computer Equipment</option>
+                    <option value="Network_Connection">Network Connection</option>
+                    <option value="Incorrect_Operation">Incorrect Operation</option>
+                    <option value="Trasability_files">Trasability files</option>
+                    <option value="VALOR_System">VALOR System</option>
+                    <option value="Other">Other</option>
+                </select>
+
+            </div>
+
+            <div class="offset-md-1 col-md-2">
+                <select name="Component_ID" id="Component_ID" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="Other">Other</option>
+                </select>
+
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Description</label>
+            </div>
+            <div class="offset-md-5 col-md-2">
+                <label>Follow Up</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <textarea rows="6" cols="5" class="form-control col-md-5 " name="Description" required="required" placeholder="*"></textarea>
+            </div>
+            <div class="offset-md-1 col-md-5">
+                <textarea rows="6" cols="5" class="form-control col-md-5 " name="Follow" required="required" placeholder="*"></textarea>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-1">
+                <label>Status</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Stop Line?</label>
+            </div>
+            <div class="offset-md-1 col-md-1">
+                <label>Duration</label>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label>Reported by</label>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <select name="Status" id="Status" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="Assigned">Assigned</option>
+                    <option value="Closed">Closed</option>
+                    <option value="Open">Open</option>
+                    <option value="Re_Assigned">Re Assigned</option>
+                    <option value="Working_Progress">Working in Progress</option>
+                </select>
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <select name="Stop_line" id="Stop_line" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <div class="offset-md-1 col-md-1">
+                <input type="number" class="form-control" name="DurationH" placeholder="Hrs" min="1" />
+            </div>
+            <div class="col-md-1">
+                <input type="number" class="form-control" name="DurationM" placeholder="Min" min="1" max="60" />
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <input type="text" name="Reported" class="form-control" />
+            </div>
+        </div>
+        <br /> <br />
+        <div class="row">
+            <div class="offset-md-4 col-md-1">
+                <input type="submit" value="Registrar Shiftlog" class="btn btn-success" />
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <a href="~/Administration/Agregar_Shiftlog" class="btn btn-danger">Limpiar Datos</a>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label style="color:red">*Campos obligatorios</label>
+            </div>
+        </div>
+
+
+    </form>
+</div>

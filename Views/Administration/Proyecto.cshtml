@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Proyecto";
+}
+
+<h2>Datos del Proyecto</h2>
+<hr />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Titulo del proyecto:</b></label>
+        </div>
+        <div class="col-md-3">
+            <label>@Model.ProjectName</label>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Sitio/Planta:</b></label>
+        </div>
+        <div class="col-md-3">
+            <label>@Model.Site</label>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Departamento:</b></label>
+        </div>
+        <div class="col-md-3">
+            <label>@Model.Departament</label>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Lider de Proyecto:</b></label>
+        </div>
+        <div class="col-md-3">
+            <label>@Model.ProjectLeader</label>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Aprobador:</b></label>
+        </div>
+        <div class="col-md-3">
+            <label>@Model.Approved</label>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="col-md-2">
+            <label><b>Comentarios:</b></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <label>@Model.Details</label>
+        </div>
+    </div>
+</div>

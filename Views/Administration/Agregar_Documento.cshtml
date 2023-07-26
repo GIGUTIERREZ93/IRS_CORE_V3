@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Agregar_Documento";
+}
+
+<h2><b class="navbar navbar-expand-md text-decoration-underline">🗂️ Agrega un nuevo documento</b></h2>
+<br />
+<div class="form-horizontal">
+
+    <form action="~/Home/Index" method="post" style="padding-left:50px">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos generales del documento</h3>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row" style="text-align:right">
+            <div class="col-md-1">
+                <label class="text-right">Document Title</label>
+            </div>
+            <div class="col-md-4">
+                <input type="text" class="form-control " required="required" placeholder="*" />
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                <label>IT Area</label>
+            </div>
+            <div class="col-md-4">
+                <select name="IT_Area" id="IT_Area" class="form-control " required="required">
+                    <option disabled selected>*</option>
+                    <option value="ITB">ITB</option>
+                    <option value="ITB">ITI</option>
+                    <option value="ITB">ITO</option>
+                    <option value="ITB">MANAGEMENT</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                <label>Document Type</label>
+            </div>
+            <div class="col-md-4">
+                <select name="Document_Type" id="Document_Type" class="form-control" required="required">
+                    <option disabled selected>*</option>
+                    <option value="General_Information">General Information</option>
+                    <option value="Manual">Manual</option>
+                    <option value="Process">Process</option>
+                    <option value="Policy">Policy</option>
+                    <option value="Minuta">Minuta</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1">
+                <label>File</label>
+            </div>
+            <div class="col-md-10">
+                <input type="file" name="File_Document" accept="pdf" />
+            </div>
+
+        </div>
+        <br>
+        <br />
+        <div class="row">
+            <div class="offset-md-4 col-md-1">
+                <input type="submit" value="Subir Documento" class="btn btn-success" />
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <a href="~/Administration/Agregar_Documento" class="btn btn-danger">Limpiar Datos</a>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label style="color:red">*Campos obligatorios</label>
+            </div>
+        </div>
+    </form>
+</div>
+
