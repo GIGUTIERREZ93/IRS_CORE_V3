@@ -423,6 +423,7 @@
     <Content Include="Views\Administration\Agregar_Linea_Telefonica.cshtml" />
     <Content Include="Views\Administration\Agregar_Shiftlog.cshtml" />
     <Content Include="Views\Administration\Shiftlog.cshtml" />
+    <Content Include="Views\Administration\AgregarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

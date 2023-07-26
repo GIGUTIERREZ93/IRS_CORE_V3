@@ -1,0 +1,125 @@
+﻿@{
+    ViewBag.Title = "Agregar_Usuario";
+}
+
+<h2><b class="navbar navbar-expand-md text-decoration-underline">👥 Agrega un nuevo usuario</b></h2>
+<br />
+<div class="form-horizontal">
+
+    <form action="~/Home/Index" method="post" style="padding-left:50px">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Datos del usuario</h3>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Site</label>
+            </div>
+            <div class="col-md-3">
+                <input type="radio" class="form-check-input" required="required" name="a" value="TEP_EL" />Tepotzotlan Electronicos
+            </div>
+            <div class="offset-md-1 col-md-3">
+                <input type="radio" class="form-check-input" required="required" name="b" value="TEP_AL" />Tepotzotlan Automotive
+            </div>
+            <div class="offset-md-1 col-md-3">
+                <input type="radio" class="form-check-input" required="required" name="c" value="TOL_AL" />Toluca Automotive
+            </div>
+        </div>
+
+        <br /> <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Operator name</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control " required="required" placeholder="Campo Obligatorio*" />
+            </div>
+            <div class="offset-md-1 col-md-2" style="text-align:right">
+                <label>Access Level</label>
+            </div>
+            <div class="col-md-2">
+                <select name="Access_Level" id="Acc_Lev" class="form-control" required="required" style="text-align:left;">
+                    <option disabled selected>Campo Obligatorio*</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Firts name</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control " required="required" placeholder="Campo Obligatorio*" />
+            </div>
+            <div class="offset-md-1 col-md-2" style="text-align:right">
+                <label>Mail notification</label>
+            </div>
+            <div class="col-md-2">
+                <select name="Mail_notification" id="Mail_noti" class="form-control" required="required">
+                    <option disabled selected>Campo Obligatorio*</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Last name</label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control " required="required" placeholder="Campo Obligatorio*" />
+            </div>
+        </div>
+
+        <br />
+
+
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Password</label>
+            </div>
+            <div class="col-md-3">
+                <input type="password" class="form-control " required="required" placeholder="Campo Obligatorio*" />
+            </div>
+        </div>
+
+        <br />
+
+        <div class="row">
+            <div class="col-md-1">
+                <label>Email</label>
+            </div>
+            <div class="col-md-3">
+                <input type="email" class="form-control " required="required" placeholder="Campo Obligatorio*" />
+            </div>
+        </div>
+
+        <br /> <br />
+        <div class="row">
+            <div class="offset-md-4 col-md-1">
+                <input type="submit" value="Registrar Usuario" class="btn btn-success" />
+            </div>
+            <div class="offset-md-1 col-md-2">
+                <a href="~/Administration/Agregar_Usuaurio" class="btn btn-danger">Limpiar Datos</a>
+            </div>
+            <div class="offset-md-2 col-md-2">
+                <label style="color:red">*Campos obligatorios</label>
+            </div>
+        </div>
+    </form>
+</div>
+
+
