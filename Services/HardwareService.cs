@@ -43,9 +43,5 @@ namespace IRS.Services
            
             return result;
         }
-       
-      
-
-
     }
 }
