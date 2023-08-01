@@ -13,6 +13,12 @@ namespace IRS.Controllers
     {
         readonly HardwareService hws = new HardwareService();
         readonly SoftwareServices sws = new SoftwareServices();
+
+        public ActionResult Assets_Menu()
+        {
+            return View();
+
+        }
        //Actions para formularios
 
         public ActionResult Add_Hardware_Form()

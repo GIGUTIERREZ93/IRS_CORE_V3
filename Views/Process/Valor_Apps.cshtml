@@ -1,38 +1,36 @@
 ﻿
 @{
-    ViewBag.Title = "Valor_Apps";
+    ViewBag.Title = "Valor Menu";
 }
-
-<br> 
 
   <div class="row ">
     <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-success">
-            <h5 class="card-header bg-success">Declaration Errors</h5>
+        <div class="card border-info">
+            <h5 class="card-header text-white bg-info">Declaration Errors</h5>
             <div class="card-body">
                 <h5 class="card-title">Detalle de Errores de Declaraion</h5>
                 <p class="card-text">Página que muestra los errores de Declaracion para SMTs</p>
-                <a href=@Url.Action("Declaration_Errors" , "Process") class="btn btn-primary">Ir</a>
+                <a href=@Url.Action("Declaration_Errors" , "Process") class="btn btn-warning">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-success"">
-            <h5 class="card-header bg-success">Downtime Entry</h5>
+        <div class="card border-info">
+            <h5 class="card-header text-white bg-info">Downtime Entry</h5>
             <div class="card-body">
                 <h5 class="card-title">Detalle de Tiempo muerto</h5>
                 <p class="card-text">Página que muestra el detalle del tiempo muerto en SMT</p>
-                <a href=@Url.Action("DowntimeEntry" , "Process") class="btn btn-primary">Ir</a>
+                <a href=@Url.Action("DowntimeEntry" , "Process") class="btn btn-warning">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-success"">
-            <h5 class="card-header bg-success">Error Codes</h5>
+        <div class="card border-info">
+            <h5 class="card-header text-white bg-info">Error Codes</h5>
             <div class="card-body">
                 <h5 class="card-title">Detalle de Código de Errores</h5>
                 <p class="card-text">Página que muestra los códigos de error en lineas de producción</p>
-                <a href=@Url.Action("Error_Codes" , "Process") class="btn btn-primary">Ir</a>
+                <a href=@Url.Action("Error_Codes" , "Process") class="btn btn-warning">Ir</a>
             </div>
         </div>
      </div>
@@ -41,32 +39,32 @@
   <div class="row">
 
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-primary">
-              <h5 class="card-header bg-primary">Kiosko Configuration</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">Kiosko Configuration</h5>
               <div class="card-body">
                   <h5 class="card-title">Configuracion del Kiosco SMTs</h5>
                   <p class="card-text">Página que muestra los detalles de configuración del Kisko para las lineas SMT</p>
-                  <a href=@Url.Action("Kiosk_Configuration" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("Kiosk_Configuration" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-primary">
-              <h5 class="card-header bg-primary">PLC Activation</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">PLC Activation</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle de Activacion de PLC SMTs</h5>
                   <p class="card-text">Página que muestra los PLC disponubles para ser activados</p>
-                  <a href=@Url.Action("PLC_Activation" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("PLC_Activation" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-primary">
-              <h5 class="card-header bg-primary">OEE Reporting</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">OEE Reporting</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle de OEE Reportado</h5>
                   <p class="card-text">Página que muestra el detalle del reporte OEE</p>
-                  <a href=@Url.Action("OEE_Reporting" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("OEE_Reporting" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
@@ -74,32 +72,32 @@
   <br />
   <div class="row">
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-danger">
-              <h5 class="card-header bg-danger">System Errors</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">System Errors</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle los errores del Sistema</h5>
                   <p class="card-text">Página que muestra el hitórico de errores en el sistema</p>
-                  <a href=@Url.Action("System_Erros" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("System_Erros" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-danger">
-              <h5 class="card-header bg-danger">Trace Errors</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">Trace Errors</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle de errores de trazabilidad</h5>
                   <p class="card-text">Página que muestra el histórico de los errores en el proceso de trazabilidad</p>
-                  <a href=@Url.Action("Trace_Errors" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("Trace_Errors" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
-          <div class="card border-danger">
-              <h5 class="card-header bg-danger">Trace History Check</h5>
+          <div class="card border-info">
+              <h5 class="card-header text-white bg-info">Trace History Check</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle del History Check</h5>
                   <p class="card-text">Página que muestra el detalle del proceso History Check.</p>
-                  <a href=@Url.Action("History_Check" , "Process") class="btn btn-primary">Ir</a>
+                  <a href=@Url.Action("History_Check" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
@@ -107,22 +105,22 @@
       <br />
       <div class="row">
           <div class="col-md-4 col-sm-4 col-lg-4">
-              <div class="card border-warning">
-                  <h5 class="card-header bg-warning">Traceability Desactivation</h5>
+              <div class="card border-info">
+                  <h5 class="card-header text-white bg-info">Traceability Desactivation</h5>
                   <div class="card-body">
                       <h5 class="card-title">Desactivación de trazabilidad</h5>
                       <p class="card-text">Página que muestra la desactivación de trazabilidad</p>
-                      <a href=@Url.Action("Trace_Desactivation" , "Process") class="btn btn-primary">Ir</a>
+                      <a href=@Url.Action("Trace_Desactivation" , "Process") class="btn btn-warning">Ir</a>
                   </div>
               </div>
               </div>
               <div class="col-md-4 col-sm-4 col-lg-4">
-                  <div class="card border-warning">
-                      <h5 class="card-header bg-warning">Valor Declaration</h5>
+                  <div class="card border-info">
+                      <h5 class="card-header text-white bg-info">Valor Declaration</h5>
                       <div class="card-body">
                           <h5 class="card-title">Detalle del proceso de declaración</h5>
                           <p class="card-text">Página que muestra el detalle del proceso de declaración</p>
-                          <a href=@Url.Action("Valor_Declaration" , "Process") class="btn btn-primary">Ir</a>
+                          <a href=@Url.Action("Valor_Declaration" , "Process") class="btn btn-warning">Ir</a>
                       </div>
                   </div>
               </div>
