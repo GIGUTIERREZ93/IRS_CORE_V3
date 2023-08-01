@@ -13,7 +13,7 @@ namespace IRS.Controllers
     public class AdministrationController : Controller
     {
         // GET: Administration
-        public ActionResult Index()
+        public ActionResult Administration_Menu()
         {
             return View();
         }
