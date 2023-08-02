@@ -424,6 +424,8 @@
     <Content Include="Views\Administration\Agregar_Shiftlog.cshtml" />
     <Content Include="Views\Administration\Shiftlog.cshtml" />
     <Content Include="Views\Administration\AgregarUsuario.cshtml" />
+    <Content Include="Views\Administration\Administration_Menu.cshtml" />
+    <Content Include="Views\Assets\Assets_Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
