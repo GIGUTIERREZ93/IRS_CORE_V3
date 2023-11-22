@@ -25,8 +25,7 @@ namespace IRS.Controllers
         {
             return View();
         }
-        // ********
-
+       
 
         //Action para insertar documento
         public ActionResult Insertar_Documento(HttpPostedFileBase DocumentName, string DocID, string IT_Area, string Topic, string DocType, string Fecha, string UserID )
