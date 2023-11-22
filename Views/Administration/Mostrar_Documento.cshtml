@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Mostrar_Documento";
+}
+
+<h2>Mostrar_Documento</h2>
+
+<div class="container">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td>DocID</td>
+                <td>DocumentName</td>
+                <td>Area</td>
+                <td>Topic</td>
+                <td>DocType</td>
+                <td>Fecha</td>
+                <td>UserID</td>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var x in Model)
+
+                {
+                    <tr>
+                        <td>@x.DocID</td>
+                        <td>@x.DocumentName</td>
+                        <td>@x.Area</td>
+                        <td>@x.Topic</td>
+                        <td>@x.DocType</td>
+                        <td>@x.Fecha </td>
+                        <td>@x.UserID</td>
+                    </tr>
+                }
+        </tbody>
+    </table>
+</div>
+
