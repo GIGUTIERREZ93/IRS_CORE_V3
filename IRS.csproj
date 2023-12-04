@@ -247,15 +247,35 @@
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\Anexos.cs" />
-    <Compile Include="Models\ViewModels\Documentos.cs" />
     <Compile Include="Models\ViewModels\HW_Model_Join.cs" />
     <Compile Include="Models\ViewModels\ProyectoModel.cs" />
     <Compile Include="Models\ViewModels\Saludo.cs" />
     <Compile Include="Models\ViewModels\ShiftlogMoldel.cs" />
+    <Compile Include="Models\vManageModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vManageModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vManageModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\vManageModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vManageModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XDeclarationProgram.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\X_Mail.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DocumentServices.cs" />
     <Compile Include="Services\HardwareService.cs" />
     <Compile Include="Services\SoftwareServices.cs" />
+    <Compile Include="Services\ValorServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -322,6 +342,16 @@
       <DependentUpon>Modelo_DB.edmx</DependentUpon>
       <LastGenOutput>Modelo_DB.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\vManageModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vManageModel.edmx</DependentUpon>
+      <LastGenOutput>vManageModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\vManageModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vManageModel.edmx</DependentUpon>
+      <LastGenOutput>vManageModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\Images\logo.png" />
     <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
     <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
@@ -366,8 +396,14 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\vManageModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vManageModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\vManageModel.edmx.diagram">
+      <DependentUpon>vManageModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
-    <Content Include="Scripts\Buscar.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
@@ -380,6 +416,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Buscar.js" />
     <Content Include="Scripts\Site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -429,9 +466,12 @@
     <Content Include="Views\Administration\AgregarUsuario.cshtml" />
     <Content Include="Views\Administration\Administration_Menu.cshtml" />
     <Content Include="Views\Assets\Assets_Menu.cshtml" />
-    <Content Include="Views\Administration\Mostrar_Documento.cshtml" />
+    <Content Include="Views\Process\Declaration_Programs.cshtml" />
+    <Content Include="Views\Process\Declaration_Program_formulario.cshtml" />
+    <Content Include="Views\Process\Declation_Program_Editar_formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Views\ProyectoModel\" />
     <Folder Include="Views\ShiftlogMoldel\" />
   </ItemGroup>
