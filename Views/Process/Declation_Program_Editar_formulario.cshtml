@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Declation_Program_Editar_formulario";
+}
+
+<h2>Editando Programa de Declaracion</h2>
+<hr />
+<br />
+<br />
+<form class="row g-3 gx-5 gy-5" method="post" action="~/Process/Declation_Program_Editar">
+    <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
+    <div>
+        <input type="hidden" class="form-control" name="RecordID" value=@Model.RecordID readonly/>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="McID">VALOR MCID:</label>
+        <select class="form-control form-select" name="McID">
+            <option>@Model.McID</option>
+            <option>9004</option>
+            <option>8001</option>
+            <option>7001</option>
+            <option>6001</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="Program">Nombre del Programa:</label>
+        <input type="text" class="form-control" name="Program" value="@Model.Program"/>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="Noblock"># de PCB dentro del Panel:</label>
+        <input type="text" class="form-control" name="Noblock" value="@Model.Noblock"/>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="NIP">Codigo NIP:</label>
+        <input type="text" class="form-control" name="NIP" value="@Model.NIP" />
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="Suffix">Sufijo del Programa (Top/Botton):</label>
+        <select class="form-control form-select" name="Suffix" optio>
+            <option>@Model.Suffix</option>
+            <option>_T</option>
+            <option>_B</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="PartNumber">Numero de Parte:</label>
+        <input type="text" class="form-control" name="PartNumber" value="@Model.PartNumber" />
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="Line">Linea de Produccion:</label>
+        <select class="form-control form-select" name="Line">
+            <option>@Model.Line</option>
+            <option>SMT1</option>
+            <option>SMT2</option>
+            <option>SMT3</option>
+            <option>SMT4</option>
+            <option>SMT5</option>
+            <option>SMT6</option>
+            <option>SMT7</option>
+            <option>SMT8</option>
+            <option>SMT9</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="CycleTime">Tiempo Ciclo (minutos):</label>
+        <input type="text" class="form-control" name="CycleTime" value="@Model.CycleTime"/>
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="PzsHr">Piezas X Hora:</label>
+        <input type="text" class="form-control" name="PzsHr" value="@Model.PzsHr"/>
+    </div>
+    <div class=" text-end">
+        <input type="submit" value="Actualizar" class="btn btn-success fs-4" name="name" />
+    </div>
+</form>
+
+<br />
+<br />
+<script src="~/Scripts/popper.js"></script>
+
