@@ -6,12 +6,16 @@ using System.Web.Mvc;
 using IRS.Models;
 using IRS.Models.ViewModels;
 using IRS.Services;
+using System.IO;
+using System.Data.SqlClient;
+using System.Data;
 
 
 
 /// </summary>
 namespace IRS.Controllers
 {
+
     public class AdministrationController : Controller
     {
         readonly DocumentServices document=new DocumentServices();
@@ -27,14 +31,18 @@ namespace IRS.Controllers
         }
        
 
-        //Action para insertar documento
-        public ActionResult Insertar_Documento(HttpPostedFileBase DocumentName, string DocID, string IT_Area, string Topic, string DocType, string Fecha, string UserID )
+        /*Action para insertar documento
+        public ActionResult Insertar_Documento(HttpPostedFileBase DocumentName, string Area, string Topic, string DocType)
         {
-            var InsertarDoc_Services = new Document();
-            var resultado=InsertarDoc_Services.Insertar_Documento
+
+            var documentService = new DocumentServices();
+            documentService.Insertar_Documento_servicio(DocumentName);
             Mostrar_Documento();
+
+            
+          
         }
-        //************************
+        */
 
         //Action para mostrar datos del documento
 

@@ -5,9 +5,9 @@
 
 <h2><b class="navbar navbar-expand-md ">🗂️ Agrega un nuevo documento</b></h2> <hr />
 <br />
-<div class="form-horizontal">
+<iv class="form-horizontal">
 
-    <form action="~/Administration/Insertar_Documento" method="post" style="padding-left:50px">
+    <form action="~/Administration/Insertar_Documento" method="post" style="padding-left:50px" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-12">
                 <h3>Datos generales del documento</h3>
@@ -23,7 +23,7 @@
                 <label class="text-right">Document Title</label>
             </div>
             <div class="col-md-4">
-                <input type="file" name="DocumentName" accept=".pdf" size="35" class="form-control " required="required" placeholder="*" />
+                <input type="file" name="DocumentName" accept=".pdf" size="3500" class="form-control " required="required" placeholder="*" />
             </div>
         </div>
         <br>
@@ -75,7 +75,6 @@
         <input type="hidden" name="Fecha" value="" />
         <input type="hidden" name="UserID" value="" />
 
-        </div>
         <br>
         <br />
         <div class="row">

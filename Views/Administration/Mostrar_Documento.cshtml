@@ -2,10 +2,26 @@
 @{
     ViewBag.Title = "Mostrar_Documento";
 }
+<script src="~/Scripts/popper.js"></script>
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
 
-<h2>Mostrar_Documento</h2>
+<h2>Documentos</h2>
+<br />
+<div class="row">
+    <div class="offset-md-3 col-md-1">
+        <label class="text-right">Buscar</label>
+    </div>
+    <div class="col-md-3">
+        <input type="text" class="form-control" id="BuscarDoc" />
+    </div>
+</div>
+
 
 <div class="container">
+
+    
+   
+    <br />
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -14,25 +30,39 @@
                 <td>Area</td>
                 <td>Topic</td>
                 <td>DocType</td>
-                <td>Fecha</td>
+                <td>Date</td>
                 <td>UserID</td>
+                <td>Operations</td>
             </tr>
         </thead>
-        <tbody>
-                @foreach (var x in Model)
+        <tbody id="tabla">
+            @foreach (var x in Model)
 
-                {
-                    <tr>
-                        <td>@x.DocID</td>
-                        <td>@x.DocumentName</td>
-                        <td>@x.Area</td>
-                        <td>@x.Topic</td>
-                        <td>@x.DocType</td>
-                        <td>@x.Fecha </td>
-                        <td>@x.UserID</td>
-                    </tr>
-                }
+            {
+                <tr>
+                    <td>@x.DocID</td>
+                    <td>@x.DocumentName</td>
+                    <td>@x.Area</td>
+                    <td>@x.Topic</td>
+                    <td>@x.DocType</td>
+                    <td>@x.Fecha </td>
+                    <td>@x.UserID</td>
+                    <td>@Html.ActionLink("Editar","Editar_Documento","Administration", new {id=x.ID_Documento},null) </td>
+                </tr>
+            }
         </tbody>
     </table>
+
+    <script>
+        $(document).ready(function () {
+            $("#BuscarDoc").on("keyup", function () {
+                var valor = $(this).val().toLowerCase();
+                $("#tabla tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(valor) > -1)
+                });
+            });
+        });
+    </script>
+
 </div>
 

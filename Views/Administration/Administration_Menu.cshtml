@@ -6,30 +6,30 @@
 <div class="row ">
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">ShiftLog</h5>
+            <h5 class="card-header text-white bg-primary">Budget</h5>
             <div class="card-body">
-                <h5 class="card-title">ShiftLog</h5>
-                <p class="card-text">Look at ShiftLog</p>
+                <h5 class="card-title">Budget IT</h5>
+                <p class="card-text">Página que muestra detalles del budget del departamento</p>
                 <a href=@Url.Action("Master_Hardware" , "Administration") class="btn btn-success">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">Downtime Entry</h5>
+            <h5 class="card-header text-white bg-primary">ShiftLog</h5>
             <div class="card-body">
-                <h5 class="card-title">Detalle de Tiempo muerto</h5>
-                <p class="card-text">Página que muestra el detalle del tiempo muerto en SMT</p>
+                <h5 class="card-title">Registro y detalles de shiftlog IT Team</h5>
+                <p class="card-text">Página que muestra el listado de shiftlog del area de IT</p>
                 <a href=@Url.Action("DowntimeEntry" , "Administration") class="btn btn-success">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">Error Codes</h5>
+            <h5 class="card-header text-white bg-primary">User Managment</h5>
             <div class="card-body">
-                <h5 class="card-title">Detalle de Código de Errores</h5>
-                <p class="card-text">Página que muestra los códigos de error en lineas de producción</p>
+                <h5 class="card-title">Detalle de Usuarios IRS</h5>
+                <p class="card-text">Página que muestra los usuarios registrados en el IRS</p>
                 <a href=@Url.Action("Error_Codes" , "Administration") class="btn btn-success">Ir</a>
             </div>
         </div>
@@ -40,88 +40,33 @@
 
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">Kiosko Configuration</h5>
+            <h5 class="card-header text-white bg-primary">Projects</h5>
             <div class="card-body">
-                <h5 class="card-title">Configuracion del Kiosco SMTs</h5>
-                <p class="card-text">Página que muestra los detalles de configuración del Kisko para las lineas SMT</p>
+                <h5 class="card-title">Proyectos de IT</h5>
+                <p class="card-text">Página que muestra los detalles de proyectos de IT</p>
                 <a href=@Url.Action("Kiosk_Configuration" , "Administration") class="btn btn-success">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">PLC Activation</h5>
+            <h5 class="card-header text-white bg-primary">Documents</h5>
             <div class="card-body">
-                <h5 class="card-title">Detalle de Activacion de PLC SMTs</h5>
-                <p class="card-text">Página que muestra los PLC disponubles para ser activados</p>
+                <h5 class="card-title">Documentos de IT</h5>
+                <p class="card-text">Página que muestra los documentos del departamento de IT</p>
+                <a href=@Url.Action("Mostrar_Documento" , "Administration") class="btn btn-success">Ir</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-lg-4">
+        <div class="card border-danger">
+            <h5 class="card-header text-white bg-primary">Suppliers</h5>
+            <div class="card-body">
+                <h5 class="card-title">Detalles de proveedores</h5>
+                <p class="card-text">Muestra los detalles y documentos de proveedores</p>
                 <a href=@Url.Action("PLC_Activation" , "Administration") class="btn btn-success">Ir</a>
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">OEE Reporting</h5>
-            <div class="card-body">
-                <h5 class="card-title">Detalle de OEE Reportado</h5>
-                <p class="card-text">Página que muestra el detalle del reporte OEE</p>
-                <a href=@Url.Action("OEE_Reporting" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-warning">System Errors</h5>
-            <div class="card-body">
-                <h5 class="card-title">Detalle los errores del Sistema</h5>
-                <p class="card-text">Página que muestra el hitórico de errores en el sistema</p>
-                <a href=@Url.Action("System_Erros" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-danger">Trace Errors</h5>
-            <div class="card-body">
-                <h5 class="card-title">Detalle de errores de trazabilidad</h5>
-                <p class="card-text">Página que muestra el histórico de los errores en el proceso de trazabilidad</p>
-                <a href=@Url.Action("Trace_Errors" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-danger">Trace History Check</h5>
-            <div class="card-body">
-                <h5 class="card-title">Detalle del History Check</h5>
-                <p class="card-text">Página que muestra el detalle del proceso History Check.</p>
-                <a href=@Url.Action("History_Check" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
-</div>
-<br />
-<div class="row">
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-danger">Traceability Desactivation</h5>
-            <div class="card-body">
-                <h5 class="card-title">Desactivación de trazabilidad</h5>
-                <p class="card-text">Página que muestra la desactivación de trazabilidad</p>
-                <a href=@Url.Action("Trace_Desactivation" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <div class="card border-danger">
-            <h5 class="card-header text-white bg-danger">Valor Declaration</h5>
-            <div class="card-body">
-                <h5 class="card-title">Detalle del proceso de declaración</h5>
-                <p class="card-text">Página que muestra el detalle del proceso de declaración</p>
-                <a href=@Url.Action("Valor_Declaration" , "Administration") class="btn btn-success">Ir</a>
-            </div>
-        </div>
-    </div>
+
 </div>

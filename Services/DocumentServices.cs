@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 using IRS.Models;
 
 
@@ -19,10 +21,19 @@ namespace IRS.Services
             return model;
         }
 
-        public void Insertar_Documento_Servicio(Document doc)
+        public void Insertar_Documento_servicio(HttpPostedFileBase DocumentName, string Area, string Topic, string DocType)
         {
-            db.Documents.Add(doc);
+            Guardar_Archivo(DocumentName);
             db.SaveChanges();
+
+           
+             
+        }
+        public void Guardar_Archivo(HttpPostedFileBase DocumentName)
+        {
+            string rutaserver = System.Web.HttpContext.Current.Server.MapPath("~/");
+            string folder = Path.Combine(rutaserver + "ICT\\Documents\\");
+
         }
 
     }
