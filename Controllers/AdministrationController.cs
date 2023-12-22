@@ -18,7 +18,7 @@ namespace IRS.Controllers
 
     public class AdministrationController : Controller
     {
-        readonly DocumentServices document=new DocumentServices();
+        //readonly DocumentServices document=new DocumentServices();
         // GET: Administration
         public ActionResult Administration_Menu()
         {
@@ -46,13 +46,13 @@ namespace IRS.Controllers
 
         //Action para mostrar datos del documento
 
-        public ViewResult Mostrar_Documento()
+        /*public ViewResult Mostrar_Documento()
         {
             var model = document.Mostrar_Documentos();
             return View(model); 
         }
 
-
+        */
         //Action del formulario para agregar proyecto
         public ActionResult Agregar_Proyecto()
         {
