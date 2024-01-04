@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IRS.Models.ViewModels.DocumentViewModel
+@{
     ViewBag.Title = "Agregar_Documento";
 }
 
@@ -6,7 +7,8 @@
 <br />
 <iv class="form-horizontal">
 
-    <form action="~/Administration/Insertar_Documento" method="post" style="padding-left:50px" enctype="multipart/form-data">
+    <form action="~/Administration/Subir_Documento" method="post" style="padding-left:50px" enctype="multipart/form-data">
+        @Html.AntiForgeryToken();
         <div class="row">
             <div class="col-md-12">
                 <h3>Datos generales del documento</h3>
@@ -22,7 +24,8 @@
                 <label class="text-right">Document Title</label>
             </div>
             <div class="col-md-4">
-                <input type="file" name="DocumentName" accept=".pdf" size="3500" class="form-control " required="required" placeholder="*" />
+                <input type="file" name="File" accept=".pdf" size="3500" class="form-control "
+                       required="required" placeholder="*" />
             </div>
         </div>
         <br>
