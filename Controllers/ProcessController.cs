@@ -50,6 +50,7 @@ namespace IRS.Controllers
         {
             //Tabla que muestra todos los registros de la tabla <XDeclarationProgram>
             var query = oService.xDeclaration_Programs();
+           
             return View(query); 
         }
         public ViewResult Declaration_Program_formulario()
