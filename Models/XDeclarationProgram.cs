@@ -23,6 +23,7 @@ namespace IRS.Models
         public string Suffix { get; set; }
         public string PartNumber { get; set; }
         public string Line { get; set; }
+        public string Assy_Line { get; set; }
         public Nullable<System.DateTime> LastUpdate { get; set; }
         public string UserID { get; set; }
         public Nullable<double> CycleTime { get; set; }

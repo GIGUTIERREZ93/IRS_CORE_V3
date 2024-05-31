@@ -13,10 +13,10 @@ namespace IRS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class vManageEntities : DbContext
+    public partial class RADServerEntities : DbContext
     {
-        public vManageEntities()
-            : base("name=vManageEntities")
+        public RADServerEntities()
+            : base("name=RADServerEntities")
         {
         }
     
@@ -25,7 +25,6 @@ namespace IRS.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<X_Mail> X_Mail { get; set; }
-        public virtual DbSet<XDeclarationProgram> XDeclarationProgram { get; set; }
+        public virtual DbSet<Z_Mail> Z_Mail { get; set; }
     }
 }

@@ -4,9 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6f4bb994d0844a17a63057eeb1d0eabe" Name="Diagram1">
-        <EntityTypeShape EntityType="vManageModel.X_Mail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="vManageModel.XDeclarationProgram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="de603f3b602948299b1fd8521ecd8db0" Name="Diagram1">
+        <EntityTypeShape EntityType="RADServerModel.Z_Mail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

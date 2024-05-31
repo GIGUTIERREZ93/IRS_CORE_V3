@@ -2,29 +2,19 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Web;
 
 namespace IRS.Services
 {
     public class ValorServices
     {
-        readonly vManageEntities1 db = new vManageEntities1();
+        readonly vManageEntities db = new vManageEntities();
+        readonly RADServerEntities db_rad = new RADServerEntities();
+
+        //DECLARACION
         public List<XDeclarationProgram> xDeclaration_Programs()
         {
-            /*var result1 = (from x in db.XDeclarationProgram
-                           select new
-                           {
-                               x.McID,
-                               x.Program,
-                               x.Noblock,
-                               x.NIP,
-                               x.Suffix,
-                               x.PartNumber,
-                               x.Line,
-                               x.CycleTime,
-                               x.PzsHr
-                           }).ToList();
-            */
             var result = db.XDeclarationProgram.ToList();
             return result;
         }
@@ -90,6 +80,16 @@ namespace IRS.Services
         {
             var model = db.X_Mail.Where(x =>x.Maquina =="AUDI Q5").Take(100).OrderByDescending(y => y.TimeDate).ToList();
             return (model);
+        }
+
+        //ERRORES DE DECLARACION
+        public List<Z_Mail> Declaration_Errors()
+        {
+            var result = (from x in db_rad.Z_Mail 
+                           where (x.Referencia == "None" || x.Referencia == "Error")
+                           orderby x.TimeDate descending
+                           select x).Take(100).ToList();
+            return result;
         }
     }
 }

@@ -25,7 +25,11 @@ namespace IRS.Controllers
         public ActionResult Valor_Apps() { return View(); }
 
         //¡¡¡¡ Controllers para Vistas de PROCESS para sub operaciones de VALOR_APPS
-        public ActionResult Declaration_Errors() {return View(); }
+        public ActionResult Declaration_Errors() 
+        {
+            var model = oService.Declaration_Errors();
+            return View(model); 
+        }
         public ActionResult DowntimeEntry() { return View(); }
         public ActionResult Kiosk_Configuration() { return View(); }
         public ActionResult Error_Codes() { return View(); }
@@ -70,7 +74,6 @@ namespace IRS.Controllers
             oService.Editar_Form(model);
             return RedirectToAction("Declaration_Programs");
         }
-
         public ActionResult Declation_Program_Eliminar(long dato)
         {
             //Action Result para eliminar en la tabla <XDeclarationProgram> el registro

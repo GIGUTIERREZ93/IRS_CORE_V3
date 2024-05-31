@@ -23,14 +23,15 @@
         <thead>
             <tr class="table-primary">
                 <th scope="col">RecordID</th>
-                <th scope="col">McID</th>
-                <th scope="col">Program</th>
-                <th scope="col">Noblock</th>
-                <th scope="col">NIP</th>
+                <th scope="col">ID SMT</th>
+                <th scope="col">Programa</th>
+                <th scope="col">PCBs Panel</th>
+                <th scope="col">NIP Code</th>
                 <th scope="col">Suffix</th>
-                <th scope="col">PartNumber</th>
-                <th scope="col">Line</th>
-                <th scope="col">CycleTime</th>
+                <th scope="col">Num. de Parte</th>
+                <th scope="col">SMT</th>
+                <th scope="col">Linea Ensamble</th>
+                <th scope="col">Tiempo Ciclo</th>
                 <th scope="col">PzsHr</th>
                 <th scope="col">Operaciones</th>
             </tr>
@@ -47,6 +48,7 @@
                     <td>@x.Suffix</td>
                     <td>@x.PartNumber</td>
                     <td>@x.Line</td>
+                    <td>@x.Assy_Line</td>
                     <td>@x.CycleTime</td>
                     <td>@x.PzsHr</td>
                     <td>
@@ -62,3 +64,4 @@
     </table>
 </div>
 <script src="~/Scripts/Buscar.js"></script>
+

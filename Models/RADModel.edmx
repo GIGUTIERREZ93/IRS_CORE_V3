@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RADServerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'RADServer.dbo.Z_Mail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Z_Mail">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Referencia" Type="nvarchar" MaxLength="50" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="500" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="250" />
+          <Property Name="Maquina" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="Planta" Type="nvarchar" MaxLength="6" />
+          <Property Name="CodigoScrap" Type="int" />
+          <Property Name="Operador" Type="nvarchar" MaxLength="50" />
+          <Property Name="Turno" Type="int" />
+          <Property Name="Message" Type="text" />
+          <Property Name="TimeDate" Type="smalldatetime" />
+          <Property Name="Sent" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="RADServerModelStoreContainer">
+          <EntitySet Name="Z_Mail" EntityType="Self.Z_Mail" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Z_Mail].[RecordID] AS [RecordID], 
+    [Z_Mail].[Referencia] AS [Referencia], 
+    [Z_Mail].[FileName] AS [FileName], 
+    [Z_Mail].[Descripcion] AS [Descripcion], 
+    [Z_Mail].[Maquina] AS [Maquina], 
+    [Z_Mail].[Cantidad] AS [Cantidad], 
+    [Z_Mail].[Planta] AS [Planta], 
+    [Z_Mail].[CodigoScrap] AS [CodigoScrap], 
+    [Z_Mail].[Operador] AS [Operador], 
+    [Z_Mail].[Turno] AS [Turno], 
+    [Z_Mail].[Message] AS [Message], 
+    [Z_Mail].[TimeDate] AS [TimeDate], 
+    [Z_Mail].[Sent] AS [Sent]
+    FROM [dbo].[Z_Mail] AS [Z_Mail]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RADServerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Z_Mail">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Maquina" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cantidad" Type="Int32" />
+          <Property Name="Planta" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoScrap" Type="Int32" />
+          <Property Name="Operador" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Turno" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TimeDate" Type="DateTime" Precision="0" />
+          <Property Name="Sent" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="RADServerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Z_Mail" EntityType="Self.Z_Mail" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RADServerModelStoreContainer" CdmEntityContainer="RADServerEntities">
+          <EntitySetMapping Name="Z_Mail">
+            <EntityTypeMapping TypeName="RADServerModel.Z_Mail">
+              <MappingFragment StoreEntitySet="Z_Mail">
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Maquina" ColumnName="Maquina" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Planta" ColumnName="Planta" />
+                <ScalarProperty Name="CodigoScrap" ColumnName="CodigoScrap" />
+                <ScalarProperty Name="Operador" ColumnName="Operador" />
+                <ScalarProperty Name="Turno" ColumnName="Turno" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="TimeDate" ColumnName="TimeDate" />
+                <ScalarProperty Name="Sent" ColumnName="Sent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

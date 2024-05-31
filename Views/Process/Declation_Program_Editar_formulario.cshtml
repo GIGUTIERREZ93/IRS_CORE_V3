@@ -10,7 +10,7 @@
 <form class="row g-3 gx-5 gy-5" method="post" action="~/Process/Declation_Program_Editar">
     <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
     <div>
-        <input type="hidden" class="form-control" name="RecordID" value=@Model.RecordID readonly/>
+        <input type="hidden" class="form-control" name="RecordID" value=@Model.RecordID readonly />
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="McID">VALOR MCID:</label>
@@ -24,11 +24,11 @@
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="Program">Nombre del Programa:</label>
-        <input type="text" class="form-control" name="Program" value="@Model.Program"/>
+        <input type="text" class="form-control" name="Program" value="@Model.Program" />
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="Noblock"># de PCB dentro del Panel:</label>
-        <input type="text" class="form-control" name="Noblock" value="@Model.Noblock"/>
+        <input type="text" class="form-control" name="Noblock" value="@Model.Noblock" />
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="NIP">Codigo NIP:</label>
@@ -63,11 +63,19 @@
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="CycleTime">Tiempo Ciclo (minutos):</label>
-        <input type="text" class="form-control" name="CycleTime" value="@Model.CycleTime"/>
+        <input type="text" class="form-control" name="CycleTime" value="@Model.CycleTime" />
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="PzsHr">Piezas X Hora:</label>
-        <input type="text" class="form-control" name="PzsHr" value="@Model.PzsHr"/>
+        <input type="text" class="form-control" name="PzsHr" value="@Model.PzsHr" />
+    </div>
+    <div class="col-md-4">
+        <label class="fs-3 fw-bold" for="Assy_Line">Linea de Ensamble:</label>
+        <select class="form-control form-select" name="Assy_Line" value="@Model.Assy_Line">
+            <option>@Model.Assy_Line</option>
+            <option>TESLA</option>
+            <option>AUDI</option>
+        </select>
     </div>
     <div class=" text-end">
         <input type="submit" value="Actualizar" class="btn btn-success fs-4" name="name" />

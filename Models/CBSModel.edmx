@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="Info_Lines" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BuscarPor" Type="varchar" Mode="In" />
+          <Parameter Name="ValorBuscar" Type="varchar" Mode="In" />
+          <Parameter Name="action" Type="int" Mode="In" />
+          <Parameter Name="orden" Type="varchar" Mode="In" />
+          <Parameter Name="CustomerID" Type="int" Mode="In" />
+          <Parameter Name="UserID" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="CBSModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CBSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CBSEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="Info_Lines" ReturnType="Collection(CBSModel.Info_Lines_Result)">
+            <Parameter Name="BuscarPor" Mode="In" Type="String" />
+            <Parameter Name="ValorBuscar" Mode="In" Type="String" />
+            <Parameter Name="action" Mode="In" Type="Int32" />
+            <Parameter Name="orden" Mode="In" Type="String" />
+            <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+            <Parameter Name="UserID" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="Info_Lines_Result">
+          <Property Type="Int32" Name="LineID" Nullable="false" />
+          <Property Type="String" Name="LineName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="rate" Nullable="true" />
+          <Property Type="Int16" Name="Active" Nullable="true" />
+          <Property Type="DateTime" Name="PLCLastUpdate" Nullable="true" Precision="16" />
+          <Property Type="Int16" Name="PLCActive" Nullable="true" />
+          <Property Type="String" Name="IPAddress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Route_number" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Nombre_hc" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CBSModelStoreContainer" CdmEntityContainer="CBSEntities" >
+          <FunctionImportMapping FunctionImportName="Info_Lines" FunctionName="CBSModel.Store.Info_Lines">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CBSModel.Info_Lines_Result">
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="LineName" ColumnName="LineName" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="PLCLastUpdate" ColumnName="PLCLastUpdate" />
+                <ScalarProperty Name="PLCActive" ColumnName="PLCActive" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="Route_number" ColumnName="Route_number" />
+                <ScalarProperty Name="Nombre_hc" ColumnName="Nombre_hc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

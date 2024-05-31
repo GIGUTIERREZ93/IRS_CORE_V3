@@ -5,3 +5,38 @@
 
 <h2>Declaration_Errors</h2>
 
+<br />
+<hr />
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-sm">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="d-flex">
+                <input class="form-control me-3" type="search" placeholder="Buscar..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<br />
+
+<div class="container">
+    <table class="table table-bordered align-middle">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">Maquina</th>
+                <th scope="col">TimeDate</th>
+                <th scope="col">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Maquina</td>
+                    <td>@x.TimeDate</td>
+                    <td>@x.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
