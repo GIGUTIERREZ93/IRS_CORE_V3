@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "Master Phone";
+}
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+
+<h2>Inventario de Celulares</h2>
+<hr />
+<p>
+    Ingresa el parámetro que deseas buscar:
+
+</p>
+<div class="row">
+    <div class="col-md-3">
+        <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-md-9">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th style="background-color:dodgerblue; color:white;">PhoneID</th>
+                    <th style="background-color:dodgerblue; color:white;">FullName</th>
+                    <th style="background-color:dodgerblue; color:white;">Depa</th>
+
+                </tr>
+
+            </thead>
+            <tbody id="mi_lista">
+                @foreach (var x in Model)
+                {
+                    <tr>
+                        <td>@x.PhoneID</td>
+       
+                            @if (x.FullName == "Disponible")
+                                {
+                                    <td style="background-color:yellow; color:black;">@x.FullName</td>
+                                 }
+                               else
+                                  {
+                                    <td> @x.FullName</td>
+                                  }
+                            
+                          <td>@x.Depa</td>
+
+                        </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#mi_lista tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
+

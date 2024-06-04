@@ -13,6 +13,7 @@ namespace IRS.Controllers
     {
         readonly HardwareService hws = new HardwareService();
         readonly SoftwareServices sws = new SoftwareServices();
+        readonly PhoneServices phones = new PhoneServices();
 
         public ActionResult Assets_Menu()
         {
@@ -36,6 +37,19 @@ namespace IRS.Controllers
             var modelo = hws.Consultar_Hardware();
             return View(modelo);
         }
+
+        public ActionResult MasterPhone() 
+        {
+            var modelo=phones.ConsultarCelulares();
+            return View(modelo);
+        }
+
+        public ActionResult ConsultarCelulares()
+        {
+            var modelo = phones.ConsultarCelulares();
+            return View(modelo);
+        }
+
 
         public ActionResult Master_Software()
         {

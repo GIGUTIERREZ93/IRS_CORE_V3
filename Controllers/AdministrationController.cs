@@ -18,12 +18,14 @@ namespace IRS.Controllers
 
     public class AdministrationController : Controller
     {
-        //readonly DocumentServices document=new DocumentServices();
-        // GET: Administration
+        readonly DocumentServices document=new DocumentServices();
+        
         public ActionResult Administration_Menu()
         {
             return View();
         }
+
+
         //Action del formulario para agregar documentacion
         public ActionResult Agregar_Documento()
         {
@@ -34,34 +36,35 @@ namespace IRS.Controllers
         public ActionResult Subir_Documento(DocumentViewModel model)
         {
             string RutaServer = Server.MapPath("~/");
-            string RutaArchivo = Path.Combine(RutaServer + "/Resources/Documents/File.pdf");
-            if (!ModelState.IsValid) { }
-            return View("Agregar_Documento", model);
+            string RutaFile = Path.Combine(RutaServer + "/Resources/Documents/File.pdf");
+
+            if (!ModelState.IsValid) {
+
+                return View("Agregar_Documento", model);
+            }
+            else
+            { 
+            model.File.SaveAs(RutaFile);
+            TempData["Message"] = "Se cargo el documento";
+            }
+            return View();
         }
+
+       
        
 
-        /*Action para insertar documento
-        public ActionResult Insertar_Documento(HttpPostedFileBase DocumentName, string Area, string Topic, string DocType)
-        {
-
-            var documentService = new DocumentServices();
-            documentService.Insertar_Documento_servicio(DocumentName);
-            Mostrar_Documento();
-
-            
-          
-        }
-        */
+        
+       
 
         //Action para mostrar datos del documento
 
-        /*public ViewResult Mostrar_Documento()
+        public ViewResult Mostrar_Documento()
         {
             var model = document.Mostrar_Documentos();
             return View(model); 
         }
 
-        */
+        
         //Action del formulario para agregar proyecto
         public ActionResult Agregar_Proyecto()
         {

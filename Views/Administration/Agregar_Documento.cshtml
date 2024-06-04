@@ -7,8 +7,9 @@
 <br />
 <iv class="form-horizontal">
 
-    <form action="~/Administration/Subir_Documento" method="post" style="padding-left:50px" enctype="multipart/form-data">
-        @Html.AntiForgeryToken();
+    <form action="~/Administration/Subir_Documento" method="post" enctype="multipart/form-data">
+
+        @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-12">
                 <h3>Datos generales del documento</h3>
@@ -17,14 +18,15 @@
 
         <br>
 
-        <input type="text" name="DocID" value="1" disabled hidden />
+        <input type="hidden" name="DocID" value="1"  />
 
         <div class="row">
             <div class="col-md-1">
+
                 <label class="text-right">Document Title</label>
             </div>
             <div class="col-md-4">
-                <input type="file" name="File" accept=".pdf" size="3500" class="form-control "
+                <input type="file" name="DocumentName" accept=".pdf" size="3500" class="form-control "
                        required="required" placeholder="*" />
             </div>
         </div>
