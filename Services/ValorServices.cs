@@ -10,7 +10,7 @@ namespace IRS.Services
     public class ValorServices
     {
         readonly vManageEntities db = new vManageEntities();
-        readonly RADServerEntities db_rad = new RADServerEntities();
+        readonly RADServerEntities1 db_rad = new RADServerEntities1();
 
         //DECLARACION
         public List<XDeclarationProgram> xDeclaration_Programs()
