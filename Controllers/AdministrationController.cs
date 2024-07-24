@@ -30,13 +30,14 @@ namespace IRS.Controllers
         public ActionResult Agregar_Documento()
         {
             return View();
-        }
-
+        }                      
         [HttpPost]
+
+        //Action para postear el documento
         public ActionResult Subir_Documento(DocumentViewModel model)
         {
             string RutaServer = Server.MapPath("~/");
-            string RutaFile = Path.Combine(RutaServer + "/Resources/Documents/File.pdf");
+            string RutaFile = Path.Combine(RutaServer + "Resources/Documents/");
 
             if (!ModelState.IsValid) {
 
@@ -47,8 +48,9 @@ namespace IRS.Controllers
             model.File.SaveAs(RutaFile);
             TempData["Message"] = "Se cargo el documento";
             }
-            return View();
+            return View("Mostrar_Documento");
         }
+
 
        
        

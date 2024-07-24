@@ -7,20 +7,20 @@
 
 <h2>Documentos</h2>
 <br />
-<div class="row">
-    <div class="offset-md-3 col-md-1">
-        <label class="text-right">Buscar</label>
-    </div>
-    <div class="col-md-3">
-        <input type="text" class="form-control" id="BuscarDoc" />
-    </div>
-</div>
-
-
-<div class="container">
-
     
-   
+
+    <div class="row">
+        <div class="col-md-1">
+            <label class="text-right">Buscar</label>
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" id="BuscarDoc" />
+        </div>
+        <div class="col-md-2">
+            <a href=@Url.Action("Agregar_Documento" , "Administration") class="btn btn-success">Subir nuevo documento</a>
+        </div>
+    </div>
+
     <br />
     <table class="table">
         <thead class="table-dark">
@@ -41,19 +41,21 @@
             {
                 <tr>
                     <td>@x.DocID</td>
-                    <td>@x.DocumentName</td>
+                    <td>
+                        <a href="http:\\139.128.230.15\ICT\Documents\@x.DocumentName" target="_blank">@x.DocumentName</a>
+                    </td>
                     <td>@x.Area</td>
                     <td>@x.Topic</td>
                     <td>@x.DocType</td>
                     <td>@x.Fecha </td>
                     <td>@x.UserID</td>
-                    <td>@Html.ActionLink("Editar","Editar_Documento","Administration", new {id=x.DocID},null) </td>
+                    <td>@Html.ActionLink("Actualizar", "Agregar_Documnto", "Administration", new { id = x.DocID }, null) </td>
                 </tr>
             }
         </tbody>
     </table>
-
     <script>
+        var BaseDoc = "http://139.128.230.15/ITC/Documents"
         $(document).ready(function () {
             $("#BuscarDoc").on("keyup", function () {
                 var valor = $(this).val().toLowerCase();
@@ -64,5 +66,4 @@
         });
     </script>
 
-</div>
 

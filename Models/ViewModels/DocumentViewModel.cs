@@ -11,8 +11,7 @@ namespace IRS.Models.ViewModels
         [Required]
         //atributos de tipo hhtppostfile base
         public HttpPostedFileBase File { get; set; }
-
-
+   
         [Required]
         //Datos registrados en la vista Agregar Documento 
         public string DocID { get; set; }

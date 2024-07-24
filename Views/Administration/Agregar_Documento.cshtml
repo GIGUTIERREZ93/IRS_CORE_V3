@@ -2,43 +2,34 @@
 @{
     ViewBag.Title = "Agregar_Documento";
 }
-
 <h2><b class="navbar navbar-expand-md ">🗂️ Agrega un nuevo documento</b></h2> <hr />
-<br />
 <iv class="form-horizontal">
-
     <form action="~/Administration/Subir_Documento" method="post" enctype="multipart/form-data">
-
         @Html.AntiForgeryToken()
         <div class="row">
             <div class="col-md-12">
                 <h3>Datos generales del documento</h3>
             </div>
         </div>
-
         <br>
-
         <input type="hidden" name="DocID" value="1"  />
-
         <div class="row">
             <div class="col-md-1">
-
                 <label class="text-right">Document Title</label>
             </div>
             <div class="col-md-4">
-                <input type="file" name="DocumentName" accept=".pdf" size="3500" class="form-control "
+                <input type="file" name="DocumentName"  size="3500" class="form-control "
                        required="required" placeholder="*" />
             </div>
         </div>
         <br>
-
         <div class="row">
             <div class="col-md-1">
                 <label>IT Area</label>
             </div>
             <div class="col-md-4">
                 <select name="Area" id="IT_Area" class="form-control " required="required">
-                    <option disabled selected>*</option>
+                    <option disabled hidden selected>*</option>
                     <option value="ITB">ITB</option>
                     <option value="ITB">ITI</option>
                     <option value="ITB">ITO</option>
@@ -65,7 +56,7 @@
             </div>
             <div class="col-md-4">
                 <select name="DocType" id="Document_Type" class="form-control" required="required">
-                    <option disabled selected>*</option>
+                    <option disabled hidden selected>*</option>
                     <option value="General_Information">General Information</option>
                     <option value="Manual">Manual</option>
                     <option value="Process">Process</option>
@@ -82,17 +73,17 @@
         <input type="hidden" name="UserID" value="" />
 
         <br>
-        <br />
         <div class="row">
-            <div class="offset-md-4 col-md-1">
+            <div class="col-md-2">
                 <input type="submit" value="Subir Documento" class="btn btn-success" />
             </div>
-            <div class="offset-md-1 col-md-2">
+            <div class="offset-1 col-md-2">
                 <a href="~/Administration/Agregar_Documento" class="btn btn-danger">Limpiar Datos</a>
             </div>
-            <div class="offset-md-2 col-md-2">
+            <div class="col-md-3">
                 <label style="color:red">*Campos obligatorios</label>
             </div>
         </div>
     </form>
+
 
