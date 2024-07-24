@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using IRS.Services;
 /// <summary>
-/// J Mendoza and J Montoya
+/// J Mendoza and N George
 /// </summary>
 namespace IRS.Controllers
 {
@@ -13,6 +13,10 @@ namespace IRS.Controllers
     {
         readonly HardwareService hws = new HardwareService();
         readonly SoftwareServices sws = new SoftwareServices();
+        readonly PhoneServices phones = new PhoneServices();
+
+       
+
 
         public ActionResult Assets_Menu()
         {
@@ -33,9 +37,23 @@ namespace IRS.Controllers
 
         public ActionResult Master_Hardware()
         {
+          
             var modelo = hws.Consultar_Hardware();
             return View(modelo);
         }
+
+        public ActionResult MasterPhone() 
+        {
+            var modelo=phones.ConsultarCelulares();
+            return View(modelo);
+        }
+
+        public ActionResult ConsultarCelulares()
+        {
+            var modelo = phones.ConsultarCelulares();
+            return View(modelo);
+        }
+
 
         public ActionResult Master_Software()
         {

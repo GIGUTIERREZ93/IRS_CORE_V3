@@ -17,6 +17,7 @@ namespace IRS.Controllers
     public class ProcessController : Controller
     {
         readonly ValorServices oService = new ValorServices();
+        readonly public vManageEntities db_vmanage = new vManageEntities();
 
         //¡¡¡¡ Controllers para Vistas de PROCESS
         public ActionResult Equipment_Repair() { return View(); }
@@ -50,10 +51,14 @@ namespace IRS.Controllers
         {
             //Tabla que muestra todos los registros de la tabla <XDeclarationProgram>
             var query = oService.xDeclaration_Programs();
+           
             return View(query); 
         }
         public ViewResult Declaration_Program_formulario()
         {
+            ViewBag.McID = db_vmanage.XDeclarationProgram.DistinctBy(a=>a.McID).Select(a=>a.McID).ToList();
+            ViewBag.Lineas = db_vmanage.XDeclarationProgram.DistinctBy(b => b.Line).Select(b => b.Line).ToList();
+            
             //Formulario para un nuevo registro
             return View();
         }

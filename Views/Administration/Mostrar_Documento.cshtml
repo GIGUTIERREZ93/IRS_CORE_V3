@@ -25,14 +25,14 @@
     <table class="table">
         <thead class="table-dark">
             <tr>
-                <td>DocID</td>
-                <td>DocumentName</td>
-                <td>Area</td>
-                <td>Topic</td>
-                <td>DocType</td>
-                <td>Date</td>
-                <td>UserID</td>
-                <td>Operations</td>
+                <th>DocID</th>
+                <th>DocumentName</th>
+                <th>Area</th>
+                <th>Topic</th>
+                <th>DocType</th>
+                <th>Date</th>
+                <th>UserID</th>
+                <th>Operations</th>
             </tr>
         </thead>
         <tbody id="tabla">
@@ -47,7 +47,7 @@
                     <td>@x.DocType</td>
                     <td>@x.Fecha </td>
                     <td>@x.UserID</td>
-                    <td>@Html.ActionLink("Editar","Editar_Documento","Administration", new {id=x.ID_Documento},null) </td>
+                    <td>@Html.ActionLink("Editar","Editar_Documento","Administration", new {id=x.DocID},null) </td>
                 </tr>
             }
         </tbody>
