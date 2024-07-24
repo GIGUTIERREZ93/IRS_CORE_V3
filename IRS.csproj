@@ -160,6 +160,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CBSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CBS_AguModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBS_AguModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBS_AguModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBS_AguModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CBS_AguModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\COVID_Acceso.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -277,6 +292,9 @@
     <Compile Include="Models\UserAccount.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Usuarios.cs">
+      <DependentUpon>CBS_AguModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Vendor.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -286,6 +304,7 @@
     <Compile Include="Models\ViewModels\ProyectoModel.cs" />
     <Compile Include="Models\ViewModels\Saludo.cs" />
     <Compile Include="Models\ViewModels\ShiftlogMoldel.cs" />
+    <Compile Include="Models\ViewModels\Usuario_confirmar.cs" />
     <Compile Include="Models\vManageModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -379,6 +398,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CBSModel.edmx</DependentUpon>
       <LastGenOutput>CBSModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CBS_AguModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
+      <LastGenOutput>CBS_AguModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CBS_AguModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
+      <LastGenOutput>CBS_AguModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Modelo_DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -474,6 +503,13 @@
     </EntityDeploy>
     <Content Include="Models\CBSModel.edmx.diagram">
       <DependentUpon>CBSModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CBS_AguModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CBS_AguModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CBS_AguModel.edmx.diagram">
+      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
