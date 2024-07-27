@@ -198,6 +198,9 @@
     <Compile Include="Models\HW_MODEL.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Info_Lines_Result.cs">
+      <DependentUpon>CBSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\INV_Budget.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -495,6 +498,20 @@
     </EntityDeploy>
     <Content Include="Models\CBS_AguModel.edmx.diagram">
       <DependentUpon>CBS_AguModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\vManageModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vManageModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\vManageModel.edmx.diagram">
+      <DependentUpon>vManageModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CBSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CBSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CBSModel.edmx.diagram">
+      <DependentUpon>CBSModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
