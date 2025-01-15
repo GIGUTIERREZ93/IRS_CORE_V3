@@ -7,53 +7,66 @@
 
 <h2>Documentos</h2>
 <br />
-    
-
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-1">
+        <div class="col-1">
             <label class="text-right">Buscar</label>
         </div>
-        <div class="col-md-3">
+        <div class="col-2">
             <input type="text" class="form-control" id="BuscarDoc" />
         </div>
-        <div class="col-md-2">
-            <a href=@Url.Action("Agregar_Documento" , "Administration") class="btn btn-success">Subir nuevo documento</a>
+    </div>
+</div>
+
+
+<br />
+<div class="container-fluid">
+
+    <div class="row"> 
+        <div class="col-10">
+            <table class="table table-responsive">
+                <thead class="fondo-claro table-dark">
+                    <tr>
+                        <th class="col-1">DocID</th>
+                        <th class="col-2">DocumentName</th>
+                        <th>Area</th>
+                        <th>Topic</th>
+                        <th>DocType</th>
+                        <th>Date</th>
+                        <th>UserID</th>
+                        <th>Operations</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla">
+                    @foreach (var x in Model)
+
+                    {
+                        <tr>
+                            <td>@x.DocID</td>
+
+                            <td>
+
+                                <a href="\\139.128.230.15/ICT/Documents/Registro%20de%20charolas%20y%20configuracion%20para%20SMT.pdf" target="_blank">
+                                    @x.DocumentName
+                                </a>
+
+                            </td>
+                            <td>@x.Area</td>
+                            <td>@x.Topic</td>
+                            <td>@x.DocType</td>
+                            <td>@x.Fecha </td>
+                            <td>@x.UserID</td>
+                            <td>@Html.ActionLink("Editar", "Editar_Documento", "Administration", new { id = x.DocID }, null) </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
+   
+    
+  
 
-    <br />
-    <table class="table">
-        <thead class="table-dark">
-            <tr>
-                <th>DocID</th>
-                <th>DocumentName</th>
-                <th>Area</th>
-                <th>Topic</th>
-                <th>DocType</th>
-                <th>Date</th>
-                <th>UserID</th>
-                <th>Operations</th>
-            </tr>
-        </thead>
-        <tbody id="tabla">
-            @foreach (var x in Model)
-
-            {
-                <tr>
-                    <td>@x.DocID</td>
-                    <td>
-                        <a href="http:\\139.128.230.15\ICT\Documents\@x.DocumentName" target="_blank">@x.DocumentName</a>
-                    </td>
-                    <td>@x.Area</td>
-                    <td>@x.Topic</td>
-                    <td>@x.DocType</td>
-                    <td>@x.Fecha </td>
-                    <td>@x.UserID</td>
-                    <td>@Html.ActionLink("Actualizar", "Agregar_Documnto", "Administration", new { id = x.DocID }, null) </td>
-                </tr>
-            }
-        </tbody>
-    </table>
     <script>
         var BaseDoc = "http://139.128.230.15/ITC/Documents"
         $(document).ready(function () {
