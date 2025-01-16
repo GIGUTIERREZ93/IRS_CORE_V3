@@ -27,6 +27,8 @@ namespace IRS.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<OEE_Detail_History> OEE_Detail_History { get; set; }
+        public virtual DbSet<Lines> Lines { get; set; }
     
         public virtual ObjectResult<Info_Lines_Result> Info_Lines(string buscarPor, string valorBuscar, Nullable<int> action, string orden, Nullable<int> customerID, string userID)
         {

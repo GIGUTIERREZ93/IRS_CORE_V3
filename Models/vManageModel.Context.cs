@@ -27,5 +27,6 @@ namespace IRS.Models
     
         public virtual DbSet<X_Mail> X_Mail { get; set; }
         public virtual DbSet<XDeclarationProgram> XDeclarationProgram { get; set; }
+        public virtual DbSet<ActPCBList> ActPCBList { get; set; }
     }
 }

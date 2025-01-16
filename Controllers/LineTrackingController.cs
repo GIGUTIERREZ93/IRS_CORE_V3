@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using IRS.Services.LineTracking;
+
+namespace IRS.Controllers
+{
+    public class LineTrackingController : Controller
+    {
+        // GET: LineTracking
+        public ActionResult Index()
+        {
+            GetinfoService getinfo=new GetinfoService();
+            var Lista = getinfo.Get_Status();
+
+            return View(Lista);
+        }
+
+
+    }
+}

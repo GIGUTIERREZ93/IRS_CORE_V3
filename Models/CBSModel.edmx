@@ -4,7 +4,58 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'CBS.dbo.FileScannerMonitor' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="FileScannerMonitor">
+          <Property Name="LineID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Marker" Type="datetime" />
+          <Property Name="SPI" Type="datetime" />
+          <Property Name="AOI" Type="datetime" />
+          <Property Name="AssyFiles" Type="datetime" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="smallint" />
+          <Property Name="IDSPI" Type="uniqueidentifier" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Lines">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="int" Nullable="false" />
+          <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rate" Type="int" />
+          <Property Name="Active" Type="smallint" />
+          <Property Name="IPID" Type="int" />
+          <Property Name="PLCActive" Type="smallint" />
+          <Property Name="PLCLastUpdate" Type="smalldatetime" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Route_number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nombre_hc" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="OEE_Detail_History">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Name="Recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Referencia" Type="nvarchar" MaxLength="50" />
+          <Property Name="PartsOK" Type="int" />
+          <Property Name="PartsNOK" Type="int" />
+          <Property Name="DownTime" Type="int" />
+          <Property Name="UpTime" Type="int" />
+          <Property Name="CycleTime" Type="float" />
+          <Property Name="BTSID" Type="int" />
+          <Property Name="OEE" Type="float" />
+          <Property Name="FTQ" Type="float" />
+          <Property Name="Availability" Type="float" />
+          <Property Name="Performance" Type="float" />
+          <Property Name="Average" Type="float" />
+          <Property Name="TurnoID" Type="int" />
+          <Property Name="TimeDate" Type="datetime" />
+          <Property Name="Fecha" Type="date" />
+        </EntityType>
         <Function Name="Info_Lines" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BuscarPor" Type="varchar" Mode="In" />
           <Parameter Name="ValorBuscar" Type="varchar" Mode="In" />
@@ -13,9 +64,25 @@
           <Parameter Name="CustomerID" Type="int" Mode="In" />
           <Parameter Name="UserID" Type="varchar" Mode="In" />
         </Function>
-        <EntityContainer Name="CBSModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="CBSModelStoreContainer">
+          <EntitySet Name="OEE_Detail_History" EntityType="Self.OEE_Detail_History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lines" EntityType="Self.Lines" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Lines].[LineID] AS [LineID], 
+    [Lines].[LineName] AS [LineName], 
+    [Lines].[Rate] AS [Rate], 
+    [Lines].[Active] AS [Active], 
+    [Lines].[IPID] AS [IPID], 
+    [Lines].[PLCActive] AS [PLCActive], 
+    [Lines].[PLCLastUpdate] AS [PLCLastUpdate], 
+    [Lines].[DateTime] AS [DateTime], 
+    [Lines].[UserID] AS [UserID], 
+    [Lines].[Route_number] AS [Route_number], 
+    [Lines].[Nombre_hc] AS [Nombre_hc]
+    FROM [dbo].[Lines] AS [Lines]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CBSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -28,6 +95,8 @@
             <Parameter Name="CustomerID" Mode="In" Type="Int32" />
             <Parameter Name="UserID" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="OEE_Detail_History" EntityType="CBSModel.OEE_Detail_History" />
+          <EntitySet Name="Lines" EntityType="CBSModel.Lines" />
         </EntityContainer>
         <ComplexType Name="Info_Lines_Result">
           <Property Type="Int32" Name="LineID" Nullable="false" />
@@ -40,6 +109,43 @@
           <Property Type="String" Name="Route_number" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="Nombre_hc" Nullable="true" MaxLength="50" />
         </ComplexType>
+        <EntityType Name="OEE_Detail_History">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Name="Recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Referencia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PartsOK" Type="Int32" />
+          <Property Name="PartsNOK" Type="Int32" />
+          <Property Name="DownTime" Type="Int32" />
+          <Property Name="UpTime" Type="Int32" />
+          <Property Name="CycleTime" Type="Double" />
+          <Property Name="BTSID" Type="Int32" />
+          <Property Name="OEE" Type="Double" />
+          <Property Name="FTQ" Type="Double" />
+          <Property Name="Availability" Type="Double" />
+          <Property Name="Performance" Type="Double" />
+          <Property Name="Average" Type="Double" />
+          <Property Name="TurnoID" Type="Int32" />
+          <Property Name="TimeDate" Type="DateTime" Precision="3" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Lines">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="Int32" Nullable="false" />
+          <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rate" Type="Int32" />
+          <Property Name="Active" Type="Int16" />
+          <Property Name="IPID" Type="Int32" />
+          <Property Name="PLCActive" Type="Int16" />
+          <Property Name="PLCLastUpdate" Type="DateTime" Precision="0" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Route_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre_hc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -61,6 +167,45 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="OEE_Detail_History">
+            <EntityTypeMapping TypeName="CBSModel.OEE_Detail_History">
+              <MappingFragment StoreEntitySet="OEE_Detail_History">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="TimeDate" ColumnName="TimeDate" />
+                <ScalarProperty Name="TurnoID" ColumnName="TurnoID" />
+                <ScalarProperty Name="Average" ColumnName="Average" />
+                <ScalarProperty Name="Performance" ColumnName="Performance" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+                <ScalarProperty Name="FTQ" ColumnName="FTQ" />
+                <ScalarProperty Name="OEE" ColumnName="OEE" />
+                <ScalarProperty Name="BTSID" ColumnName="BTSID" />
+                <ScalarProperty Name="CycleTime" ColumnName="CycleTime" />
+                <ScalarProperty Name="UpTime" ColumnName="UpTime" />
+                <ScalarProperty Name="DownTime" ColumnName="DownTime" />
+                <ScalarProperty Name="PartsNOK" ColumnName="PartsNOK" />
+                <ScalarProperty Name="PartsOK" ColumnName="PartsOK" />
+                <ScalarProperty Name="Referencia" ColumnName="Referencia" />
+                <ScalarProperty Name="Recordid" ColumnName="Recordid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lines">
+            <EntityTypeMapping TypeName="CBSModel.Lines">
+              <MappingFragment StoreEntitySet="Lines">
+                <ScalarProperty Name="Nombre_hc" ColumnName="Nombre_hc" />
+                <ScalarProperty Name="Route_number" ColumnName="Route_number" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="PLCLastUpdate" ColumnName="PLCLastUpdate" />
+                <ScalarProperty Name="PLCActive" ColumnName="PLCActive" />
+                <ScalarProperty Name="IPID" ColumnName="IPID" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="LineName" ColumnName="LineName" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

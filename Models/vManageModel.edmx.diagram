@@ -7,6 +7,7 @@
       <Diagram DiagramId="0d16e0525ae14890978ab492e667b6b7" Name="Diagram1">
         <EntityTypeShape EntityType="vManageModel.X_Mail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="vManageModel.XDeclarationProgram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="vManageModel.ActPCBList" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

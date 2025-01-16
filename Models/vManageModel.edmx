@@ -4,7 +4,21 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="vManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="vManageModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActPCBList">
+          <Key>
+            <PropertyRef Name="RawBarcode" />
+            <PropertyRef Name="McID" />
+          </Key>
+          <Property Name="RawBarcode" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="McID" Type="int" Nullable="false" />
+          <Property Name="Lane" Type="int" Nullable="false" />
+          <Property Name="PositionInLane" Type="int" />
+          <Property Name="Timestamp" Type="datetime" />
+          <Property Name="Original" Type="char" MaxLength="1" />
+          <Property Name="Validated" Type="char" MaxLength="1" />
+          <Property Name="ItemId" Type="varchar" MaxLength="64" />
+        </EntityType>
         <EntityType Name="X_Mail">
           <Key>
             <PropertyRef Name="RecordID" />
@@ -46,11 +60,11 @@
           <Property Name="Active" Type="bit" />
         </EntityType>
         <EntityContainer Name="vManageModelStoreContainer">
+          <EntitySet Name="ActPCBList" EntityType="Self.ActPCBList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="vManageModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -97,7 +111,22 @@
         <EntityContainer Name="vManageEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" />
+          <EntitySet Name="ActPCBList" EntityType="vManageModel.ActPCBList" />
         </EntityContainer>
+        <EntityType Name="ActPCBList">
+          <Key>
+            <PropertyRef Name="RawBarcode" />
+            <PropertyRef Name="McID" />
+          </Key>
+          <Property Name="RawBarcode" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="McID" Type="Int32" Nullable="false" />
+          <Property Name="Lane" Type="Int32" Nullable="false" />
+          <Property Name="PositionInLane" Type="Int32" />
+          <Property Name="Timestamp" Type="DateTime" Precision="3" />
+          <Property Name="Original" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="Validated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ItemId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -143,6 +172,20 @@
                 <ScalarProperty Name="AutoUpdate" ColumnName="AutoUpdate" />
                 <ScalarProperty Name="AutoDate" ColumnName="AutoDate" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActPCBList">
+            <EntityTypeMapping TypeName="vManageModel.ActPCBList">
+              <MappingFragment StoreEntitySet="ActPCBList">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Validated" ColumnName="Validated" />
+                <ScalarProperty Name="Original" ColumnName="Original" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="PositionInLane" ColumnName="PositionInLane" />
+                <ScalarProperty Name="Lane" ColumnName="Lane" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="RawBarcode" ColumnName="RawBarcode" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

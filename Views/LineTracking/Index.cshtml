@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<div class="container-fluid">
+    <table class="table table-responsive">
+        <thead class="table-dark">
+            <tr>
+                <th>Línea</th>
+                <th>Orden de trabajo</th>
+                <th>Marcadora</th>
+                <th>SPI</th>
+                <th>Agarra y pon</th>
+                <th>AOI</th>
+                <th>OEE</th>
+                <th>Tiempo muerto</th>
+                <th>Piezas OK </th>
+                <th>Piezas en búfer</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var x in Model)
+             {
+                <tr>
+                    <td>@x.Linea</td>
+                    <td>@x.WO</td>
+                    @if (x.Marcadora >= 3)
+                    {
+                        <td class="bg-danger">@x.Marcadora_f</td>
+                    }
+                    else
+                    {
+                        <td class="bg-success">@x.Marcadora_f</td>
+                    }
+
+                    @if (x.SPI >= 3)
+                    {
+                        <td class="bg-danger-subtle">@x.SPI_f</td>
+                    }
+                    else
+                    {
+                        <td class="bg-success-subtle">@x.SPI_f</td>
+                    }
+                    <td>@x.Pick_place</td>
+                    @if (x.AOI >= 3)
+                    {
+                        <td class="bg-danger-subtle">@x.AOI_f</td>
+                    }
+                    else
+                    {
+                        <td class="bg-success-subtle">@x.AOI_f</td>
+                    }
+                    <td>70%</td>
+                    <td>40 min</td>
+                    <td>150</td>
+                    <td>T @x.Top B @x.Bot </td>
+                </tr>
+             }
+                
+
+
+
+            </tbody>
+    </table>
+</div>
+
