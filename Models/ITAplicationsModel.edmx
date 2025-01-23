@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ITAplicationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="ITAplicationsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Monitoring_Services">
           <Key>
             <PropertyRef Name="ID" />
@@ -16,14 +16,14 @@
           <Property Name="Estatus" Type="nvarchar" MaxLength="20" />
           <Property Name="Alias" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <EntityContainer Name="ITAplicationModelStoreContainer">
+        <EntityContainer Name="ITAplicationsModelStoreContainer">
           <EntitySet Name="Monitoring_Services" EntityType="Self.Monitoring_Services" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ITAplicationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="ITAplicationsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Monitoring_Services">
           <Key>
             <PropertyRef Name="ID" />
@@ -35,7 +35,7 @@
           <Property Name="Estatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Alias" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="ITAplicationEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ITAplicationsEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Monitoring_Services" EntityType="Self.Monitoring_Services" />
         </EntityContainer>
       </Schema>
@@ -43,9 +43,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ITAplicationModelStoreContainer" CdmEntityContainer="ITAplicationEntities">
+        <EntityContainerMapping StorageEntityContainer="ITAplicationsModelStoreContainer" CdmEntityContainer="ITAplicationsEntities">
           <EntitySetMapping Name="Monitoring_Services">
-            <EntityTypeMapping TypeName="ITAplicationModel.Monitoring_Services">
+            <EntityTypeMapping TypeName="ITAplicationsModel.Monitoring_Services">
               <MappingFragment StoreEntitySet="Monitoring_Services">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Hostname" ColumnName="Hostname" />
@@ -70,7 +70,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

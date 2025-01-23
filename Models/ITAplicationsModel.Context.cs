@@ -13,10 +13,10 @@ namespace IRS.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ITAplicationEntities : DbContext
+    public partial class ITAplicationsEntities : DbContext
     {
-        public ITAplicationEntities()
-            : base("name=ITAplicationEntities")
+        public ITAplicationsEntities()
+            : base("name=ITAplicationsEntities")
         {
         }
     

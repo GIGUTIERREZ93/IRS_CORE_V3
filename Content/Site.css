@@ -25,7 +25,7 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--body-color);
+  /*background-color: var(--body-color);
     transition: var(--tran-05);
     /*  padding-top: 50px;
     padding-bottom: 20px;*/

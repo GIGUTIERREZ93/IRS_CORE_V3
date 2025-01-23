@@ -5,7 +5,9 @@ using System.Linq;
 using System.Web;
 using IRS.Models;
 using IRS.Models.ViewModels.LineTracking;
+
 using Microsoft.Ajax.Utilities;
+
 
 namespace IRS.Services.LineTracking
 {
@@ -87,6 +89,15 @@ namespace IRS.Services.LineTracking
             }
 
             return Lista_BackEnd; 
+        }
+
+        public List<Monitoring_Services> Get_Services_Status()
+        {
+            ITAplicationsEntities db = new ITAplicationsEntities();
+
+            var result=db.Monitoring_Services.ToList();
+
+            return result;
         }
 
     }

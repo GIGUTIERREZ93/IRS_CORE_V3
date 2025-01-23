@@ -20,6 +20,7 @@ namespace IRS.Controllers
             ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
             //var Lista_BackEnd = getinfo.Get_StatusAssy();
 
+            ViewBag.Lista_Servicios=getinfo.Get_Services_Status();
             
             return View(Lista);
 

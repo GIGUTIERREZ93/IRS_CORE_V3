@@ -208,20 +208,20 @@
     <Compile Include="Models\INV_Budget.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ITAplicationModel.Context.cs">
+    <Compile Include="Models\ITAplicationsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ITAplicationModel.Context.tt</DependentUpon>
+      <DependentUpon>ITAplicationsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ITAplicationModel.cs">
+    <Compile Include="Models\ITAplicationsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ITAplicationModel.tt</DependentUpon>
+      <DependentUpon>ITAplicationsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ITAplicationModel.Designer.cs">
+    <Compile Include="Models\ITAplicationsModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
+      <DependentUpon>ITAplicationsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\KamishibaiLog.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
@@ -281,7 +281,7 @@
       <DependentUpon>Model_RAD.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Monitoring_Services.cs">
-      <DependentUpon>ITAplicationModel.tt</DependentUpon>
+      <DependentUpon>ITAplicationsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OEE_Detail_History.cs">
       <DependentUpon>CBSModel.tt</DependentUpon>
@@ -443,15 +443,15 @@
       <DependentUpon>CBS_AguModel.edmx</DependentUpon>
       <LastGenOutput>CBS_AguModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ITAplicationModel.Context.tt">
+    <Content Include="Models\ITAplicationsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
-      <LastGenOutput>ITAplicationModel.Context.cs</LastGenOutput>
+      <DependentUpon>ITAplicationsModel.edmx</DependentUpon>
+      <LastGenOutput>ITAplicationsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ITAplicationModel.tt">
+    <Content Include="Models\ITAplicationsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
-      <LastGenOutput>ITAplicationModel.cs</LastGenOutput>
+      <DependentUpon>ITAplicationsModel.edmx</DependentUpon>
+      <LastGenOutput>ITAplicationsModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Modelo_DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -555,12 +555,12 @@
     <Content Include="Models\CBSModel.edmx.diagram">
       <DependentUpon>CBSModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\ITAplicationModel.edmx">
+    <EntityDeploy Include="Models\ITAplicationsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ITAplicationModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ITAplicationsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ITAplicationModel.edmx.diagram">
-      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
+    <Content Include="Models\ITAplicationsModel.edmx.diagram">
+      <DependentUpon>ITAplicationsModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
@@ -694,6 +694,7 @@
     <Content Include="Views\Administration\Mostrar_Documento.cshtml" />
     <Content Include="Views\Assets\MasterPhone.cshtml" />
     <Content Include="Views\LineTracking\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutClean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
