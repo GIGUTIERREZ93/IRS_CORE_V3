@@ -208,6 +208,21 @@
     <Compile Include="Models\INV_Budget.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ITAplicationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITAplicationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITAplicationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITAplicationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITAplicationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\KamishibaiLog.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -265,6 +280,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model_RAD.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Monitoring_Services.cs">
+      <DependentUpon>ITAplicationModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\OEE_Detail_History.cs">
       <DependentUpon>CBSModel.tt</DependentUpon>
     </Compile>
@@ -311,6 +329,7 @@
     <Compile Include="Models\ViewModels\ConsultaCelularUsuario_ActivosHd.cs" />
     <Compile Include="Models\ViewModels\DocumentViewModel.cs" />
     <Compile Include="Models\ViewModels\HW_Model_Join.cs" />
+    <Compile Include="Models\ViewModels\LineTracking\BackEnd_StatusViewModel.cs" />
     <Compile Include="Models\ViewModels\LineTracking\FileScannerViewModel.cs" />
     <Compile Include="Models\ViewModels\LineTracking\Smt_StatusViewModel.cs" />
     <Compile Include="Models\ViewModels\ProyectoModel.cs" />
@@ -424,6 +443,16 @@
       <DependentUpon>CBS_AguModel.edmx</DependentUpon>
       <LastGenOutput>CBS_AguModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\ITAplicationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
+      <LastGenOutput>ITAplicationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ITAplicationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
+      <LastGenOutput>ITAplicationModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\Modelo_DB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Modelo_DB.Context.cs</LastGenOutput>
@@ -525,6 +554,13 @@
     </EntityDeploy>
     <Content Include="Models\CBSModel.edmx.diagram">
       <DependentUpon>CBSModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\ITAplicationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ITAplicationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ITAplicationModel.edmx.diagram">
+      <DependentUpon>ITAplicationModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />

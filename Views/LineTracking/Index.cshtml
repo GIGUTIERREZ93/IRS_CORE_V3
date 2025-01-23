@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+
 }
  
 <div class="container-fluid">
@@ -20,9 +21,8 @@
             </tr>
         </thead>
         <tbody>
-
             @foreach (var x in Model)
-             {
+            {
                 <tr>
                     <td>@x.Linea</td>
                     <td>@x.WO</td>
@@ -57,12 +57,34 @@
                     <td>150</td>
                     <td>T @x.Top B @x.Bot </td>
                 </tr>
-             }
-                
+            }
+        </tbody>
+    </table> <br />
+
+    <table class="table table-responsive">
+        <thead class="table-dark">
+            <tr>
+                <th>Línea</th>
+                <th>Ultima Actualizacíon</th>
+                <th>Estatus</th>
+            </tr>
+        </thead>
+
+        <tbody>
+         @foreach (var x in ViewBag.Lista_BackEnd)
+        {
+            <tr>
+                <td>@x.Linea_Assy</td>
+                <td>@x.Assy_F</td>
+                <td>@x.StatusAssy1</td>
+            </tr>
+        }
+        </tbody>
 
 
 
-            </tbody>
+
+
     </table>
 </div>
 

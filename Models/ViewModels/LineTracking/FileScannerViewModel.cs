@@ -16,6 +16,7 @@ namespace IRS.Models.ViewModels.LineTracking
         public string Area { get; set; }
         public short Active { get; set; }     
         public string IDSPI { get; set; }
+        public string LineType { get; set; }
 
     }
 }

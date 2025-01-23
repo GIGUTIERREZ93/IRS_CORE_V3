@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using IRS.Models;
 using IRS.Models.ViewModels.LineTracking;
+using Microsoft.Ajax.Utilities;
 
 namespace IRS.Services.LineTracking
 {
     public class GetinfoService
     {
+         CBSEntities db = new CBSEntities();
+         vManageEntities db2 = new vManageEntities();
+
         public List<Smt_StatusViewModel> Get_Status()
         {
-            CBSEntities db=new CBSEntities();
-            vManageEntities db2= new vManageEntities();
             List<Smt_StatusViewModel> Lista = new List<Smt_StatusViewModel>();
             Smt_StatusViewModel Status;
-            var lineas = db.Lines.Where(d=>d.LineName.Contains("SMT")).ToList();
+            var lineas = db.Lines.Where(d => d.LineName.Contains("SMT")).ToList();
 
             foreach (var line in lineas)
             {
@@ -57,6 +60,33 @@ namespace IRS.Services.LineTracking
 
             return Lista;
         
+        }
+        public List<BackEnd_StatusViewModel> Get_StatusAssy()
+        {
+            List<BackEnd_StatusViewModel> Lista_BackEnd = new List<BackEnd_StatusViewModel>();
+            BackEnd_StatusViewModel StatusAssy;
+            var lineas_Assy = db.Lines.Where(a => a.LineType.Contains("Assy")).ToList();
+
+
+            foreach (var lineAssy in lineas_Assy)
+            {
+                
+                    StatusAssy = new BackEnd_StatusViewModel();
+                    DateTime current = DateTime.Now;
+                    var Datos_Assy = db.Database.SqlQuery<FileScannerViewModel>("SELECT LineID, [Area],[Active],'0' as [IDSPI], ISnull([AssyFiles],'2024-01-01')as [AssyFiles]  FROM [CBS].[dbo].[FileScannerMonitor]  where LineID='" + lineAssy.LineName + "'").FirstOrDefault();
+                    if (Datos_Assy != null)
+                    {
+                        var D_Assy = (current.Subtract(Datos_Assy.AssyFiles)).Minutes;
+                    }
+                    
+                    StatusAssy.Linea_Assy =  lineAssy.LineName;
+                    StatusAssy.Assy_F = Datos_Assy.AssyFiles;
+                    StatusAssy.StatusAssy1 = lineAssy.LineType;
+                                   
+                    Lista_BackEnd.Add(StatusAssy);
+            }
+
+            return Lista_BackEnd; 
         }
 
     }

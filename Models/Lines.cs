@@ -25,5 +25,6 @@ namespace IRS.Models
         public string UserID { get; set; }
         public string Route_number { get; set; }
         public string Nombre_hc { get; set; }
+        public string LineType { get; set; }
     }
 }

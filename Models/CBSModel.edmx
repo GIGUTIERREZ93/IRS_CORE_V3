@@ -6,18 +6,6 @@
     <edmx:StorageModels>
     <Schema Namespace="CBSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-warning 6013: The table/view 'CBS.dbo.FileScannerMonitor' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="FileScannerMonitor">
-          <Property Name="LineID" Type="nvarchar" MaxLength="50" />
-          <Property Name="Marker" Type="datetime" />
-          <Property Name="SPI" Type="datetime" />
-          <Property Name="AOI" Type="datetime" />
-          <Property Name="AssyFiles" Type="datetime" />
-          <Property Name="Area" Type="nvarchar" MaxLength="50" />
-          <Property Name="Active" Type="smallint" />
-          <Property Name="IDSPI" Type="uniqueidentifier" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
 warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Lines">
           <Key>
@@ -34,6 +22,7 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
           <Property Name="UserID" Type="nvarchar" MaxLength="50" />
           <Property Name="Route_number" Type="nvarchar" MaxLength="50" />
           <Property Name="Nombre_hc" Type="nvarchar" MaxLength="50" />
+          <Property Name="LineType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="OEE_Detail_History">
           <Key>
@@ -56,14 +45,6 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
           <Property Name="TimeDate" Type="datetime" />
           <Property Name="Fecha" Type="date" />
         </EntityType>
-        <Function Name="Info_Lines" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="BuscarPor" Type="varchar" Mode="In" />
-          <Parameter Name="ValorBuscar" Type="varchar" Mode="In" />
-          <Parameter Name="action" Type="int" Mode="In" />
-          <Parameter Name="orden" Type="varchar" Mode="In" />
-          <Parameter Name="CustomerID" Type="int" Mode="In" />
-          <Parameter Name="UserID" Type="varchar" Mode="In" />
-        </Function>
         <EntityContainer Name="CBSModelStoreContainer">
           <EntitySet Name="OEE_Detail_History" EntityType="Self.OEE_Detail_History" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Lines" EntityType="Self.Lines" store:Type="Tables" store:Schema="dbo">
@@ -78,7 +59,8 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
     [Lines].[DateTime] AS [DateTime], 
     [Lines].[UserID] AS [UserID], 
     [Lines].[Route_number] AS [Route_number], 
-    [Lines].[Nombre_hc] AS [Nombre_hc]
+    [Lines].[Nombre_hc] AS [Nombre_hc], 
+    [Lines].[LineType] AS [LineType]
     FROM [dbo].[Lines] AS [Lines]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
@@ -145,6 +127,7 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
           <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Route_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Nombre_hc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LineType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -152,21 +135,6 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="CBSModelStoreContainer" CdmEntityContainer="CBSEntities" >
-          <FunctionImportMapping FunctionImportName="Info_Lines" FunctionName="CBSModel.Store.Info_Lines">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="CBSModel.Info_Lines_Result">
-                <ScalarProperty Name="LineID" ColumnName="LineID" />
-                <ScalarProperty Name="LineName" ColumnName="LineName" />
-                <ScalarProperty Name="rate" ColumnName="rate" />
-                <ScalarProperty Name="Active" ColumnName="Active" />
-                <ScalarProperty Name="PLCLastUpdate" ColumnName="PLCLastUpdate" />
-                <ScalarProperty Name="PLCActive" ColumnName="PLCActive" />
-                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
-                <ScalarProperty Name="Route_number" ColumnName="Route_number" />
-                <ScalarProperty Name="Nombre_hc" ColumnName="Nombre_hc" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="OEE_Detail_History">
             <EntityTypeMapping TypeName="CBSModel.OEE_Detail_History">
               <MappingFragment StoreEntitySet="OEE_Detail_History">
@@ -192,6 +160,7 @@ warning 6002: The table/view 'CBS.dbo.Lines' does not have a primary key defined
           <EntitySetMapping Name="Lines">
             <EntityTypeMapping TypeName="CBSModel.Lines">
               <MappingFragment StoreEntitySet="Lines">
+                <ScalarProperty Name="LineType" ColumnName="LineType" />
                 <ScalarProperty Name="Nombre_hc" ColumnName="Nombre_hc" />
                 <ScalarProperty Name="Route_number" ColumnName="Route_number" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />

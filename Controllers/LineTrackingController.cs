@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IRS.Models.ViewModels.LineTracking;
 using IRS.Services.LineTracking;
 
 namespace IRS.Controllers
@@ -12,12 +13,17 @@ namespace IRS.Controllers
         // GET: LineTracking
         public ActionResult Index()
         {
-            GetinfoService getinfo=new GetinfoService();
-            var Lista = getinfo.Get_Status();
+            GetinfoService getinfo = new GetinfoService();
+            //ViewBag.Lista = getinfo.Get_Status();
+            var Lista= getinfo.Get_Status();
 
+            ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
+            //var Lista_BackEnd = getinfo.Get_StatusAssy();
+
+            
             return View(Lista);
+
+
         }
-
-
     }
 }
