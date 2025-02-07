@@ -4,101 +4,94 @@
     Layout = "~/Views/Shared/_LayoutClean.cshtml";
 
 }
- 
-<div class="container-fluid">
 
-    <div>
-        <table class="table table-responsive">
-            <thead class="table-dark">
-                <tr>
-                    <th>Línea</th>
-                    <th>Orden de trabajo</th>
-                    <th>Marcadora</th>
-                    <th>SPI</th>
-                    <th>Agarra y pon</th>
-                    <th>AOI</th>
-                    <th>OEE</th>
-                    <th>Tiempo muerto</th>
-                    <th>Piezas OK </th>
-                    <th>Piezas en búfer</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var x in Model)
-                {
+<link rel="stylesheet" href="~/Content/Tema.css" />
+ <style>
+     .general{
+         padding-top:1rem;
+     }
+     .banners{
+         width:3rem;
+         text-align:center;
+        float:right;
+     }
+     .fondo-tabla{
+         background-color:#0066a1  !important;
+         
+     }
+
+ </style>
+<div class="container-fluid general">
+    <div><h1 class="text-center">Aqui pones tu pinche titulo</h1></div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-responsive border border-2">
+                <thead class="border">
                     <tr>
-                        <td>@x.Linea</td>
-                        <td>@x.WO</td>
-                        @if (x.Marcadora >= 3)
-                        {
-                            <td class="bg-danger">@x.Marcadora_f</td>
-                        }
-                        else
-                        {
-                            <td class="bg-success">@x.Marcadora_f</td>
-                        }
-
-                        @if (x.SPI >= 3)
-                        {
-                            <td class="bg-danger-subtle">@x.SPI_f</td>
-                        }
-                        else
-                        {
-                            <td class="bg-success-subtle">@x.SPI_f</td>
-                        }
-                        <td>@x.Pick_place</td>
-                        @if (x.AOI >= 3)
-                        {
-                            <td class="bg-danger-subtle">@x.AOI_f</td>
-                        }
-                        else
-                        {
-                            <td class="bg-success-subtle">@x.AOI_f</td>
-                        }
-                        <td>70%</td>
-                        <td>40 min</td>
-                        <td>150</td>
-                        <td>T @x.Top B @x.Bot </td>
+                        <th class="fondo-tabla text-white">Línea</th>
+                        <th class="fondo-tabla text-white">Orden de trabajo</th>
+                        <th class="fondo-tabla text-white">Marcadora</th>
+                        <th class="fondo-tabla text-white">SPI</th>
+                        <th class="fondo-tabla text-white">Pick & PLace</th>
+                        <th class="fondo-tabla text-white">AOI</th>
+                        <th class="fondo-tabla text-white">OEE</th>
+                        <th class="fondo-tabla text-white">Tiempo muerto</th>
+                        <th class="fondo-tabla text-white">Piezas OK </th>
+                        <th class="fondo-tabla text-white">Piezas en búfer</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.Linea</td>
+                            <td>@x.WO</td>
+                            @if (x.Marcadora >= 3)
+                            {
+                                <td>@x.Marcadora_f <label class="bg-danger rounded-3 banners text-white"> NOK</label></td>
+                            }
+                            else
+                            {
+                                <td>@x.Marcadora_f <label class="bg-success rounded-3 banners text-white"> OK</label></td>
+                            }
+
+                            @if (x.SPI >= 3)
+                            {
+                                <td>@x.SPI_f <label class="bg-danger rounded-3 banners text-white"> NOK</label></td>
+                            }
+                            else
+                            {
+                                <td>@x.SPI_f <label class="bg-success rounded-3 banners text-white"> OK</label></td>
+                            }
+                            <td>@x.Pick_place</td>
+                            @if (x.AOI >= 3)
+                            {
+                                <td>@x.AOI_f <label class="bg-danger rounded-3 banners text-white"> NOK</label></td>
+                            }
+                            else
+                            {
+                                <td>@x.AOI_f <label class="bg-danger rounded-3 banners text-white"> OK</label></td>
+                            }
+                            <td>70%</td>
+                            <td>40 min</td>
+                            <td>150</td>
+                            <td>T @x.Top B @x.Bot </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+       
     </div>
  
     
     <br />
 
-    <div class="container-fluid">
+   
 
         <div class="row">
+           
             <div class="col-5">
-                <table class="table table-responsive">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Línea</th>
-                            <th>Ultima Actualizacíon</th>
-                            <th>Estatus</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        @foreach (var x in ViewBag.Lista_BackEnd)
-                        {
-                            <tr>
-                                <td>@x.Linea_Assy</td>
-                                <td>@x.Assy_F</td>
-                                <td>@x.StatusAssy1</td>
-                            </tr>
-                        }
-                    </tbody>
-
-
-
-
-
-                </table>
-            </div>
-            <div class="col-5 offset-2">
                 <table class="table">
                     <thead class="table-dark">
                         <tr>
@@ -110,15 +103,16 @@
                         @foreach(var y in ViewBag.Lista_Servicios)
                         {
                            <tr>
-                               <td>@y.Alias </td >
-                               @if(y.Estatus.ToLower()=="running")
-                                {
-                                    <td class="bg-success"></td>
-                                }
-                                else
-                                {
-                                    <td class="bg-danger"></td>
-                                }
+                               <td>@y.Alias </td>
+                               @if (y.Estatus.ToLower() == "running")
+                               {
+
+                                   <td> <label class="bg-success rounded-3 banners text-white"> OK</label></td>
+                               }
+                               else
+                               {
+                                   <td> <label class="bg-danger rounded-3 banners text-white"> NOK</label></td>
+                               }
                            </tr>
                          }
                         
@@ -130,14 +124,6 @@
             </div>
         </div>
        
-
-    </div>
-    <br />
-
-    
-
-    
-
 
 </div>
 
