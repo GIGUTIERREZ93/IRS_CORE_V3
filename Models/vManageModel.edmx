@@ -95,11 +95,35 @@
           <Property Name="TimeDate" Type="datetime" />
           <Property Name="Sent" Type="bit" />
         </EntityType>
+        <EntityType Name="XOEE_Details_Per_Hour">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TimeDate" Type="date" />
+          <Property Name="Hora" Type="int" />
+          <Property Name="Total" Type="int" />
+          <Property Name="TPz" Type="int" />
+          <Property Name="PzOk" Type="int" />
+          <Property Name="PzNok" Type="int" />
+          <Property Name="DownTime" Type="int" />
+          <Property Name="FTQ" Type="float" />
+          <Property Name="Perf" Type="float" />
+          <Property Name="Avail" Type="float" />
+          <Property Name="OEE" Type="float" />
+          <Property Name="TurnoID" Type="int" />
+          <Property Name="McID" Type="int" />
+          <Property Name="CT" Type="float" />
+          <Property Name="Programa" Type="nvarchar" MaxLength="250" />
+          <Property Name="WorkOrder" Type="nvarchar" MaxLength="50" />
+          <Property Name="Change" Type="bit" />
+        </EntityType>
         <EntityContainer Name="vManageModelStoreContainer">
           <EntitySet Name="ActPCBList" EntityType="Self.ActPCBList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XOEE_Detail_History" EntityType="Self.XOEE_Detail_History" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XOEE_Details_Per_Hour" EntityType="Self.XOEE_Details_Per_Hour" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -150,6 +174,7 @@
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" />
           <EntitySet Name="ActPCBList" EntityType="vManageModel.ActPCBList" />
           <EntitySet Name="XOEE_Detail_History" EntityType="vManageModel.XOEE_Detail_History" />
+          <EntitySet Name="XOEE_Details_Per_Hour" EntityType="vManageModel.XOEE_Details_Per_Hour" />
         </EntityContainer>
         <EntityType Name="ActPCBList">
           <Key>
@@ -200,6 +225,29 @@
           <Property Name="TurnoID" Type="Int32" />
           <Property Name="TimeDate" Type="DateTime" Precision="3" />
           <Property Name="Sent" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="XOEE_Details_Per_Hour">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TimeDate" Type="DateTime" Precision="0" />
+          <Property Name="Hora" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="TPz" Type="Int32" />
+          <Property Name="PzOk" Type="Int32" />
+          <Property Name="PzNok" Type="Int32" />
+          <Property Name="DownTime" Type="Int32" />
+          <Property Name="FTQ" Type="Double" />
+          <Property Name="Perf" Type="Double" />
+          <Property Name="Avail" Type="Double" />
+          <Property Name="OEE" Type="Double" />
+          <Property Name="TurnoID" Type="Int32" />
+          <Property Name="McID" Type="Int32" />
+          <Property Name="CT" Type="Double" />
+          <Property Name="Programa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="WorkOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Change" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -297,6 +345,30 @@
                 <ScalarProperty Name="PartsNOK" ColumnName="PartsNOK" />
                 <ScalarProperty Name="PartsOK" ColumnName="PartsOK" />
                 <ScalarProperty Name="Recordid" ColumnName="Recordid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XOEE_Details_Per_Hour">
+            <EntityTypeMapping TypeName="vManageModel.XOEE_Details_Per_Hour">
+              <MappingFragment StoreEntitySet="XOEE_Details_Per_Hour">
+                <ScalarProperty Name="Change" ColumnName="Change" />
+                <ScalarProperty Name="WorkOrder" ColumnName="WorkOrder" />
+                <ScalarProperty Name="Programa" ColumnName="Programa" />
+                <ScalarProperty Name="CT" ColumnName="CT" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="TurnoID" ColumnName="TurnoID" />
+                <ScalarProperty Name="OEE" ColumnName="OEE" />
+                <ScalarProperty Name="Avail" ColumnName="Avail" />
+                <ScalarProperty Name="Perf" ColumnName="Perf" />
+                <ScalarProperty Name="FTQ" ColumnName="FTQ" />
+                <ScalarProperty Name="DownTime" ColumnName="DownTime" />
+                <ScalarProperty Name="PzNok" ColumnName="PzNok" />
+                <ScalarProperty Name="PzOk" ColumnName="PzOk" />
+                <ScalarProperty Name="TPz" ColumnName="TPz" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Hora" ColumnName="Hora" />
+                <ScalarProperty Name="TimeDate" ColumnName="TimeDate" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

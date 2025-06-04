@@ -163,21 +163,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CBSModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\CBS_AguModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CBS_AguModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CBS_AguModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CBS_AguModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CBS_AguModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\COVID_Acceso.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -319,9 +304,6 @@
     <Compile Include="Models\UserAccount.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Usuarios.cs">
-      <DependentUpon>CBS_AguModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Vendor.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -352,6 +334,9 @@
       <DependentUpon>vManageModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\XDeclarationProgram.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\XOEE_Details_Per_Hour.cs">
       <DependentUpon>vManageModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\XOEE_Detail_History.cs">
@@ -436,16 +421,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CBSModel.edmx</DependentUpon>
       <LastGenOutput>CBSModel.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\CBS_AguModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
-      <LastGenOutput>CBS_AguModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\CBS_AguModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
-      <LastGenOutput>CBS_AguModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ITAplicationsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -537,13 +512,6 @@
     </EntityDeploy>
     <Content Include="Models\Model_RAD.edmx.diagram">
       <DependentUpon>Model_RAD.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\CBS_AguModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CBS_AguModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CBS_AguModel.edmx.diagram">
-      <DependentUpon>CBS_AguModel.edmx</DependentUpon>
     </Content>
     <EntityDeploy Include="Models\vManageModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

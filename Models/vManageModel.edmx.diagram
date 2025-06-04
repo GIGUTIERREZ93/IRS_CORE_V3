@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="vManageModel.XDeclarationProgram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="vManageModel.ActPCBList" Width="1.5" PointX="5.375" PointY="0.75" />
         <EntityTypeShape EntityType="vManageModel.XOEE_Detail_History" Width="1.5" PointX="7.25" PointY="0.5" />
+        <EntityTypeShape EntityType="vManageModel.XOEE_Details_Per_Hour" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

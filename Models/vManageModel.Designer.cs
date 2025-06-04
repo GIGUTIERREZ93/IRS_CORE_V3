@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\M09791A\Documents\Ivan_Gutierrez\IRS_PIVA\Models\vManageModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\f68972c\Source\Repos\Yisusdevelop\IRS\Models\vManageModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

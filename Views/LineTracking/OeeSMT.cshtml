@@ -25,23 +25,9 @@
 <br />
 
 <div class="container-fluid general">
-    <h1 class="text-center">Espacio para Filtrar linea y fechas </h1>
+    <h1 class="text-center">Espacio para Filtrar linea y fechas @ViewBag.turno</h1>
     <div class="row">
-        <div class="col-12">
-            <table class="table table-responsive border border-2">
-                <thead class="border">
-                    <tr>
-                        <th class="fondo-tabla text-white">Turno</th>
-                        <th class="fondo-tabla text-white">Piezas OK</th>
-                        <th class="fondo-tabla text-white">Tiempo Muerto (min)</th>
-                        <th class="fondo-tabla text-white">Tiempo Ciclo</th>
-                        <th class="fondo-tabla text-white">OEE</th>
-                        <th class="fondo-tabla text-white">OEE Total</th>
-                    </tr>
-                </thead>
-            </table>
-    </div>
-        <br />
+       
         <div class="row">
             <div class="col-4">
                 <table class="table table-responsive border border-2">
@@ -56,6 +42,45 @@
                             <th class="fondo-tabla text-white">Programa</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach(var a in ViewBag.turno1)
+                         {
+                            <tr>
+                                <td>@a.Hora</td>
+                                <td>@a.TPz</td>
+                                @if (a.PzOk >= a.TPz)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+
+                                @if (a.DownTime <= 20)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+
+                                @if (a.OEE >= 80)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.OEE</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white"> @a.OEE</label></td>
+                                }
+
+
+                              <td>@a.Programa</td>
+                            </tr>
+                         }
+
+                    </tbody>
                 </table>
             </div>
             <div class="col-4">
@@ -71,6 +96,45 @@
                             <th class="fondo-tabla text-white">Programa</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach (var a in ViewBag.turno2)
+                        {
+                            <tr>
+                                <td>@a.Hora</td>
+                                <td>@a.TPz</td>
+                                @if (a.PzOk >= a.TPz)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+
+                                @if (a.DownTime <= 20)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+
+                                @if (a.OEE >= 80)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.OEE</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white"> @a.OEE</label></td>
+                                }
+
+
+                                <td>@a.Programa</td>
+                            </tr>
+                        }
+
+                    </tbody>
                 </table>
             </div>
             <div class="col-4">
@@ -86,9 +150,48 @@
                             <th class="fondo-tabla text-white">Programa</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        @foreach (var a in ViewBag.turno3)
+                        {
+                            <tr>
+                                <td>@a.Hora</td>
+                                <td>@a.TPz</td>
+                                @if (a.PzOk >= a.TPz)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.PzOk </label></td>
+                                }
+
+                                @if (a.DownTime <= 20)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white">@a.DownTime</label></td>
+                                }
+
+                                @if (a.OEE >= 80)
+                                {
+                                    <td><label class="bg-success rounded-3 banners text-white">@a.OEE</label></td>
+                                }
+                                else
+                                {
+                                    <td><label class="bg-danger rounded-3 banners text-white"> @a.OEE</label></td>
+                                }
+
+
+                                <td>@a.Programa</td>
+                            </tr>
+                        }
+
+                    </tbody>
                 </table>
             </div>
         </div>
 
+    </div>
 </div>
-
