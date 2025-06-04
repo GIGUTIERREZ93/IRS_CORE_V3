@@ -29,6 +29,7 @@ namespace IRS.Services.LineTracking
                 var Datos_linea=db.Database.SqlQuery<FileScannerViewModel>("SELECT LineID, ISnull(Marker,'2024-01-01')as Marker,ISnull(SPI,'2024-01-01')as [SPI],ISnull(AOI,'2024-01-01')as [AOI],ISnull([AssyFiles],'2024-01-01')as [AssyFiles] ,[Area],[Active],'0' as [IDSPI]  FROM [CBS].[dbo].[FileScannerMonitor]  where LineID='" + line.LineID+"'").FirstOrDefault();
                 if (Datos_linea != null)
                 {
+                    //var order = 
                     var D_marcadora = (current.Subtract(Datos_linea.Marker)).Minutes;
                     var D_spi = (current.Subtract(Datos_linea.SPI)).Minutes;
                     var D_aoi = (current.Subtract(Datos_linea.AOI)).Minutes;
@@ -44,7 +45,7 @@ namespace IRS.Services.LineTracking
 
 
                     Status.Linea = line.LineName + " (" + line.LineID + ")";
-                    Status.WO = "test";
+                    Status.WO = "hola";
                     Status.Marcadora = D_marcadora;
                     Status.SPI = D_spi;
                     Status.AOI = D_aoi;
@@ -63,7 +64,7 @@ namespace IRS.Services.LineTracking
             return Lista;
         
         }
-        public List<BackEnd_StatusViewModel> Get_StatusAssy()
+        /*public List<BackEnd_StatusViewModel> Get_StatusAssy()
         {
             List<BackEnd_StatusViewModel> Lista_BackEnd = new List<BackEnd_StatusViewModel>();
             BackEnd_StatusViewModel StatusAssy;
@@ -89,7 +90,7 @@ namespace IRS.Services.LineTracking
             }
 
             return Lista_BackEnd; 
-        }
+        }*/
         
 
         public List<Monitoring_Services> Get_Services_Status()

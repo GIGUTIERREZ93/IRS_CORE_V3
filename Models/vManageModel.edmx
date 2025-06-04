@@ -59,10 +59,47 @@
           <Property Name="AutoDate" Type="smalldatetime" />
           <Property Name="Active" Type="bit" />
         </EntityType>
+        <EntityType Name="XOEE_Detail_History">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Name="Recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PartsOK" Type="int" />
+          <Property Name="PartsNOK" Type="int" />
+          <Property Name="DownTime" Type="int" />
+          <Property Name="UpTime" Type="int" />
+          <Property Name="ProgDowntime" Type="int" />
+          <Property Name="CycleTime" Type="float" />
+          <Property Name="PzsHr" Type="int" />
+          <Property Name="Panel" Type="int" />
+          <Property Name="NIP" Type="nvarchar" MaxLength="25" />
+          <Property Name="BTSID" Type="int" />
+          <Property Name="McID" Type="int" />
+          <Property Name="ProdLine" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkOrder" Type="nvarchar" MaxLength="50" />
+          <Property Name="OEE" Type="float" />
+          <Property Name="FTQ" Type="float" />
+          <Property Name="Availability" Type="float" />
+          <Property Name="Performance" Type="float" />
+          <Property Name="Average" Type="float" />
+          <Property Name="Program1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Program2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Program3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ref1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ref2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ref3" Type="nvarchar" MaxLength="50" />
+          <Property Name="HR1" Type="int" />
+          <Property Name="HR2" Type="int" />
+          <Property Name="HR3" Type="int" />
+          <Property Name="TurnoID" Type="int" />
+          <Property Name="TimeDate" Type="datetime" />
+          <Property Name="Sent" Type="bit" />
+        </EntityType>
         <EntityContainer Name="vManageModelStoreContainer">
           <EntitySet Name="ActPCBList" EntityType="Self.ActPCBList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XOEE_Detail_History" EntityType="Self.XOEE_Detail_History" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -112,6 +149,7 @@
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" />
           <EntitySet Name="ActPCBList" EntityType="vManageModel.ActPCBList" />
+          <EntitySet Name="XOEE_Detail_History" EntityType="vManageModel.XOEE_Detail_History" />
         </EntityContainer>
         <EntityType Name="ActPCBList">
           <Key>
@@ -126,6 +164,42 @@
           <Property Name="Original" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="Validated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="ItemId" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="XOEE_Detail_History">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Name="Recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PartsOK" Type="Int32" />
+          <Property Name="PartsNOK" Type="Int32" />
+          <Property Name="DownTime" Type="Int32" />
+          <Property Name="UpTime" Type="Int32" />
+          <Property Name="ProgDowntime" Type="Int32" />
+          <Property Name="CycleTime" Type="Double" />
+          <Property Name="PzsHr" Type="Int32" />
+          <Property Name="Panel" Type="Int32" />
+          <Property Name="NIP" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="BTSID" Type="Int32" />
+          <Property Name="McID" Type="Int32" />
+          <Property Name="ProdLine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OEE" Type="Double" />
+          <Property Name="FTQ" Type="Double" />
+          <Property Name="Availability" Type="Double" />
+          <Property Name="Performance" Type="Double" />
+          <Property Name="Average" Type="Double" />
+          <Property Name="Program1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Program2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Program3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ref1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ref2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ref3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HR1" Type="Int32" />
+          <Property Name="HR2" Type="Int32" />
+          <Property Name="HR3" Type="Int32" />
+          <Property Name="TurnoID" Type="Int32" />
+          <Property Name="TimeDate" Type="DateTime" Precision="3" />
+          <Property Name="Sent" Type="Boolean" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -186,6 +260,43 @@
                 <ScalarProperty Name="Lane" ColumnName="Lane" />
                 <ScalarProperty Name="McID" ColumnName="McID" />
                 <ScalarProperty Name="RawBarcode" ColumnName="RawBarcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XOEE_Detail_History">
+            <EntityTypeMapping TypeName="vManageModel.XOEE_Detail_History">
+              <MappingFragment StoreEntitySet="XOEE_Detail_History">
+                <ScalarProperty Name="Sent" ColumnName="Sent" />
+                <ScalarProperty Name="TimeDate" ColumnName="TimeDate" />
+                <ScalarProperty Name="TurnoID" ColumnName="TurnoID" />
+                <ScalarProperty Name="HR3" ColumnName="HR3" />
+                <ScalarProperty Name="HR2" ColumnName="HR2" />
+                <ScalarProperty Name="HR1" ColumnName="HR1" />
+                <ScalarProperty Name="Ref3" ColumnName="Ref3" />
+                <ScalarProperty Name="Ref2" ColumnName="Ref2" />
+                <ScalarProperty Name="Ref1" ColumnName="Ref1" />
+                <ScalarProperty Name="Program3" ColumnName="Program3" />
+                <ScalarProperty Name="Program2" ColumnName="Program2" />
+                <ScalarProperty Name="Program1" ColumnName="Program1" />
+                <ScalarProperty Name="Average" ColumnName="Average" />
+                <ScalarProperty Name="Performance" ColumnName="Performance" />
+                <ScalarProperty Name="Availability" ColumnName="Availability" />
+                <ScalarProperty Name="FTQ" ColumnName="FTQ" />
+                <ScalarProperty Name="OEE" ColumnName="OEE" />
+                <ScalarProperty Name="WorkOrder" ColumnName="WorkOrder" />
+                <ScalarProperty Name="ProdLine" ColumnName="ProdLine" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="BTSID" ColumnName="BTSID" />
+                <ScalarProperty Name="NIP" ColumnName="NIP" />
+                <ScalarProperty Name="Panel" ColumnName="Panel" />
+                <ScalarProperty Name="PzsHr" ColumnName="PzsHr" />
+                <ScalarProperty Name="CycleTime" ColumnName="CycleTime" />
+                <ScalarProperty Name="ProgDowntime" ColumnName="ProgDowntime" />
+                <ScalarProperty Name="UpTime" ColumnName="UpTime" />
+                <ScalarProperty Name="DownTime" ColumnName="DownTime" />
+                <ScalarProperty Name="PartsNOK" ColumnName="PartsNOK" />
+                <ScalarProperty Name="PartsOK" ColumnName="PartsOK" />
+                <ScalarProperty Name="Recordid" ColumnName="Recordid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "OeeSMT";
+    Layout = "~/Views/Shared/_LayoutClean.cshtml";
+}
+<link rel="stylesheet" href="~/Content/Tema.css" />
+<style>
+    .general {
+        padding-top: 1rem;
+    }
+
+    .banners {
+        width: 3rem;
+        text-align: center;
+        float: right;
+    }
+
+    .fondo-tabla {
+        background-color: #0066a1 !important;
+    }
+</style>
+<div class="container-fluid">
+    <h1 class="text-center">Detalles de Produccion</h1>
+</div>
+
+<br />
+
+<div class="container-fluid general">
+    <h1 class="text-center">Espacio para Filtrar linea y fechas </h1>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-responsive border border-2">
+                <thead class="border">
+                    <tr>
+                        <th class="fondo-tabla text-white">Turno</th>
+                        <th class="fondo-tabla text-white">Piezas OK</th>
+                        <th class="fondo-tabla text-white">Tiempo Muerto (min)</th>
+                        <th class="fondo-tabla text-white">Tiempo Ciclo</th>
+                        <th class="fondo-tabla text-white">OEE</th>
+                        <th class="fondo-tabla text-white">OEE Total</th>
+                    </tr>
+                </thead>
+            </table>
+    </div>
+        <br />
+        <div class="row">
+            <div class="col-4">
+                <table class="table table-responsive border border-2">
+                    <thead class="table-dark">
+                        PRIMER TURNO
+                        <tr>
+                            <th class="fondo-tabla text-white">Hora</th>
+                            <th class="fondo-tabla text-white">Objetivo</th>
+                            <th class="fondo-tabla text-white">Actual</th>
+                            <th class="fondo-tabla text-white">Tiempo Muerto</th>
+                            <th class="fondo-tabla text-white">OEE</th>
+                            <th class="fondo-tabla text-white">Programa</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-4">
+                <table class="table table-responsive border border-2">
+                    <thead class="table-dark">
+                        SEGUNDO TURNO
+                        <tr>
+                            <th class="fondo-tabla text-white">Hora</th>
+                            <th class="fondo-tabla text-white">Objetivo</th>
+                            <th class="fondo-tabla text-white">Actual</th>
+                            <th class="fondo-tabla text-white">Tiempo Muerto</th>
+                            <th class="fondo-tabla text-white">OEE</th>
+                            <th class="fondo-tabla text-white">Programa</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="col-4">
+                <table class="table table-responsive border border-2">
+                    <thead class="table-dark">
+                        TERCER TURNO
+                        <tr>
+                            <th class="fondo-tabla text-white">Hora</th>
+                            <th class="fondo-tabla text-white">Objetivo</th>
+                            <th class="fondo-tabla text-white">Actual</th>
+                            <th class="fondo-tabla text-white">Tiempo Muerto</th>
+                            <th class="fondo-tabla text-white">OEE</th>
+                            <th class="fondo-tabla text-white">Programa</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+
+</div>
+

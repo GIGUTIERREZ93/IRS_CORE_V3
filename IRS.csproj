@@ -354,6 +354,9 @@
     <Compile Include="Models\XDeclarationProgram.cs">
       <DependentUpon>vManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\XOEE_Detail_History.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\X_Mail.cs">
       <DependentUpon>vManageModel.tt</DependentUpon>
     </Compile>
@@ -696,6 +699,7 @@
     <Content Include="Views\Assets\MasterPhone.cshtml" />
     <Content Include="Views\LineTracking\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutClean.cshtml" />
+    <Content Include="Views\LineTracking\OeeSMT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,14 +17,17 @@ namespace IRS.Controllers
             //ViewBag.Lista = getinfo.Get_Status();
             var Lista= getinfo.Get_Status();
 
-            ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
+            //ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
             //var Lista_BackEnd = getinfo.Get_StatusAssy();
 
             ViewBag.Lista_Servicios=getinfo.Get_Services_Status();
             
             return View(Lista);
+        }
 
-
+        public ActionResult OeeSMT()
+        {
+            return View();
         }
     }
 }
