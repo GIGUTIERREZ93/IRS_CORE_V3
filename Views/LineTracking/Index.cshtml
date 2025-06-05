@@ -1,4 +1,4 @@
-﻿
+﻿@model List<IRS.Models.ViewModels.LineTracking.Smt_StatusViewModel>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutClean.cshtml";
@@ -43,9 +43,13 @@
                 <tbody>
                     @foreach (var x in Model)
                     {
+                        var mcid = x.Linea.Contains("(") ?
+                            x.Linea.Substring(x.Linea.IndexOf("(") + 1 ):
+                            x.Linea;
+                        mcid = mcid.Replace(")", string.Empty);
                         <tr>
 
-                            <td>@Html.ActionLink("" + x.Linea.ToString, "OeeSMT", "LineTracking", new { mcid = x.LineID }, null)</td>
+                            <td>@Html.ActionLink("" + x.Linea, "OeeSMT", "LineTracking", new { mcid = mcid }, null)</td>
                             <td>@x.WO</td>
                             @if (x.Marcadora >= 3)
                             {

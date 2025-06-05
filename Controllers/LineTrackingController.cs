@@ -26,7 +26,7 @@ namespace IRS.Controllers
             return View(Lista);
         }
 
-        public ActionResult OeeSMT(string mcid/*, DateTime date*/)
+        public ActionResult OeeSMT(int? mcid/*, DateTime date*/)
         {
             /* CBSEntities db = new CBSEntities();
              var turno=db.Database.SqlQuery<int>("exec TurnoA").FirstOrDefault();
@@ -36,9 +36,9 @@ namespace IRS.Controllers
             var day = DateTime.Now;
             var dia = day.ToString("yyyy-MM-dd");
             var dia3 = day.AddDays(-1).ToString("yyyy-MM-dd");
-            ViewBag.turno1 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == 9004 && x.TurnoID==1 && x.TimeDate.ToString()==dia ).ToList();
-            ViewBag.turno2 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == 9004 && x.TurnoID == 2 && x.TimeDate.ToString() == dia).ToList();
-            ViewBag.turno3 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == 9004 && x.TurnoID == 3 && x.TimeDate.ToString() == dia3).ToList();
+            ViewBag.turno1 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == mcid && x.TurnoID==1 && x.TimeDate.ToString()==dia ).ToList();
+            ViewBag.turno2 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == mcid && x.TurnoID == 2 && x.TimeDate.ToString() == dia).ToList();
+            ViewBag.turno3 = db2.XOEE_Details_Per_Hour.Where(x => x.McID == mcid && x.TurnoID == 3 && x.TimeDate.ToString() == dia3).ToList();
 
 
             return View();
