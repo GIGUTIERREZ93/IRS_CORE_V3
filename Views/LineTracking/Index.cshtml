@@ -44,7 +44,8 @@
                     @foreach (var x in Model)
                     {
                         <tr>
-                            <td>@x.Linea</td>
+
+                            <td>@Html.ActionLink("" + x.Linea.ToString, "OeeSMT", "LineTracking", new { mcid = x.LineID }, null)</td>
                             <td>@x.WO</td>
                             @if (x.Marcadora >= 3)
                             {

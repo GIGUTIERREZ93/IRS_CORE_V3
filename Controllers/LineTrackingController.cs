@@ -26,7 +26,7 @@ namespace IRS.Controllers
             return View(Lista);
         }
 
-        public ActionResult OeeSMT(string mcid, DateTime date)
+        public ActionResult OeeSMT(string mcid/*, DateTime date*/)
         {
             /* CBSEntities db = new CBSEntities();
              var turno=db.Database.SqlQuery<int>("exec TurnoA").FirstOrDefault();
