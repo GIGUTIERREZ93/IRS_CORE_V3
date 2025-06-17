@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
+using System.Web.WebPages;
 using IRS.Models;
 using IRS.Models.ViewModels.LineTracking;
 
@@ -37,15 +38,22 @@ namespace IRS.Services.LineTracking
                     var bot = db2.ActPCBList.Where(d => d.McID == line.LineID && d.Lane == 2).Count();
                     var serial = db2.ActPCBList.Where((d) => d.McID == line.LineID).OrderByDescending(d => d.Timestamp).FirstOrDefault();
                     var serial_f = "";
+                    var orden = "ORDEN DESCONOCIDA";
                     if (serial != null)
                     {
                         serial_f = serial.RawBarcode.ToString() + " " + serial.Timestamp.ToString();
+                        orden = db2.Database.SqlQuery<string>("select ISNull(orderNo,'ORDEN DESCONOCIDA') as orderNo from PCBTrace where PCBId=@p0 and orderNo!='??' ", serial_f).FirstOrDefault();
+                        
+                        if ((orden.IsEmpty()) || (orden.Contains("")))
+                        {
+                            orden = "ORDEN DESCONOCIDA";
+                        }
                     }
 
 
 
                     Status.Linea = line.LineName + " (" + line.LineID + ")";
-                    Status.WO = "hola";
+                    Status.WO = orden;
                     Status.Marcadora = D_marcadora;
                     Status.SPI = D_spi;
                     Status.AOI = D_aoi;
