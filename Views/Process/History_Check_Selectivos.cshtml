@@ -1,11 +1,12 @@
-﻿@{
-    ViewBag.Title = "History_Check";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿
+@{
+    ViewBag.Title = "History_Check_Selectivos";
 }
-<h1 class="text-primary fw-bold">Detalle History Check *Lineas de Ensamble*</h1>
+
+<h1 class="text-primary fw-bold">Detalle History Check *Estaciones de Selectivos*</h1>
 <hr />
 <div class="container">
-    <form action="History_Check" method="post">
+    <form action="History_Check_Selectivos" method="post">
         <input type="text" name="serie" value="" />
         <input type="submit" value="Buscar">
     </form>
@@ -20,7 +21,6 @@
                         <th>Mensaje</th>
                         <th>Linea</th>
                         <th>Estación</th>
-                        <th>Número de parte</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,11 +33,11 @@
                             <td>@item.Message</td>
                             <td>@item.LineID</td>
                             <td>@item.StationID</td>
-                            <td>@item.PN</td>
                         </tr>
                     }
                 </tbody>
             </table>
-        </div>  
+        </div>
     </div>
- </div>      
+</div>
+

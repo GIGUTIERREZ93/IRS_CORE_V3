@@ -318,6 +318,7 @@
     <Compile Include="Models\ViewModels\Saludo.cs" />
     <Compile Include="Models\ViewModels\ShiftlogMoldel.cs" />
     <Compile Include="Models\ViewModels\Usuario_confirmar.cs" />
+    <Compile Include="Models\ViewModels\XHistoryCheck.cs" />
     <Compile Include="Models\vManageModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -668,6 +669,7 @@
     <Content Include="Views\LineTracking\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutClean.cshtml" />
     <Content Include="Views\LineTracking\OeeSMT.cshtml" />
+    <Content Include="Views\Process\History_Check_Selectivos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,7 +11,7 @@ namespace IRS.Services
     {
         readonly vManageEntities db = new vManageEntities();
         readonly RADServerEntities1 db_rad = new RADServerEntities1();
-
+        
         //DECLARACION
         public List<XDeclarationProgram> xDeclaration_Programs()
         {
@@ -78,7 +78,8 @@ namespace IRS.Services
 
         public List<X_Mail> LogErrores() 
         {
-            var model = db.X_Mail.Where(x =>x.Maquina =="AUDI Q5").Take(100).OrderByDescending(y => y.TimeDate).ToList();
+            var model = db.X_Mail.Where(x =>x.Planta =="AGUAS").Take(100).OrderByDescending(y => y.TimeDate).ToList();
+            
             return (model);
         }
 

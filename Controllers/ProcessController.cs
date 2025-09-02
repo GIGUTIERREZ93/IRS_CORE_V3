@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -42,7 +43,41 @@ namespace IRS.Controllers
             var model = oService.LogErrores();
             return View(model); 
         }
-        public ActionResult History_Check() { return View(); }
+        public ActionResult History_Check(string serie="1") 
+        {
+            string query;
+            if (serie == "1")
+            {
+                query = "SELECT A.SerialNumber, Convert(int,A.Sequence) as Sequence , A.TimeDone, A.Message, A.LineID, A.StationID, B.PN FROM (SELECT top (1000)ID,SerialNumber,Message, LineID, StationID, Sequence, TimeDone, Result, AliasSerialNumber FROM dbo.XHistoryCheck WHERE (SerialNumber<>'') ORDER BY TimeDone DESC) AS A INNER JOIN dbo.XCuadranteDisplay2 AS B ON A.SerialNumber = B.SN_PCB_Main ORDER BY TimeDone DESC";
+            }
+            else
+            {
+
+                query = "SELECT A.SerialNumber, Convert(int,A.Sequence) as Sequence , A.TimeDone, A.Message, A.LineID, A.StationID, B.PN FROM (SELECT top (1000)ID,SerialNumber,Message, LineID, StationID, Sequence, TimeDone, Result, AliasSerialNumber FROM dbo.XHistoryCheck WHERE (SerialNumber='" + serie+"') ORDER BY TimeDone DESC) AS A INNER JOIN dbo.XCuadranteDisplay2 AS B ON A.SerialNumber = B.SN_PCB_Main";
+            }
+
+            var result= db_vmanage.Database.SqlQuery<XHistoryCheck>(query).ToList();
+
+            return View(result); 
+        }
+        public ActionResult History_Check_Selectivos(string serie = "1")
+        {
+            string query;
+            if (serie == "1")
+            {
+                query = "SELECT A.SerialNumber, Convert(int,A.Sequence) as Sequence , A.TimeDone, A.Message, A.LineID, A.StationID FROM (SELECT top (50)ID,SerialNumber,Message, LineID, StationID, Sequence, TimeDone, Result, AliasSerialNumber FROM dbo.XHistoryCheck WHERE (SerialNumber<>'' AND (StationID='XRAY' OR StationID='ROUTER' OR StationID='OBP')) ORDER BY TimeDone DESC) AS A  ORDER BY TimeDone DESC";
+            }
+            else
+            {
+
+                query = "SELECT A.SerialNumber, Convert(int,A.Sequence) as Sequence , A.TimeDone, A.Message, A.LineID, A.StationID FROM (SELECT top (100)ID,SerialNumber,Message, LineID, StationID, Sequence, TimeDone, Result, AliasSerialNumber FROM dbo.XHistoryCheck WHERE (SerialNumber='" + serie + "' AND (StationID='XRAY' OR StationID='ROUTER' OR StationID='OBP')) ORDER BY TimeDone DESC) AS A";
+            }
+
+            var result = db_vmanage.Database.SqlQuery<XHistoryCheck>(query).ToList();
+
+            return View(result);
+        }
+
         public ActionResult Trace_Desactivation() { return View(); }
         public ActionResult Valor_Declaration() { return View(); }
 
@@ -85,6 +120,5 @@ namespace IRS.Controllers
             oService.Eliminar(dato);
             return RedirectToAction("Declaration_Programs");
         }
-
     }
 }
