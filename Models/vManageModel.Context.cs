@@ -30,5 +30,6 @@ namespace IRS.Models
         public virtual DbSet<ActPCBList> ActPCBList { get; set; }
         public virtual DbSet<XOEE_Detail_History> XOEE_Detail_History { get; set; }
         public virtual DbSet<XOEE_Details_Per_Hour> XOEE_Details_Per_Hour { get; set; }
+        public virtual DbSet<CompList> CompList { get; set; }
     }
 }

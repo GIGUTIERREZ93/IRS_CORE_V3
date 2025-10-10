@@ -10,17 +10,16 @@
 <form class="row g-3 gx-5 gy-5" method="post" action="~/Process/Declation_Program_Insertar">
     <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
     <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="McID">ID SMT:</label>
-        <select class="form-control form-select" name="McID">
-            <option disabled selected value="0">Seleccione....</option>
-            @foreach(var x in ViewBag.McID)
+        <label class="fs-3 fw-bold" for="Line">Linea de SMT:</label>
+        <select class="form-control form-select" name="Line" required>
+            <option disabled selected value="0">Sí no visualiza la linea, contacte a IT</option>
+            @foreach (var l in ViewBag.Lineas)
             {
-                <option value="@x">MCID-> @x </option>
+                <option value="@l">Line -> @l </option>
             }
-
-
+            <option disabled selected value="0">Seleccione....</option>
         </select>
-    </div>
+    </div>    
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="Program">Nombre del Programa:</label>
         <input type="text" class="form-control" name="Program" placeholder="Ejemplo >> 179_AB_C1_BOT" />
@@ -46,17 +45,16 @@
         <input type="text" class="form-control" name="PartNumber" />
     </div>
     <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Line">Linea de SMT:</label>
-        <select class="form-control form-select" name="Line" required>
+        <label class="fs-3 fw-bold" for="McID">ID SMT:</label>
+        <select class="form-control form-select" name="McID">
             <option disabled selected value="0">Seleccione....</option>
-            @foreach (var l in ViewBag.Lineas)
+            @foreach (var x in ViewBag.McID)
             {
-                <option value="@l">Line -> @l </option>
+                <option class="order-first" value="@x">MCID-> @x  </option>
             }
-
-
+            <
         </select>
-    </div>
+    </div>   
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="CycleTime">Tiempo Ciclo (minutos):</label>
         <input type="text" class="form-control" name="CycleTime" placeholder="Ejemplo >> 0.251" />

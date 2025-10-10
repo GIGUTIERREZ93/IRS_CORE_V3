@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "ComponentTrace";
+}
+
+<h1 class="text-primary fw-bold">Registro de Componentes</h1>
+<hr />
+
+    <tr class="table-primary">
+        <td colspan="11">
+            <input id="searchTerm" onkeyup="doSearch()" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+        </td>
+    </tr>
+    <br />
+    <table class="table table-striped table-bordered" id="tabla_desplegada">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">CompID</th>
+                <th scope="col">FeederID</th>
+                <th scope="col">CompName</th>
+                <th scope="col">OpenTimeStamp</th>
+                <th scope="col">NumDryLeft</th>
+                <th scope="col">McID</th>
+                <th scope="col">Station</th>
+                <th scope="col">Slot</th>
+                <th scope="col">SubSlot</th>
+                <th scope="col">Used</th>
+                <th scope="col">Errors</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                <th scope="col">CompPrPCB</th>
+                <th scope="col">LastSeenOnMachine</th>
+                <th scope="col">DryTimeStamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.CompID</td>
+                    <td>@x.FeederID</td>
+                    <td>@x.CompName</td>
+                    <td>@x.OpenTimeStamp</td>
+                    <td>@x.NumDryLeft</td>
+                    <td>@x.McID</td>
+                    <td>@x.Station</td>
+                    <td>@x.Slot</td>
+                    <td>@x.SubSlot</td>
+                    <td>@x.Used</td>
+                    <td>@x.Errors</td>
+                    <td>@x.Amount</td>
+                    <td>@x.Status</td>
+                    <td>@x.CompPrPCB</td>
+                    <td>@x.LastSeenOnMachine</td>
+                    <td>@x.DryTimeStamp</td>
+
+                </tr>
+            }
+        </tbody>
+        <tr class="noSearch hide fw-bold">
+            <td colspan="11"></td>
+        </tr>
+    </table>
+<script src="~/Scripts/Buscar.js"></script>
+

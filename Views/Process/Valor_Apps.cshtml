@@ -6,17 +6,17 @@
   <div class="row ">
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-info">
-            <h5 class="card-header text-white bg-info">Declaration Errors</h5>
+            <h5 class="card-header text-white bg-danger">OEE Reporting</h5>
             <div class="card-body">
-                <h5 class="card-title">Detalle de Errores de Declaraion</h5>
-                <p class="card-text">Página que muestra los errores de Declaracion para SMTs</p>
-                <a href=@Url.Action("Declaration_Errors" , "Process") class="btn btn-warning">Ir</a>
+                <h5 class="card-title">Detalle de OEE Reportado</h5>
+                <p class="card-text">Página que muestra el detalle del reporte OEE</p>
+                <a href=@Url.Action("OeeSMT" , "LineTracking") class="btn btn-warning">Ir</a>
             </div>
         </div>
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-info">
-            <h5 class="card-header text-white bg-info">Downtime Entry</h5>
+            <h5 class="card-header text-white bg-warning">Downtime Entry</h5>
             <div class="card-body">
                 <h5 class="card-title">Detalle de Tiempo muerto</h5>
                 <p class="card-text">Página que muestra el detalle del tiempo muerto en SMT</p>
@@ -26,11 +26,11 @@
     </div>
     <div class="col-md-4 col-sm-4 col-lg-4">
         <div class="card border-info">
-            <h5 class="card-header text-white bg-info">Error Codes</h5>
+            <h5 class="card-header text-white bg-danger">Components Trace</h5>
             <div class="card-body">
-                <h5 class="card-title">Detalle de Código de Errores</h5>
-                <p class="card-text">Página que muestra los códigos de error en lineas de producción</p>
-                <a href=@Url.Action("Error_Codes" , "Process") class="btn btn-warning">Ir</a>
+                <h5 class="card-title">Registro de componentes en SMT</h5>
+                <p class="card-text">Página que muestra los registros de componentes usados en lineas SMT</p>
+                <a href=@Url.Action("ComponentTrace" , "Process") class="btn btn-warning">Ir</a>
             </div>
         </div>
     </div>
@@ -40,11 +40,11 @@
 
       <div class="col-md-4 col-sm-4 col-lg-4">
           <div class="card border-info">
-              <h5 class="card-header text-white bg-info">Kiosko Configuration</h5>
+              <h5 class="card-header text-white bg-danger">SMT & Services Summry</h5>
               <div class="card-body">
-                  <h5 class="card-title">Configuracion del Kiosco SMTs</h5>
-                  <p class="card-text">Página que muestra los detalles de configuración del Kisko para las lineas SMT</p>
-                  <a href=@Url.Action("Kiosk_Configuration" , "Process") class="btn btn-warning">Ir</a>
+                  <h5 class="card-title">Rusumen de lineas y servicios en tiempo real</h5>
+                  <p class="card-text">Página que muestra en tiempo real el estado de lineas SMT y servicios del sistema VALOR</p>
+                  <a href=@Url.Action("Index" , "LineTracking") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
@@ -60,11 +60,11 @@
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
           <div class="card border-info">
-              <h5 class="card-header text-white bg-info">OEE Reporting</h5>
+              <h5 class="card-header text-white bg-info">System Errors</h5>
               <div class="card-body">
-                  <h5 class="card-title">Detalle de OEE Reportado</h5>
-                  <p class="card-text">Página que muestra el detalle del reporte OEE</p>
-                  <a href=@Url.Action("OEE_Reporting" , "Process") class="btn btn-warning">Ir</a>
+                  <h5 class="card-title">Detalle los errores del Sistema</h5>
+                  <p class="card-text">Página que muestra el hitórico de errores en el sistema</p>
+                  <a href=@Url.Action("System_Erros" , "Process") class="btn btn-warning">Ir</a>
               </div>
           </div>
       </div>
@@ -73,7 +73,7 @@
   <div class="row">
       <div class="col-md-4 col-sm-4 col-lg-4">
           <div class="card border-info">
-              <h5 class="card-header text-white bg-info">Trace History Check Estaciones de Selectivos</h5>
+              <h5 class="card-header text-white bg-danger">Trace History Check Estaciones de Selectivos</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle del History Check en Estaciones de Selectivos</h5>
                   <p class="card-text">Página que muestra el detalle del proceso History Check para estaciones de selectivos.</p>
@@ -83,7 +83,7 @@
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
           <div class="card border-info">
-              <h5 class="card-header text-white bg-info">Trace Errors</h5>
+              <h5 class="card-header text-white bg-danger">Trace Errors</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle de errores en el proceso de trazabilidad</h5>
                   <p class="card-text">Página que muestra el detalle de los errores en el proceso de trazabilidad</p>
@@ -93,7 +93,7 @@
       </div>
       <div class="col-md-4 col-sm-4 col-lg-4">
           <div class="card border-info">
-              <h5 class="card-header text-white bg-info">Trace History Check Lineas de Ensamble</h5>
+              <h5 class="card-header text-white bg-danger">Trace History Check Lineas de Ensamble</h5>
               <div class="card-body">
                   <h5 class="card-title">Detalle del History Check en Lineas de Ensamble</h5>
                   <p class="card-text">Página que muestra el detalle del proceso History Check para lineas de ensamble.</p>
@@ -126,7 +126,7 @@
           </div>
           <div class="col-md-4 col-sm-4 col-lg-4">
               <div class="card border-info">
-                  <h5 class="card-header text-white bg-info">Declaration Programs</h5>
+                  <h5 class="card-header text-white bg-danger ">Declaration Programs</h5>
                   <div class="card-body">
                       <h5 class="card-title">Detalle de los programas de produccion</h5>
                       <p class="card-text">Página que muestra el detalle de los programas de produccion</p>
@@ -135,15 +135,4 @@
               </div>
           </div>
       </div>
-      <div class="row">
-          <div class="col-md-4 col-sm-4 col-lg-4">
-              <div class="card border-info">
-                  <h5 class="card-header text-white bg-info">System Errors</h5>
-                  <div class="card-body">
-                      <h5 class="card-title">Detalle los errores del Sistema</h5>
-                      <p class="card-text">Página que muestra el hitórico de errores en el sistema</p>
-                      <a href=@Url.Action("System_Erros" , "Process") class="btn btn-warning">Ir</a>
-                  </div>
-              </div>
-          </div>
-      </div>
+      

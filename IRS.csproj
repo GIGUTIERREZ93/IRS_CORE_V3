@@ -163,6 +163,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CBSModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CompList.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\COVID_Acceso.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -670,6 +673,9 @@
     <Content Include="Views\Shared\_LayoutClean.cshtml" />
     <Content Include="Views\LineTracking\OeeSMT.cshtml" />
     <Content Include="Views\Process\History_Check_Selectivos.cshtml" />
+    <Content Include="Views\Process\Declaration_Program_formulario.cshtml" />
+    <Content Include="Views\Process\Declaration_Programs.cshtml" />
+    <Content Include="Views\Process\ComponentTrace.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

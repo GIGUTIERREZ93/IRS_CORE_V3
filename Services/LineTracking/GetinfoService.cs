@@ -72,7 +72,7 @@ namespace IRS.Services.LineTracking
             return Lista;
         
         }
-        /*public List<BackEnd_StatusViewModel> Get_StatusAssy()
+        public List<BackEnd_StatusViewModel> Get_StatusAssy()
         {
             List<BackEnd_StatusViewModel> Lista_BackEnd = new List<BackEnd_StatusViewModel>();
             BackEnd_StatusViewModel StatusAssy;
@@ -98,7 +98,7 @@ namespace IRS.Services.LineTracking
             }
 
             return Lista_BackEnd; 
-        }*/
+        }
         
 
         public List<Monitoring_Services> Get_Services_Status()

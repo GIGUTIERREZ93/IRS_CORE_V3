@@ -29,8 +29,8 @@ namespace IRS.Controllers
         //¡¡¡¡ Controllers para Vistas de PROCESS para sub operaciones de VALOR_APPS
         public ActionResult Declaration_Errors() 
         {
-            var model = oService.Declaration_Errors();
-            return View(model); 
+            //var model = oService.Declaration_Errors();
+            return View(); 
         }
         public ActionResult DowntimeEntry() { return View(); }
         public ActionResult Kiosk_Configuration() { return View(); }
@@ -59,6 +59,14 @@ namespace IRS.Controllers
             var result= db_vmanage.Database.SqlQuery<XHistoryCheck>(query).ToList();
 
             return View(result); 
+        }
+
+        public ActionResult ComponentTrace()
+        {
+            //Tabla que muestra los registros de la tabla CompList
+            var query = oService.ComponentTrace1();
+
+            return View(query);
         }
         public ActionResult History_Check_Selectivos(string serie = "1")
         {

@@ -1,4 +1,5 @@
 ﻿using IRS.Models;
+using IRS.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,11 @@ namespace IRS.Services
         public List<XDeclarationProgram> xDeclaration_Programs()
         {
             var result = db.XDeclarationProgram.ToList();
+            return result;
+        }
+        public List<CompList> ComponentTrace1()
+        {
+            var result = db.CompList.Take(200).OrderByDescending(x => x.DryTimeStamp).ToList();
             return result;
         }
 

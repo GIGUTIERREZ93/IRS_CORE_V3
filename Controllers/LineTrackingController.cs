@@ -15,11 +15,11 @@ namespace IRS.Controllers
         public ActionResult Index()
         {
             GetinfoService getinfo = new GetinfoService();
-            //ViewBag.Lista = getinfo.Get_Status();
+            ViewBag.Lista = getinfo.Get_Status();
             var Lista= getinfo.Get_Status();
 
-            //ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
-            //var Lista_BackEnd = getinfo.Get_StatusAssy();
+            ViewBag.Lista_BackEnd = getinfo.Get_StatusAssy();
+            var Lista_BackEnd = getinfo.Get_StatusAssy();
 
             ViewBag.Lista_Servicios=getinfo.Get_Services_Status();
             

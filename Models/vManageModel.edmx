@@ -19,6 +19,35 @@
           <Property Name="Validated" Type="char" MaxLength="1" />
           <Property Name="ItemId" Type="varchar" MaxLength="64" />
         </EntityType>
+        <EntityType Name="CompList">
+          <Key>
+            <PropertyRef Name="CompID" />
+          </Key>
+          <Property Name="CompID" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="FeederID" Type="int" />
+          <Property Name="CompName" Type="varchar" MaxLength="64" />
+          <Property Name="OpenTimeStamp" Type="datetime" />
+          <Property Name="NumDryLeft" Type="int" />
+          <Property Name="McID" Type="int" />
+          <Property Name="Station" Type="int" />
+          <Property Name="Slot" Type="int" />
+          <Property Name="SubSlot" Type="int" />
+          <Property Name="Used" Type="int" />
+          <Property Name="Errors" Type="int" />
+          <Property Name="Amount" Type="int" />
+          <Property Name="Correction" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CompPrPCB" Type="int" />
+          <Property Name="DryTimeStamp" Type="datetime" />
+          <Property Name="PreparationStatus" Type="int" />
+          <Property Name="LastSeenOnMachine" Type="int" />
+          <Property Name="BookingMcid" Type="int" />
+          <Property Name="BookingStation" Type="int" />
+          <Property Name="BookingSlot" Type="int" />
+          <Property Name="BookingSubslot" Type="int" />
+          <Property Name="ExpirationDate" Type="datetime" />
+          <Property Name="IdentifierStatus" Type="int" />
+        </EntityType>
         <EntityType Name="X_Mail">
           <Key>
             <PropertyRef Name="RecordID" />
@@ -120,6 +149,7 @@
         </EntityType>
         <EntityContainer Name="vManageModelStoreContainer">
           <EntitySet Name="ActPCBList" EntityType="Self.ActPCBList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompList" EntityType="Self.CompList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="X_Mail" EntityType="Self.X_Mail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XOEE_Detail_History" EntityType="Self.XOEE_Detail_History" Schema="dbo" store:Type="Tables" />
@@ -175,6 +205,7 @@
           <EntitySet Name="ActPCBList" EntityType="vManageModel.ActPCBList" />
           <EntitySet Name="XOEE_Detail_History" EntityType="vManageModel.XOEE_Detail_History" />
           <EntitySet Name="XOEE_Details_Per_Hour" EntityType="vManageModel.XOEE_Details_Per_Hour" />
+          <EntitySet Name="CompList" EntityType="vManageModel.CompList" />
         </EntityContainer>
         <EntityType Name="ActPCBList">
           <Key>
@@ -248,6 +279,35 @@
           <Property Name="Programa" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="WorkOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Change" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="CompList">
+          <Key>
+            <PropertyRef Name="CompID" />
+          </Key>
+          <Property Name="CompID" Type="String" Nullable="false" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="FeederID" Type="Int32" />
+          <Property Name="CompName" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="OpenTimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="NumDryLeft" Type="Int32" />
+          <Property Name="McID" Type="Int32" />
+          <Property Name="Station" Type="Int32" />
+          <Property Name="Slot" Type="Int32" />
+          <Property Name="SubSlot" Type="Int32" />
+          <Property Name="Used" Type="Int32" />
+          <Property Name="Errors" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <Property Name="Correction" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CompPrPCB" Type="Int32" />
+          <Property Name="DryTimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="PreparationStatus" Type="Int32" />
+          <Property Name="LastSeenOnMachine" Type="Int32" />
+          <Property Name="BookingMcid" Type="Int32" />
+          <Property Name="BookingStation" Type="Int32" />
+          <Property Name="BookingSlot" Type="Int32" />
+          <Property Name="BookingSubslot" Type="Int32" />
+          <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
+          <Property Name="IdentifierStatus" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -369,6 +429,36 @@
                 <ScalarProperty Name="Hora" ColumnName="Hora" />
                 <ScalarProperty Name="TimeDate" ColumnName="TimeDate" />
                 <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompList">
+            <EntityTypeMapping TypeName="vManageModel.CompList">
+              <MappingFragment StoreEntitySet="CompList">
+                <ScalarProperty Name="IdentifierStatus" ColumnName="IdentifierStatus" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="BookingSubslot" ColumnName="BookingSubslot" />
+                <ScalarProperty Name="BookingSlot" ColumnName="BookingSlot" />
+                <ScalarProperty Name="BookingStation" ColumnName="BookingStation" />
+                <ScalarProperty Name="BookingMcid" ColumnName="BookingMcid" />
+                <ScalarProperty Name="LastSeenOnMachine" ColumnName="LastSeenOnMachine" />
+                <ScalarProperty Name="PreparationStatus" ColumnName="PreparationStatus" />
+                <ScalarProperty Name="DryTimeStamp" ColumnName="DryTimeStamp" />
+                <ScalarProperty Name="CompPrPCB" ColumnName="CompPrPCB" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Correction" ColumnName="Correction" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Errors" ColumnName="Errors" />
+                <ScalarProperty Name="Used" ColumnName="Used" />
+                <ScalarProperty Name="SubSlot" ColumnName="SubSlot" />
+                <ScalarProperty Name="Slot" ColumnName="Slot" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="NumDryLeft" ColumnName="NumDryLeft" />
+                <ScalarProperty Name="OpenTimeStamp" ColumnName="OpenTimeStamp" />
+                <ScalarProperty Name="CompName" ColumnName="CompName" />
+                <ScalarProperty Name="FeederID" ColumnName="FeederID" />
+                <ScalarProperty Name="CompID" ColumnName="CompID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
