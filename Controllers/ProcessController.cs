@@ -46,7 +46,7 @@ namespace IRS.Controllers
         public ActionResult History_Check(string serie="1") 
         {
             string query;
-            if (serie == "1")
+            if (serie == "1" || serie =="")
             {
                 query = "SELECT A.SerialNumber, Convert(int,A.Sequence) as Sequence , A.TimeDone, A.Message, A.LineID, A.StationID, B.PN FROM (SELECT top (1000)ID,SerialNumber,Message, LineID, StationID, Sequence, TimeDone, Result, AliasSerialNumber FROM dbo.XHistoryCheck WHERE (SerialNumber<>'') ORDER BY TimeDone DESC) AS A INNER JOIN dbo.XCuadranteDisplay2 AS B ON A.SerialNumber = B.SN_PCB_Main ORDER BY TimeDone DESC";
             }
@@ -61,12 +61,22 @@ namespace IRS.Controllers
             return View(result); 
         }
 
-        public ActionResult ComponentTrace()
+        public ActionResult ComponentTrace(string busqueda="1")
         {
-            //Tabla que muestra los registros de la tabla CompList
-            var query = oService.ComponentTrace1();
+            string query;
+            if (busqueda == "1")
+            {
+                //Tabla que muestra los prmieros 200 registros de la tabla CompList sin filtro
+                query = "SELECT TOP (200) [CompID],[FeederID],[CompName],[OpenTimeStamp],[NumDryLeft],[McID],[Station],[Slot],[SubSlot],[Used],[Errors],[Amount],[Status],[LastSeenOnMachine] FROM [vManage].[dbo].[CompList] ORDER BY DryTimeStamp DESC";
+            }
+            else
+            {
+                //Tabla que muestra los registros filtrados por CompID
+                query = "SELECT [CompID],[FeederID],[CompName],[OpenTimeStamp],[NumDryLeft],[McID],[Station],[Slot],[SubSlot],[Used],[Errors],[Amount],[Status],[LastSeenOnMachine] FROM [vManage].[dbo].[CompList] WHERE (CompID='" + busqueda + "' or CompName='" + busqueda +"' or FeederID='" + busqueda +"') ORDER BY DryTimeStamp DESC";
+            }
+            var result = db_vmanage.Database.SqlQuery<ListaComponentes>(query).ToList();
+            return View(result);
 
-            return View(query);
         }
         public ActionResult History_Check_Selectivos(string serie = "1")
         {
@@ -88,6 +98,12 @@ namespace IRS.Controllers
 
         public ActionResult Trace_Desactivation() { return View(); }
         public ActionResult Valor_Declaration() { return View(); }
+
+        public ActionResult ComponentAndPCB()
+        {
+            var query = oService.ComponentAndPCBService();
+            return View(query);
+        }
 
         //¡¡¡¡ Action and View Result para Formulario de Declaration Program > CRUD
         public ViewResult Declaration_Programs() 

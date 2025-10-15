@@ -6,31 +6,29 @@
 <h1 class="text-primary fw-bold">Registro de Componentes</h1>
 <hr />
 
-    <tr class="table-primary">
-        <td colspan="11">
-            <input id="searchTerm" onkeyup="doSearch()" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
-        </td>
-    </tr>
+    <form action="ComponentTrace" method="post">
+        <input type="text" name="busqueda" value="" />
+        <input type="submit" value="Buscar">
+        <label class="shadow fw-bold"> *Puede buscar por:   ID de Componente,       FeederID o  Nombre del componente</label>
+    </form>
     <br />
     <table class="table table-striped table-bordered" id="tabla_desplegada">
         <thead>
             <tr class="table-primary">
-                <th scope="col">CompID</th>
+                <th scope="col">ComponenteID</th>
                 <th scope="col">FeederID</th>
-                <th scope="col">CompName</th>
-                <th scope="col">OpenTimeStamp</th>
-                <th scope="col">NumDryLeft</th>
-                <th scope="col">McID</th>
-                <th scope="col">Station</th>
-                <th scope="col">Slot</th>
-                <th scope="col">SubSlot</th>
-                <th scope="col">Used</th>
-                <th scope="col">Errors</th>
-                <th scope="col">Amount</th>
+                <th scope="col">Nombre de Componente</th>
+                <th scope="col">Marca de tiempo abierto</th>
+                <th scope="col">Horneados restantes</th>
+                <th scope="col">Estacion McID</th>
+                <th scope="col">Estacion</th>
+                <th scope="col">Ranura</th>
+                <th scope="col">SubRanura</th>
+                <th scope="col">Veces usado</th>
+                <th scope="col">Errores</th>
+                <th scope="col">Cantidad</th>
                 <th scope="col">Status</th>
-                <th scope="col">CompPrPCB</th>
-                <th scope="col">LastSeenOnMachine</th>
-                <th scope="col">DryTimeStamp</th>
+                <th scope="col">Ultima estacion que lo registro</th>
             </tr>
         </thead>
         <tbody>
@@ -50,10 +48,7 @@
                     <td>@x.Errors</td>
                     <td>@x.Amount</td>
                     <td>@x.Status</td>
-                    <td>@x.CompPrPCB</td>
                     <td>@x.LastSeenOnMachine</td>
-                    <td>@x.DryTimeStamp</td>
-
                 </tr>
             }
         </tbody>

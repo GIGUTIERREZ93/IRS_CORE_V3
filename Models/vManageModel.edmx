@@ -48,6 +48,25 @@
           <Property Name="ExpirationDate" Type="datetime" />
           <Property Name="IdentifierStatus" Type="int" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DeviceTrace">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+            <PropertyRef Name="McID" />
+            <PropertyRef Name="Station" />
+          </Key>
+          <Property Name="DeviceID" Type="int" Nullable="false" />
+          <Property Name="McID" Type="int" Nullable="false" />
+          <Property Name="Station" Type="int" Nullable="false" />
+          <Property Name="Slot" Type="int" />
+          <Property Name="SubSlot" Type="int" />
+          <Property Name="CompID" Type="varchar" MaxLength="64" />
+          <Property Name="BlockNo" Type="int" />
+          <Property Name="Reference" Type="varchar" MaxLength="32" />
+          <Property Name="CompType" Type="int" />
+          <Property Name="InsertDate" Type="datetime" />
+        </EntityType>
         <EntityType Name="X_Mail">
           <Key>
             <PropertyRef Name="RecordID" />
@@ -154,6 +173,20 @@
           <EntitySet Name="XDeclarationProgram" EntityType="Self.XDeclarationProgram" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XOEE_Detail_History" EntityType="Self.XOEE_Detail_History" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="XOEE_Details_Per_Hour" EntityType="Self.XOEE_Details_Per_Hour" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DeviceTrace" EntityType="Self.DeviceTrace" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DeviceTrace].[DeviceID] AS [DeviceID], 
+    [DeviceTrace].[McID] AS [McID], 
+    [DeviceTrace].[Station] AS [Station], 
+    [DeviceTrace].[Slot] AS [Slot], 
+    [DeviceTrace].[SubSlot] AS [SubSlot], 
+    [DeviceTrace].[CompID] AS [CompID], 
+    [DeviceTrace].[BlockNo] AS [BlockNo], 
+    [DeviceTrace].[Reference] AS [Reference], 
+    [DeviceTrace].[CompType] AS [CompType], 
+    [DeviceTrace].[InsertDate] AS [InsertDate]
+    FROM [dbo].[DeviceTrace] AS [DeviceTrace]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -206,6 +239,7 @@
           <EntitySet Name="XOEE_Detail_History" EntityType="vManageModel.XOEE_Detail_History" />
           <EntitySet Name="XOEE_Details_Per_Hour" EntityType="vManageModel.XOEE_Details_Per_Hour" />
           <EntitySet Name="CompList" EntityType="vManageModel.CompList" />
+          <EntitySet Name="DeviceTrace" EntityType="vManageModel.DeviceTrace" />
         </EntityContainer>
         <EntityType Name="ActPCBList">
           <Key>
@@ -308,6 +342,23 @@
           <Property Name="BookingSubslot" Type="Int32" />
           <Property Name="ExpirationDate" Type="DateTime" Precision="3" />
           <Property Name="IdentifierStatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="DeviceTrace">
+          <Key>
+            <PropertyRef Name="DeviceID" />
+            <PropertyRef Name="McID" />
+            <PropertyRef Name="Station" />
+          </Key>
+          <Property Name="DeviceID" Type="Int32" Nullable="false" />
+          <Property Name="McID" Type="Int32" Nullable="false" />
+          <Property Name="Station" Type="Int32" Nullable="false" />
+          <Property Name="Slot" Type="Int32" />
+          <Property Name="SubSlot" Type="Int32" />
+          <Property Name="CompID" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+          <Property Name="BlockNo" Type="Int32" />
+          <Property Name="Reference" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="CompType" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -459,6 +510,22 @@
                 <ScalarProperty Name="CompName" ColumnName="CompName" />
                 <ScalarProperty Name="FeederID" ColumnName="FeederID" />
                 <ScalarProperty Name="CompID" ColumnName="CompID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DeviceTrace">
+            <EntityTypeMapping TypeName="vManageModel.DeviceTrace">
+              <MappingFragment StoreEntitySet="DeviceTrace">
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="CompType" ColumnName="CompType" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="BlockNo" ColumnName="BlockNo" />
+                <ScalarProperty Name="CompID" ColumnName="CompID" />
+                <ScalarProperty Name="SubSlot" ColumnName="SubSlot" />
+                <ScalarProperty Name="Slot" ColumnName="Slot" />
+                <ScalarProperty Name="Station" ColumnName="Station" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

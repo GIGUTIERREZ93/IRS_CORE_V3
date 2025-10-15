@@ -175,6 +175,9 @@
     <Compile Include="Models\Department.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DeviceTrace.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Document.cs">
       <DependentUpon>Modelo_DB.tt</DependentUpon>
     </Compile>
@@ -317,6 +320,7 @@
     <Compile Include="Models\ViewModels\LineTracking\BackEnd_StatusViewModel.cs" />
     <Compile Include="Models\ViewModels\LineTracking\FileScannerViewModel.cs" />
     <Compile Include="Models\ViewModels\LineTracking\Smt_StatusViewModel.cs" />
+    <Compile Include="Models\ViewModels\ListaComponentes.cs" />
     <Compile Include="Models\ViewModels\ProyectoModel.cs" />
     <Compile Include="Models\ViewModels\Saludo.cs" />
     <Compile Include="Models\ViewModels\ShiftlogMoldel.cs" />

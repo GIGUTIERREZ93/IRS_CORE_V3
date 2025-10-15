@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace IRS.Services
 {
@@ -13,14 +14,32 @@ namespace IRS.Services
         readonly vManageEntities db = new vManageEntities();
         readonly RADServerEntities1 db_rad = new RADServerEntities1();
         
+        public List <DeviceTrace> ComponentAndPCBService()
+        {
+            var result =db.DeviceTrace.ToList();
+            return result;
+
+        }
         //DECLARACION
         public List<XDeclarationProgram> xDeclaration_Programs()
         {
             var result = db.XDeclarationProgram.ToList();
             return result;
         }
-        public List<CompList> ComponentTrace1()
+        public List<CompList> ComponentTrace1(string busqueda)
         {
+
+            string query;
+            if (busqueda == "1")
+            {
+                //Tabla que muestra los prmieros 200 registros de la tabla CompList sin filtro
+                query = "SELECT TOP (200) [CompID],[FeederID],[CompName],[OpenTimeStamp],[NumDryLeft],[McID],[Station],[Slot],[SubSlot],[Used],[Errors],[Amount],[Correction],[Status],[CompPrPCB],[DryTimeStamp],[PreparationStatus],[LastSeenOnMachine],[BookingMcid],[BookingStation],[BookingSlot],[BookingSubslot],[ExpirationDate],[IdentifierStatus] FROM [vManage].[dbo].[CompList] ORDER BY DryTimeStamp DESC";
+            }
+            else
+            {
+                //Tabla que muestra los registros filtrados por CompID
+                query = "SELECT [CompID],[FeederID],[CompName],[OpenTimeStamp],[NumDryLeft],[McID],[Station],[Slot],[SubSlot],[Used],[Errors],[Amount],[Correction],[Status],[CompPrPCB],[DryTimeStamp],[PreparationStatus],[LastSeenOnMachine],[BookingMcid],[BookingStation],[BookingSlot],[BookingSubslot],[ExpirationDate],[IdentifierStatus] FROM [vManage].[dbo].[CompList] WHERE (SerialNumber='" + busqueda + "') ORDER BY DryTimeStamp DESC";
+            }
             var result = db.CompList.Take(200).OrderByDescending(x => x.DryTimeStamp).ToList();
             return result;
         }
