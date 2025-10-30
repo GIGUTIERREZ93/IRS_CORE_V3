@@ -25,10 +25,12 @@
 
 body {
     min-height: 100vh;
-  /*background-color: var(--body-color);
-    transition: var(--tran-05);
-    /*  padding-top: 50px;
-    padding-bottom: 20px;*/
+    --body-color: #FFF;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
 }
 
 ::selection {
@@ -54,13 +56,11 @@ body.dark {
     width: 260px;
     padding: -5px -5px;
     background: var(--sidebar-color);
-    transition: var(--tran-05);
+   
     z-index: 100;
 }
 
-    .sidebar.close {
-        width: 105px;
-    }
+    
 
     /* ===== Reusable code - Here ===== */
     .sidebar li {
@@ -68,13 +68,15 @@ body.dark {
         list-style: none;
         display: flex;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 5px;
+        margin-right: 0rem;
     }
 
     .sidebar header .image,
     .sidebar .icon {
         min-width: 60px;
         border-radius: 6px;
+        margin-right: -.5rem;
     }
 
     .sidebar .icon {
@@ -100,9 +102,7 @@ body.dark {
         opacity: 1;
     }
 
-    .sidebar.close .text {
-        opacity: 0;
-    }
+   
     /* =========================== */
 
     .sidebar header {
@@ -180,18 +180,7 @@ body.dark .sidebar header .toggle {
     transition: var(--tran-05);
 }
 
-    .sidebar li.search-box input {
-        height: 100%;
-        width: 100%;
-        outline: none;
-        border: none;
-        background-color: var(--primary-color-light);
-        color: var(--text-color);
-        border-radius: 6px;
-        font-size: 17px;
-        font-weight: 500;
-        transition: var(--tran-05);
-    }
+   
 
 .sidebar li a {
     list-style: none;
@@ -207,7 +196,7 @@ body.dark .sidebar header .toggle {
 }
 
     .sidebar li a:hover {
-        background-color: var(--primary-color);
+        background-color:#0ca830;
     }
 
         .sidebar li a:hover .icon,
@@ -330,6 +319,8 @@ body.dark .home .text {
 .card {
     transition: 0.5s;
     cursor: pointer;
+    width:25rem;
+    height:15rem;
 }
 .card:hover {
     transform: scale(1.05);

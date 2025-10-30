@@ -85,6 +85,21 @@ warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary k
           <Property Name="TimeDate" Type="smalldatetime" />
           <Property Name="Sent" Type="bit" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'vManage.dbo.X_McID_Relationship' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="X_McID_Relationship">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="Hostname" />
+            <PropertyRef Name="McID" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Hostname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="McID" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="SMT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="XDeclarationProgram">
           <Key>
             <PropertyRef Name="RecordID" />
@@ -187,6 +202,15 @@ warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary k
     [DeviceTrace].[InsertDate] AS [InsertDate]
     FROM [dbo].[DeviceTrace] AS [DeviceTrace]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="X_McID_Relationship" EntityType="Self.X_McID_Relationship" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [X_McID_Relationship].[RecordID] AS [RecordID], 
+    [X_McID_Relationship].[Hostname] AS [Hostname], 
+    [X_McID_Relationship].[McID] AS [McID], 
+    [X_McID_Relationship].[Active] AS [Active], 
+    [X_McID_Relationship].[SMT] AS [SMT]
+    FROM [dbo].[X_McID_Relationship] AS [X_McID_Relationship]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -240,6 +264,7 @@ warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary k
           <EntitySet Name="XOEE_Details_Per_Hour" EntityType="vManageModel.XOEE_Details_Per_Hour" />
           <EntitySet Name="CompList" EntityType="vManageModel.CompList" />
           <EntitySet Name="DeviceTrace" EntityType="vManageModel.DeviceTrace" />
+          <EntitySet Name="X_McID_Relationship" EntityType="vManageModel.X_McID_Relationship" />
         </EntityContainer>
         <EntityType Name="ActPCBList">
           <Key>
@@ -359,6 +384,19 @@ warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary k
           <Property Name="Reference" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
           <Property Name="CompType" Type="Int32" />
           <Property Name="InsertDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="X_McID_Relationship">
+          <Key>
+            <PropertyRef Name="RecordID" />
+            <PropertyRef Name="Hostname" />
+            <PropertyRef Name="McID" />
+            <PropertyRef Name="Active" />
+          </Key>
+          <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Hostname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="McID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SMT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -526,6 +564,17 @@ warning 6002: The table/view 'vManage.dbo.DeviceTrace' does not have a primary k
                 <ScalarProperty Name="Station" ColumnName="Station" />
                 <ScalarProperty Name="McID" ColumnName="McID" />
                 <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="X_McID_Relationship">
+            <EntityTypeMapping TypeName="vManageModel.X_McID_Relationship">
+              <MappingFragment StoreEntitySet="X_McID_Relationship">
+                <ScalarProperty Name="SMT" ColumnName="SMT" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="McID" ColumnName="McID" />
+                <ScalarProperty Name="Hostname" ColumnName="Hostname" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

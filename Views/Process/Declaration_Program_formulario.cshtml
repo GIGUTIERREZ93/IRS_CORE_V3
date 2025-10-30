@@ -5,82 +5,104 @@
 
 <h2>Registro de Programas de Produccion</h2>
 <hr />
-<br />
-<br />
-<form class="row g-3 gx-5 gy-5" method="post" action="~/Process/Declation_Program_Insertar">
-    <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Line">Linea de SMT:</label>
-        <select class="form-control form-select" name="Line" required>
-            <option disabled selected value="0">Sí no visualiza la linea, contacte a IT</option>
-            @foreach (var l in ViewBag.Lineas)
-            {
-                <option value="@l">Line -> @l </option>
-            }
-            <option disabled selected value="0">Seleccione....</option>
-        </select>
-    </div>    
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Program">Nombre del Programa:</label>
-        <input type="text" class="form-control" name="Program" placeholder="Ejemplo >> 179_AB_C1_BOT" />
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Noblock"># de PCB dentro del Panel:</label>
-        <input type="text" class="form-control" name="Noblock" required/>
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="NIP">Codigo NIP:</label>
-        <input type="text" class="form-control" name="NIP" />
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Suffix">Sufijo del Programa (Top/Botton):</label>
-        <select class="form-control form-select" name="Suffix">
-            <option>Seleccione....</option>
-            <option>_T</option>
-            <option>_B</option>
-        </select>
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="PartNumber">Numero de Parte:</label>
-        <input type="text" class="form-control" name="PartNumber" />
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="McID">ID SMT:</label>
-        <select class="form-control form-select" name="McID">
-            <option disabled selected value="0">Seleccione....</option>
-            @foreach (var x in ViewBag.McID)
-            {
-                <option class="order-first" value="@x">MCID-> @x  </option>
-            }
-            <
-        </select>
-    </div>   
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="CycleTime">Tiempo Ciclo (minutos):</label>
-        <input type="text" class="form-control" name="CycleTime" placeholder="Ejemplo >> 0.251" />
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="PzsHr">Piezas X Hora:</label>
-        <input type="text" class="form-control" name="PzsHr" />
-    </div>
-    <div class="col-md-4">
-        <label class="fs-3 fw-bold" for="Assy_Line">Linea de Ensamble:</label>
-        <select class="form-control form-select" name="Assy_Line">
-            <option>Seleccione....</option>
-            <option>TESLA</option>
-            <option>AUDI</option>
-            <option>CLUSTER7</option>
-            <option>CLUSTER3.5</option>
-        </select>
-    </div>
-    <div class=" text-end">
-        <input type="submit" value="Crear" class="btn btn-success fs-4" name="name" />
-        <input type="reset" value="Resetear" class="btn btn-dark fs-4" name="name" />
+<form class="g-3 gx-5 gy-5" method="post" action="~/Process/Declation_Program_Insertar">
+    <div class="container-fluid">
+        <div class="row">
+
+            <input type="hidden" name="mcid" value="1" />
+
+
+            <!--SELECCION DE LINEA TOMANDO 5 COLUMNAS col-5 -->
+            <div class="col-md-3">
+                <label class="fs-4 fw-bold" for="Line">Linea de SMT:</label>
+                <select class="form-control form-select" name="Line" required>
+                    <option disabled selected value="0">Sí no visualiza la linea, contacte a IT</option>
+                    @foreach (var l in ViewBag.Linea)
+                    {
+                        <option value="@l.SMT">@l.SMT </option>
+                    }
+                    <option disabled selected value="0">Seleccione....</option>
+                </select>
+            </div>
+            <div class="col-md-5">
+                <label class="fs-4 fw-bold" for="Program">Nombre del Programa:</label>
+                <input type="text" class="form-control" name="Program" placeholder="Ejemplo >> 179_AB_C1_BOT" />
+            </div>
+            <div class="col-md-4">
+                <label class="fs-4 fw-bold" for="Noblock"># de PCB dentro del Panel:</label>
+                <input type="text" class="form-control" name="Noblock" required />
+            </div>
+
+        </div>
+        <br />
+        <div class="row">
+
+            <div class="col-md-3">
+                <label class="fs-4 fw-bold" for="NIP">Codigo NIP:</label>
+                <input type="text" class="form-control" name="NIP"/>
+            </div>
+            <div class="col-md-5">
+                <label class="fs-4 fw-bold" for="Suffix">Sufijo del Programa (Top/Botton):</label>
+                <select class="form-control form-select" name="Suffix">
+                    <option>Seleccione....</option>
+                    <option>_T</option>
+                    <option>_B</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="fs-4 fw-bold" for="PartNumber">Numero de Parte:</label>
+                <input type="text" class="form-control" name="PartNumber" required />
+            </div>
+
+        </div>
+        <br />
+
+        <div class="row">
+
+
+            <div class="col-md-3">
+                <label class="fs-4 fw-bold" for="Assy_Line">Linea de Ensamble:</label>
+                <select class="form-control form-select" name="Assy_Line">
+                    <option>Seleccione....</option>
+                    @foreach (var a in ViewBag.Assy_Line)
+                    {
+                        <option class="order-first" value="@a">@a  </option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-5">
+                <label class="fs-4 fw-bold" for="CycleTime">Tiempo Ciclo (minutos):</label>
+                <input type="text" class="form-control" name="CycleTime" placeholder="Ejemplo >> 0.251" />
+            </div>
+            <div class="col-md-4">
+                <label class="fs-4 fw-bold" for="PzsHr">Piezas X Hora:</label>
+                <input type="text" class="form-control" name="PzsHr" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+
+
+            <div class="col-md-3">
+              
+                
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-2 ">
+                <input type="submit" value="Crear" class="btn btn-success fs-4" name="name" />
+             
+            </div>
+            <div class="col-2 ">
+             
+                <input type="reset" value="Resetear" class="btn btn-dark fs-4" name="name" />
+            </div>  
+        </div>
     </div>
 </form>
 
-<br />
-<br />
+
 
 
 

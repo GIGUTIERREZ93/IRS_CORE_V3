@@ -116,25 +116,31 @@ namespace IRS.Controllers
         public ViewResult Declaration_Program_formulario()
         {
             ViewBag.McID = db_vmanage.XDeclarationProgram.DistinctBy(a=>a.McID).Select(a=>a.McID).ToList();
-            ViewBag.Lineas = db_vmanage.XDeclarationProgram.DistinctBy(b => b.Line).Select(b => b.Line).ToList();
-            
+           // ViewBag.Lineas = db_vmanage.XDeclarationProgram.DistinctBy(b => b.Line).Select(b => b.Line).ToList();
+            ViewBag.Assy_Line=db_vmanage.XDeclarationProgram.DistinctBy(c => c.Assy_Line).Where(C=>C.Assy_Line!=null).Select(c => c.Assy_Line).ToList();
+            ViewBag.Linea = db_vmanage.X_McID_Relationship.ToList();
             //Formulario para un nuevo registro
             return View();
         }
         public ActionResult Declation_Program_Insertar(XDeclarationProgram model)
         {
+            var mcid = int.Parse((db_vmanage.X_McID_Relationship.Where(c => c.SMT == model.Line).Select(c=>c.McID).FirstOrDefault()));
+            model.McID = mcid;
             //Action Result para insertar en la tabla <XDeclarationProgram> el nuevo registro
             oService.Insertar(model);
             return RedirectToAction("Declaration_Programs");
         }
         public ActionResult Declation_Program_Editar_formulario(long dato)
         {
+            ViewBag.Linea = db_vmanage.X_McID_Relationship.ToList();
             //Buscando, seleccionando y enviando el RecordID a MOSTRAR en la vista Declation_Program_Editar_formulario
             var model = oService.Editar(dato);
             return View(model);
         }
         public ActionResult Declation_Program_Editar(XDeclarationProgram model)
         {
+            var mcid = int.Parse((db_vmanage.X_McID_Relationship.Where(c => c.SMT == model.Line).Select(c => c.McID).FirstOrDefault()));
+            model.McID = mcid;
             oService.Editar_Form(model);
             return RedirectToAction("Declaration_Programs");
         }

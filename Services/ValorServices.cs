@@ -56,7 +56,9 @@ namespace IRS.Services
                 PartNumber = model.PartNumber,
                 Line = model.Line,
                 CycleTime = model.CycleTime,
-                PzsHr = model.PzsHr
+                PzsHr = model.PzsHr,
+                Assy_Line = model.Assy_Line,
+                Active = true
             };
             db.XDeclarationProgram.Add(std);
             db.SaveChanges();
@@ -83,6 +85,8 @@ namespace IRS.Services
             update_model.Line = model.Line;
             update_model.CycleTime = model.CycleTime;
             update_model.PzsHr = model.PzsHr;
+            update_model.Assy_Line = model.Assy_Line;
+            update_model.Active=model.Active;
 
             db.SaveChanges();
             return update_model;

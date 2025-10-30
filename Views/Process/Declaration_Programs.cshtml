@@ -2,22 +2,32 @@
 @{
     ViewBag.Title = "Declaration_Programs";
 }
+<div class="container-fluid">
+    <h1 class="text-primary fw-bold">Programas de Producción</h1>
+    <hr />
+  
+        
+            <div class="row">
+                <div class="col-4">
+                    <a href=@Url.Action("Declaration_Program_formulario" , "Process") class="btn btn-success fs-5">Nuevo programa</a>
+                </div>
+            </div>
+            <div class="row">
 
-<h1 class="text-primary fw-bold">Programas de Producción</h1>
-<hr />
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-md">
-        <a href=@Url.Action("Declaration_Program_formulario" , "Process") class="btn btn-success fs-5">Nuevo programa</a>
+            </div>
+        
+   
+    <br />
+
+
+    <div class="table-primary">
+        <div class="row">
+            <div class="col-4">
+                <input id="searchTerm" onkeyup="doSearch()" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
+            </div>
+           
+        </div>
     </div>
-</nav>
-<br />
-
-<div class="container">
-    <tr class="table-primary">
-        <td colspan="11">
-            <input id="searchTerm" onkeyup="doSearch()" type="text" class="form-control" placeholder="Escriba algo para filtrar" />
-        </td>
-    </tr>
     <br />
     <table class="table table-striped table-bordered" id="tabla_desplegada">
         <thead>

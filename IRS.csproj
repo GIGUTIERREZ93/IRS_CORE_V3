@@ -353,6 +353,9 @@
     <Compile Include="Models\X_Mail.cs">
       <DependentUpon>vManageModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\X_McID_Relationship.cs">
+      <DependentUpon>vManageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Z_Mail.cs">
       <DependentUpon>Model_RAD.tt</DependentUpon>
     </Compile>
@@ -365,6 +368,7 @@
     <Compile Include="Services\ValorServices.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -377,10 +381,13 @@
     <Content Include="Content\bootstrap-utilities.min.css" />
     <Content Include="Content\bootstrap-utilities.rtl.css" />
     <Content Include="Content\bootstrap-utilities.rtl.min.css" />
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap_.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.min_.css" />
     <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl_.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\bootstrap.rtl.min_.css" />
     <Content Include="Content\Tema.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -542,6 +549,8 @@
     <Content Include="Models\ITAplicationsModel.edmx.diagram">
       <DependentUpon>ITAplicationsModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\_bootswatch.scss" />
+    <Content Include="Content\_variables.scss" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -680,6 +689,7 @@
     <Content Include="Views\Process\Declaration_Program_formulario.cshtml" />
     <Content Include="Views\Process\Declaration_Programs.cshtml" />
     <Content Include="Views\Process\ComponentTrace.cshtml" />
+    <Content Include="Views\Process\Declation_Program_Editar_formulario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

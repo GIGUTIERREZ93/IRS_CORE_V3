@@ -32,5 +32,6 @@ namespace IRS.Models
         public virtual DbSet<XOEE_Details_Per_Hour> XOEE_Details_Per_Hour { get; set; }
         public virtual DbSet<CompList> CompList { get; set; }
         public virtual DbSet<DeviceTrace> DeviceTrace { get; set; }
+        public virtual DbSet<X_McID_Relationship> X_McID_Relationship { get; set; }
     }
 }
