@@ -321,6 +321,7 @@
     <Compile Include="Models\ViewModels\LineTracking\FileScannerViewModel.cs" />
     <Compile Include="Models\ViewModels\LineTracking\Smt_StatusViewModel.cs" />
     <Compile Include="Models\ViewModels\ListaComponentes.cs" />
+    <Compile Include="Models\ViewModels\ListaComponentesPCB.cs" />
     <Compile Include="Models\ViewModels\ProyectoModel.cs" />
     <Compile Include="Models\ViewModels\Saludo.cs" />
     <Compile Include="Models\ViewModels\ShiftlogMoldel.cs" />
@@ -690,9 +691,11 @@
     <Content Include="Views\Process\Declaration_Programs.cshtml" />
     <Content Include="Views\Process\ComponentTrace.cshtml" />
     <Content Include="Views\Process\Declation_Program_Editar_formulario.cshtml" />
+    <Content Include="Views\Process\ComponentAndPCB.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Imagenes\" />
     <Folder Include="Resources\Documents\" />
     <Folder Include="Views\ProyectoModel\" />
     <Folder Include="Views\ShiftlogMoldel\" />

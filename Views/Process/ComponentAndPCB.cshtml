@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "ComponentAndPCB";
+}
+
+<h1 class="text-primary fw-bold">Registro de Componentes por PCB</h1>
+<hr />
+
+<form action="ComponentAndPCB" method="post">
+    <input type="text" name="busqueda" value="" />
+    <input type="submit" value="Buscar">
+    <label class="shadow fw-bold"> *Puede buscar por: ID de rollo de material </label>
+</form>
+<br />
+<table class="table table-striped table-bordered" id="tabla_desplegada">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">ID Componente</th>
+            <th scope="col">McID</th>
+            <th scope="col">Estacion</th>
+            <th scope="col">Ranura</th>
+            <th scope="col">SubRanura</th>
+            <th scope="col">Numero de serie de PCB</th>
+            <th scope="col">Bloque dentro del panel</th>
+            <th scope="col">Tipo de Componente</th>
+            <th scope="col">Fecha de insercion</th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.CompID</td>
+                <td>@x.McID</td>
+                <td>@x.Station</td>
+                <td>@x.Slot</td>
+                <td>@x.SubSlot</td>
+                <td>@x.DeviceID</td>
+                <td>@x.BlockNo</td>
+                <td>@x.CompType</td>
+                <td>@x.InsertDate</td>                
+            </tr>
+        }
+    </tbody>
+    <tr class="noSearch hide fw-bold">
+        <td colspan="11"></td>
+    </tr>
+</table>
+<script src="~/Scripts/Buscar.js"></script>

@@ -16,21 +16,21 @@
             <div class="col-md-3">
                 <label class="fs-4 fw-bold" for="Line">Linea de SMT:</label>
                 <select class="form-control form-select" name="Line" required>
-                    <option disabled selected value="0">Sí no visualiza la linea, contacte a IT</option>
+                    <option value="" disabled selected>Seleccione...</option>
                     @foreach (var l in ViewBag.Linea)
                     {
                         <option value="@l.SMT">@l.SMT </option>
                     }
-                    <option disabled selected value="0">Seleccione....</option>
+                    <!--<option disabled selected>Seleccione....</option>-->
                 </select>
             </div>
             <div class="col-md-5">
                 <label class="fs-4 fw-bold" for="Program">Nombre del Programa:</label>
-                <input type="text" class="form-control" name="Program" placeholder="Ejemplo >> 179_AB_C1_BOT" />
+                <input type="text" class="form-control" name="Program" placeholder="Ejemplo >> 179_AB_C1_BOT" required/>
             </div>
             <div class="col-md-4">
                 <label class="fs-4 fw-bold" for="Noblock"># de PCB dentro del Panel:</label>
-                <input type="text" class="form-control" name="Noblock" required />
+                <input type="text" class="form-control" name="Noblock" placeholder="#piezas + 1" required />
             </div>
 
         </div>
@@ -39,12 +39,12 @@
 
             <div class="col-md-3">
                 <label class="fs-4 fw-bold" for="NIP">Codigo NIP:</label>
-                <input type="text" class="form-control" name="NIP"/>
+                <input type="text" class="form-control" name="NIP" required/>
             </div>
             <div class="col-md-5">
                 <label class="fs-4 fw-bold" for="Suffix">Sufijo del Programa (Top/Botton):</label>
-                <select class="form-control form-select" name="Suffix">
-                    <option>Seleccione....</option>
+                <select class="form-control form-select" name="Suffix" required>
+                    <option value="" disabled selected>Seleccione....</option>
                     <option>_T</option>
                     <option>_B</option>
                 </select>
@@ -62,8 +62,8 @@
 
             <div class="col-md-3">
                 <label class="fs-4 fw-bold" for="Assy_Line">Linea de Ensamble:</label>
-                <select class="form-control form-select" name="Assy_Line">
-                    <option>Seleccione....</option>
+                <select class="form-control form-select" name="Assy_Line" >
+                    <option value="" disabled selected>Seleccione....</option>
                     @foreach (var a in ViewBag.Assy_Line)
                     {
                         <option class="order-first" value="@a">@a  </option>

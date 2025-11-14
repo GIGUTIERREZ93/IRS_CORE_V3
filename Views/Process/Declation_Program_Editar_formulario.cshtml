@@ -40,13 +40,12 @@
     </div>
     <div class="col-md-4">
         <label class="fs-3 fw-bold" for="Line">Linea de Produccion:</label>
-        <select class="form-control form-select" name="Line">
-            <option disabled selected value="0">Sí no visualiza la linea, contacte a IT</option>
+        <select class="form-control form-select" name="Line" value="@Model.Line">
+            <option>@Model.Line</option>
             @foreach (var l in ViewBag.Linea)
             {
                 <option value="@l.SMT">@l.SMT </option>
             }
-            <option disabled selected value="0">Seleccione....</option>
         </select>
     </div>
     <div class="col-md-4">
@@ -61,8 +60,10 @@
         <label class="fs-3 fw-bold" for="Assy_Line">Linea de Ensamble:</label>
         <select class="form-control form-select" name="Assy_Line" value="@Model.Assy_Line">
             <option>@Model.Assy_Line</option>
-            <option>TESLA</option>
-            <option>AUDI</option>
+            @foreach (var s in ViewBag.Assy_Line)
+            {
+                <option value="@s">@s </option>
+            }
         </select>
     </div>
     <div class=" text-end">

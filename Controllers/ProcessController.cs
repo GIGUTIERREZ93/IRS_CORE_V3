@@ -99,10 +99,21 @@ namespace IRS.Controllers
         public ActionResult Trace_Desactivation() { return View(); }
         public ActionResult Valor_Declaration() { return View(); }
 
-        public ActionResult ComponentAndPCB()
+        public ActionResult ComponentAndPCB(string busqueda = "1")
         {
-            var query = oService.ComponentAndPCBService();
-            return View(query);
+            string query;
+            if (busqueda == "1")
+            {
+                //Tabla que muestra los prmieros 200 registros de la tabla DeviceTrace sin filtro
+                query = "SELECT TOP (200) [DeviceID],[McID],[Station],[Slot],[SubSlot],[CompID],[BlockNo],[CompType],[InsertDate] FROM [vManage].[dbo].[DeviceTrace] ORDER BY InsertDate DESC";
+            }
+            else
+            {
+                //Tabla que muestra los registros filtrados por CompID
+                query = "SELECT [DeviceID],[McID],[Station],[Slot],[SubSlot],[CompID],[BlockNo],[CompType],[InsertDate] FROM [vManage].[dbo].[DeviceTrace] WHERE (CompID='" + busqueda + "' or McID='" + busqueda + "') ORDER BY InsertDate DESC";
+            }
+            var result = db_vmanage.Database.SqlQuery<ListaComponentesPCB>(query).ToList();
+            return View (result);
         }
 
         //¡¡¡¡ Action and View Result para Formulario de Declaration Program > CRUD
@@ -133,12 +144,14 @@ namespace IRS.Controllers
         public ActionResult Declation_Program_Editar_formulario(long dato)
         {
             ViewBag.Linea = db_vmanage.X_McID_Relationship.ToList();
-            //Buscando, seleccionando y enviando el RecordID a MOSTRAR en la vista Declation_Program_Editar_formulario
+            ViewBag.Assy_Line = db_vmanage.XDeclarationProgram.DistinctBy(c => c.Assy_Line).Where(C => C.Assy_Line != null).Select(c => c.Assy_Line).ToList();
+            //Buscando, seleccionando y enviando el RecordID a MOSTRAR en la vista Declation_Program_Editar_formulario          
             var model = oService.Editar(dato);
             return View(model);
         }
         public ActionResult Declation_Program_Editar(XDeclarationProgram model)
         {
+            ViewBag.Assy_Line = db_vmanage.XDeclarationProgram.DistinctBy(c => c.Assy_Line).Where(C => C.Assy_Line != null).Select(c => c.Assy_Line).ToList();
             var mcid = int.Parse((db_vmanage.X_McID_Relationship.Where(c => c.SMT == model.Line).Select(c => c.McID).FirstOrDefault()));
             model.McID = mcid;
             oService.Editar_Form(model);

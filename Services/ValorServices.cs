@@ -14,9 +14,20 @@ namespace IRS.Services
         readonly vManageEntities db = new vManageEntities();
         readonly RADServerEntities1 db_rad = new RADServerEntities1();
         
-        public List <DeviceTrace> ComponentAndPCBService()
+        public List <DeviceTrace> ComponentAndPCBService(string busqueda)
         {
-            var result =db.DeviceTrace.ToList();
+            string query;
+            if (busqueda == "1")
+            {
+                //Tabla que muestra los prmieros 200 registros de la tabla DeviceTrace sin filtro
+                query = "SELECT TOP (200) [DeviceID],[McID],[Station],[Slot],[SubSlot],[CompID],[BlockNo],[CompType],[InsertDate] FROM [vManage].[dbo].[DeviceTrace] ORDER BY InsertDate DESC";
+            }
+            else
+            {
+                //Tabla que muestra los registros filtrados por CompID
+                query = "SELECT [DeviceID],[McID],[Station],[Slot],[SubSlot],[CompID],[BlockNo],[CompType],[InsertDate] FROM [vManage].[dbo].[DeviceTrace] WHERE (CompID='" + busqueda + "') ORDER BY InsertDate DESC";
+            }
+            var result = db.DeviceTrace.Take(200).OrderByDescending(x => x.InsertDate).ToList();
             return result;
 
         }
@@ -67,6 +78,7 @@ namespace IRS.Services
         public XDeclarationProgram Editar(long RecordID)
         {
             var model =( from monitor in db.XDeclarationProgram.Where(x => x.RecordID==RecordID) select monitor).FirstOrDefault();
+            
             return model;
 
         }
