@@ -2,10 +2,66 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1 class="align-text-top">Comunicados Marelli Mexicana</h1>
-</div>
+<h1 class="display-2 text-center fw-bold">
+    <img width="150" src="@Url.Content("~/Imagenes/logo.png")" />
+</h1>
 
-<div class="row">
-    <img src="@Url.Content("~/Imagenes/comunicado.png")" width="300" height="750" />
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 ">
+            <div class="card-img border-info">
+                <h1 class="card-header text-white bg-primary text-center">Comunicados Generales</h1>
+                <div class="card-body text-center text-black bg-success border-primary">
+                    <img class="img-rounded align-content-center" src="~/Imagenes/comunicados.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Service Now</h3>
+                    <p>
+                        ¿Tienes alguna solicitud para IT?
+                    </p>
+                    <p class="card-text">
+                        Recuerda que el portal de Service now es uno de los medios oficales para hacerlo; Genera tu ticket dando clic al botón.
+                    </p>
+                    <p>
+                        <a class="btn btn-default" href="https://marelli.service-now.com/">Ir a Service Now &raquo;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Master Web Marelli Mexicana</h3>
+                    <p>
+                        Consulta todos los procesos de RH relacionados con los sistemas de Calidad, Seguridad y Medio Ambiente en MasterWeb.
+                    </p>                  
+                    <p>
+                        <a class="btn btn-default" href="http://172.23.139.93/index.asp?lang=0&w=1920&i=&a=">Ingreso de Facturas &raquo;</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Success Factors</h3>
+                    <p>
+                        No olvides mantener tu CV actualizado, monitorear tus objetivos y revisar los cursos que Marelli tiene para ti
+                    </p>
+                    <p>
+                    <p><a class="btn btn-default" href="https://performancemanager.successfactors.eu/">Saber más &raquo;</a></p>                    </p>
+                </div>
+            </div>
+        </div>       
+    </div>
+
 </div>
